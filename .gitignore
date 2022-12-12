@@ -1,0 +1,9 @@
+.env
+.DS_Store
+manifest.json
+node_modules
+package-lock.json
+public/bundles
+public/static.json
+sam.json
+sam.yaml

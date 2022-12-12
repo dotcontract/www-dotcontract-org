@@ -1,0 +1,34 @@
+{
+  "name": "www-dotcontract-xyz",
+  "version": "3.2.1",
+  "scripts": {
+    "postinstall": "node ./scripts/createManifest.js",
+    "start": "sandbox",
+    "lint": "eslint ./app/**/*.mjs --fix"
+  },
+  "devDependencies": {
+    "@architect/sandbox": "^5.4.1",
+    "@enhance/types": "^0.4.0",
+    "eslint": "^8.29.0"
+  },
+  "eslintConfig": {
+    "env": {
+      "node": true
+    },
+    "extends": "eslint:recommended",
+    "rules": {
+      "indent": [
+        "error",
+        2
+      ]
+    },
+    "ignorePatterns": [],
+    "parserOptions": {
+      "sourceType": "module",
+      "ecmaVersion": 2022
+    }
+  },
+  "dependencies": {
+    "@enhance/arc-plugin-enhance": "^4.2.1"
+  }
+}

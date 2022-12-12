@@ -1,0 +1,61 @@
+name: "Architect Deploy"
+description: "Deploys an Architect app to AWS"
+inputs:
+  aws_access_key_id:
+    required: true
+  aws_secret_access_key:
+    required: true
+  use_lock_file:
+    required: false
+    default: true
+  node-version:
+    required: false
+    default: 16
+runs:
+  using: "composite"
+  steps:
+    - name: Cancel previous runs
+      uses: styfle/cancel-workflow-action@0.11.0
+
+    - name: Check out repo
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ inputs.node-version }}
+
+    - name: Install dependencies
+      uses: bahmutov/npm-install@v1
+      with:
+        useLockFile: ${{ inputs.use_lock_file }}
+
+    - name: Install Architect
+      shell: bash
+      run: npm install @architect/architect
+    - name: Install aws-sdk
+      shell: bash
+      run: npm install aws-sdk
+
+    - name: Vendor dist files
+      shell: bash
+      run: npm run dist --if-present
+
+    # - name: Staging Deploy
+    #   if: github.ref == 'refs/heads/main'
+    #   shell: bash
+    #   run: npx arc deploy --staging
+    #   env:
+    #     AWS_ACCESS_KEY_ID: ${{ inputs.aws_access_key_id }}
+    #     AWS_SECRET_ACCESS_KEY: ${{ inputs.aws_secret_access_key }}
+
+    - name: Production Deploy
+      if: github.ref == 'refs/heads/production'
+      # if: startsWith(github.ref, 'refs/tags/v')
+      shell: bash
+      run: npx arc deploy --production
+      env:
+        ARC_AWS_CREDS: env
+        AWS_REGION: ${{ inputs.aws_region }}
+        AWS_ACCESS_KEY_ID: ${{ inputs.aws_access_key_id }}
+        AWS_SECRET_ACCESS_KEY: ${{ inputs.aws_secret_access_key }}
