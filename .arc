@@ -1,5 +1,5 @@
 @app
-auth-using-email
+www-dotcontract-xyz
 
 @plugins
 enhance/arc-plugin-enhance

@@ -7,8 +7,10 @@
     "lint": "eslint ./app/**/*.mjs --fix"
   },
   "devDependencies": {
+    "@architect/architect": "^10.8.2",
     "@architect/sandbox": "^5.4.1",
     "@enhance/types": "^0.4.0",
+    "aws-sdk": "^2.1272.0",
     "eslint": "^8.29.0"
   },
   "eslintConfig": {
