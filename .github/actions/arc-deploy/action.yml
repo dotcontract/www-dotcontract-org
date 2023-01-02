@@ -1,6 +1,8 @@
 name: "Architect Deploy"
 description: "Deploys an Architect app to AWS"
 inputs:
+  aws_region:
+    required: false
   aws_access_key_id:
     required: true
   aws_secret_access_key:
