@@ -1,37 +1,155 @@
 <style scope="global">
   body {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
+    padding: 0;
+    margin: 0;
+  }
+  h2 {
+    font-family: "Sanchez", "Open Sans", sans-serif;
+    font-size: 60px;
+  }
+  h2.center {
+    text-align: center;
   }
   #hero {
   }
+  #hero,
   #hero .content {
-    padding: 20px;
+    min-height: 80vh;
+    min-height: 80vh;
+  }
+  #hero .content {
+    padding: 25px;
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
   }
   #hero .content h1 {
-    font-family: 'Sanchez', 'Open Sans', sans-serif;
-    font-size: 60px;
+    font-family: "Sanchez", "Open Sans", sans-serif;
+    font-size: 80px;
     font-weight: 300;
-    width: 580px;
+    width: 800px;
   }
   #hero .content h1 .name {
     display: none;
   }
   #hero .explanation {
-    width: 450px;
     max-width: 100%;
     margin-top: 20px;
     margin-bottom: 50px;
     line-height: 1.5em;
+    font-size: 30px;
+    width: 750px;
   }
   #hero .cta a {
     text-decoration: none;
     padding: 8px 25px;
     color: black;
   }
-  #hero .cta .get-started { 
+  #hero .cta .get-started {
     border: 1px solid black;
     background: greenyellow;
     border-radius: 2px;
+  }
+  #big-use-cases {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 40px 0;
+    position: relative;
+  }
+  #big-use-cases .line {
+    position: absolute;
+    width: 100vw;
+    height: 50%;
+    border-bottom: 1px dashed #ccc;
+    z-index: -100;
+  }
+  #big-use-cases .use-case {
+    width: 25%;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    padding: 25px;
+    padding-top: 40px;
+    padding-bottom: 80px;
+    line-height: 1.4em;
+    box-shadow: 0px 3px 3px #ccc;
+    background: white;
+  }
+  #big-use-cases .use-case .image {
+    background: #ccc;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    display: block;
+    margin: 0 auto;
+  }
+  #big-use-cases .use-case .heading {
+    text-align: center;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 20px 0px;
+  }
+  #how-to {
+    padding: 25px;
+  }
+
+  #how-to .step {
+    display: flex;
+    padding: 20px 0;
+  }
+  #how-to .image img {
+    width: 100px;
+  }
+  #how-to .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 10px;
+  }
+  #how-to .text .heading {
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-bottom: 3px;
+  }
+  #validated-and {
+    padding: 20px;
+  }
+  #validated-and .features {
+    margin: 0 -20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  #validated-and .feature {
+    flex-basis: 45%;
+    box-sizing: border-box;
+    padding: 40px;
+    line-height: 1.5em;
+  }
+  #validated-and .feature .heading {
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 20px;
+    font-size: 18px;
+  }
+  #validated-and .feature.n01,
+  #validated-and .feature.n04 {
+    background: #ddd;
+  }
+  #validated-and .feature.n01 {
+    border-radius: 0 20px 20px 0;
+  }
+  #validated-and .feature.n04 {
+    border-radius: 20px 0 0 20px;
+  }
+
+  #final-cta {
+    padding: 25px;
+    margin: 50px auto;
+    max-width: 1200px;
   }
 </style>
 <main>
@@ -43,14 +161,128 @@
         <div>Smart contracts without blockchains</div>
       </h1>
       <div class="explanation">
-        DotContract is an open source smart contract standard for the
-        specification and management of evolving contractual rights and
-        obligations.
+        DotContract is an open-source smart contract standard for the
+        specification, management, and automation of evolving contractual rights
+        and obligations.
       </div>
       <div class="cta">
         <a class="get-started" href="/">Get Started</a>
         <a href="/">Documentation →</a>
       </div>
     </div>
+  </div>
+  <div id="big-use-cases">
+    <div class="use-case">
+      <div class="image"><img src="" /></div>
+      <div class="heading">Validate contract rights for finance</div>
+      <div class="description">
+        Model lifecycle conditions for any asset type, automatically enforce the
+        rights and obligations between participant with a powerful smart
+        contract framework.
+      </div>
+    </div>
+    <div class="use-case">
+      <div class="image"><img src="" /></div>
+      <div class="heading">
+        Digital governance for organizations of all sizes
+      </div>
+      <div class="description">
+        Embed logic and dependencies with contract execution and signing to
+        enable organizational checks and balances.
+      </div>
+    </div>
+    <div class="use-case">
+      <div class="image"><img src="" /></div>
+      <div class="heading">Complex compliance automation</div>
+      <div class="description">
+        Streamline and automate complex compliance workflows with a robust and
+        reliable contract specification language.
+      </div>
+    </div>
+    <div class="line"></div>
+  </div>
+  <div id="how-to">
+    <h2>How to get started</h2>
+    <div class="step">
+      <div class="image">
+        <img src="_public/homepage/how-to/install.png" />
+      </div>
+      <div class="text">
+        <div class="heading">Install</div>
+        <div class="description">Install the DotContract toolkit</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="image">
+        <img src="_public/homepage/how-to/write.png" />
+      </div>
+      <div class="text">
+        <div class="heading">Write</div>
+        <div class="description">
+          Build, update, review and sign DotContracts, saving them as files
+        </div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="image">
+        <img src="_public/homepage/how-to/share.png" />
+      </div>
+      <div class="text">
+        <div class="heading">Share</div>
+        <div class="description">
+          Share DotContracts as email attachments or push them to an Origin Repo
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="validated-and">
+    <h2>Validated and changeable with consensus, no blockchain required.</h2>
+    <div class="features">
+      <div class="feature n01">
+        <div class="heading">Evolvable Smart Contracts</div>
+        <div class="description">
+          DotContracts start off blank, and by adding rules in the form of
+          formally specified rights and obligations, can be evolved into any
+          needed multi-party dynamic.
+        </div>
+      </div>
+      <div class="feature n02">
+        <div class="heading">Shareable Data Repos</div>
+        <div class="description">
+          DotContracts act as a stand alone data repositories covering the full
+          lifecycle of an agreement. Share .contract files as easily as a .zip
+          file, to give others the ability to interact as a data repo.
+        </div>
+      </div>
+      <div class="feature n03">
+        <div class="heading">Formal Models and Analysis</div>
+        <div class="description">
+          Unlike programing language based smart contracts, which are too
+          complex for formal analysis, DotContracts are written in a
+          specification language that makes it possible to fully model and
+          analyze all possible outcomes.
+        </div>
+      </div>
+      <div class="feature n04">
+        <div class="heading">Hostable on Secure Networks</div>
+        <div class="description">
+          DotContracts can be optionally hosted on your own secure network,
+          enabling them to share state and common data feed values though
+          network synchronized message passing.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="final-cta">
+    <h2 class="center">
+      We're building a global programmatic standard for digital consensus. We
+      aim to unlock smart contract technology for everyone.
+    </h2>
+    <h2 class="center">
+      Join the community on
+      <a href="https://discord.gg/KpYFdrfnkS">Discord</a> or email us at
+      <a href="mailto:hello@dotcontract.xyz">hello@dotcontract.xyz</a> to build
+      with us.
+    </h2>
   </div>
 </main>
