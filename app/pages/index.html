@@ -4,13 +4,23 @@
     padding: 0;
     margin: 0;
   }
+  main {
+    max-width: 100vw;
+    overflow: hidden;
+  }
   h2 {
     font-family: "Sanchez", "Open Sans", sans-serif;
-    font-size: 60px;
+    font-size: 30px;
     padding-bottom: 40px;
   }
   h2.center {
     text-align: center;
+  }
+  @media (min-width: 800px) {
+    h2 {
+      font-size: 60px;
+      padding-bottom: 40px;
+    }
   }
   #hero {
   }
@@ -28,9 +38,15 @@
   }
   #hero .content h1 {
     font-family: "Sanchez", "Open Sans", sans-serif;
-    font-size: 80px;
-    font-weight: 300;
+    font-size: 60px;
     width: 800px;
+    max-width: calc(100vw - 50px);
+  }
+  @media (min-width: 800px) {
+    #hero .content h1 {
+      font-size: 80px;
+      font-weight: 300;
+    }
   }
   #hero .content h1 .name {
     display: none;
@@ -42,6 +58,17 @@
     line-height: 1.5em;
     font-size: 30px;
     width: 750px;
+  }
+  #hero .cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  @media (min-width: 800px) {
+    #hero .cta {
+      flex-direction: row;
+      align-items: flex-start;
+    }
   }
   #hero .cta a {
     text-decoration: none;
@@ -55,19 +82,23 @@
   }
   #big-use-cases {
     display: flex;
-    justify-content: space-evenly;
     margin: 40px 0;
     position: relative;
   }
-  #big-use-cases .line {
-    position: absolute;
-    width: 100vw;
-    height: 50%;
-    border-bottom: 1px dashed #ccc;
-    z-index: -100;
+  #big-use-cases {
+    flex-direction: column;
+    justify-content: space-evenly;
   }
+  @media (min-width: 800px) {
+    #big-use-cases {
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+  }
+
   #big-use-cases .use-case {
-    width: 25%;
+    margin: 40px;
+    width: calc(100vw - 80px);
     border: 1px solid #ccc;
     border-radius: 15px;
     padding: 25px;
@@ -76,6 +107,19 @@
     line-height: 1.4em;
     box-shadow: 0px 3px 3px #ccc;
     background: white;
+  }
+  @media (min-width: 800px) {
+    #big-use-cases .use-case {
+      margin: 0;
+      width: 25%;
+    }
+    #big-use-cases .line {
+      position: absolute;
+      width: 100vw;
+      height: 50%;
+      border-bottom: 1px dashed #ccc;
+      z-index: -100;
+    }
   }
   #big-use-cases .use-case .image {
     background: #ccc;
@@ -92,6 +136,8 @@
     padding: 20px 0px;
   }
   #how-to {
+    margin-top: 50px;
+    margin-bottom: 50px;
     padding: 25px;
   }
 
@@ -101,6 +147,7 @@
   }
   #how-to .image img {
     width: 100px;
+    max-width: 100px;
   }
   #how-to .text {
     display: flex;
@@ -149,9 +196,19 @@
   #final-cta {
     padding: 25px;
     margin: 50px auto;
-    max-width: 1200px;
-    font-size: 25px;
-    line-height: 3em;
+    margin-top: 75px;
+    max-width: 100vw;
+  }
+  #final-cta h2 {
+    font-size: 30px;
+    line-height: 50px;
+    text-align: left;
+  }
+  @media (min-width: 800px) {
+    #final-cta h2 {
+      text-align: center;
+      font-size: 40px;
+    }
   }
   #final-cta a {
     text-decoration: underline;

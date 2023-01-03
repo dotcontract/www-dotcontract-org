@@ -21,11 +21,16 @@ export default function PublicTopNav({ html, state }) {
         font-weight: bold;
       }
       header .right {
-        margin-left: 20px;
-        display: flex;
-        flex-grow: 1;
-        max-width: 40vw;
-        justify-content: space-between;
+        display: none;
+      }
+      @media (min-width: 800px) {
+        header .right {
+          margin-left: 20px;
+          display: flex;
+          flex-grow: 1;
+          max-width: 40vw;
+          justify-content: space-between;
+        }
       }
       header .right a {
         padding: 8px;
