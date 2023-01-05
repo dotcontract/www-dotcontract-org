@@ -18,20 +18,21 @@
   }
   @media (min-width: 800px) {
     h2 {
-      font-size: 60px;
+      font-size: 40px;
       padding-bottom: 40px;
+      text-align: center;
     }
   }
   #hero {
   }
   #hero,
   #hero .content {
-    min-height: 80vh;
-    min-height: 80vh;
+    min-height: 70vh;
+    min-height: 70vh;
   }
   #hero .content {
     padding: 25px;
-    padding-bottom: 80px;
+    padding-bottom: 25px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -80,38 +81,53 @@
     background: greenyellow;
     border-radius: 2px;
   }
+
+  /* big-use-cases */
   #big-use-cases {
-    display: flex;
     margin: 40px 0;
-    position: relative;
   }
-  #big-use-cases {
+  #big-use-cases h2 {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    font-size: 40px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  #big-use-cases .use-cases {
+    display: flex;
+    position: relative;
     flex-direction: column;
     justify-content: space-evenly;
   }
   @media (min-width: 800px) {
-    #big-use-cases {
+    #big-use-cases .use-cases {
+      flex-wrap: wrap;
       flex-direction: row;
       justify-content: space-evenly;
     }
   }
-
   #big-use-cases .use-case {
     margin: 40px;
     width: calc(100vw - 80px);
+    line-height: 1.4em;
+  }
+  #big-use-cases .use-case .box {
+    height: 100%;
+    box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 15px;
     padding: 25px;
-    padding-top: 40px;
-    padding-bottom: 80px;
-    line-height: 1.4em;
+    padding-top: 20px;
+    padding-bottom: 20px;
     box-shadow: 0px 3px 3px #ccc;
     background: white;
   }
   @media (min-width: 800px) {
     #big-use-cases .use-case {
       margin: 0;
-      width: 25%;
+      width: 33%;
+      padding: 40px;
     }
     #big-use-cases .line {
       position: absolute;
@@ -135,12 +151,17 @@
     font-size: 18px;
     padding: 20px 0px;
   }
+
+  /* #how-to */
   #how-to {
     margin-top: 50px;
     margin-bottom: 50px;
     padding: 25px;
   }
-
+  #how-to .steps {
+    display: flex;
+    flex-direction: column;
+  }
   #how-to .step {
     display: flex;
     padding: 20px 0;
@@ -155,42 +176,54 @@
     justify-content: center;
     align-items: flex-start;
     padding-left: 10px;
+    line-height: 1.4em;
   }
   #how-to .text .heading {
     font-weight: bold;
     text-transform: uppercase;
     padding-bottom: 3px;
   }
-  #validated-and {
+  @media (min-width: 600px) {
+    #how-to .steps {
+      flex-direction: row;
+      justify-content: space-around;
+    }
+    #how-to .step {
+      flex-basis: 25%;
+      align-items: flex-start;
+    }
+  }
+
+  #dev-features {
     padding: 20px;
   }
-  #validated-and .features {
-    margin: 0 -20px;
+  #dev-features .features {
+    margin: 40px -20px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
   }
-  #validated-and .feature {
+  #dev-features .feature {
     flex-basis: 45%;
     box-sizing: border-box;
     padding: 40px;
     line-height: 1.5em;
   }
-  #validated-and .feature .heading {
+  #dev-features .feature .heading {
     text-align: center;
     font-weight: bold;
     padding-bottom: 20px;
     font-size: 18px;
   }
-  #validated-and .feature.n01,
-  #validated-and .feature.n04 {
+  #dev-features .feature.n01,
+  #dev-features .feature.n04 {
     background: #ddd;
   }
-  #validated-and .feature.n01 {
+  #dev-features .feature.n01 {
     border-radius: 0 20px 20px 0;
   }
-  #validated-and .feature.n04 {
+  #dev-features .feature.n04 {
     border-radius: 20px 0 0 20px;
   }
   #final-cta {
@@ -234,71 +267,118 @@
     </div>
   </div>
   <div id="big-use-cases">
-    <div class="use-case">
-      <div class="image"><img src="" /></div>
-      <div class="heading">Validated terms and conditions for finance</div>
-      <div class="description">
-        Model lifecycle conditions for any asset type, automatically enforce the
-        rights and obligations between participant with a powerful smart
-        contract framework.
+    <h2>Powering Use Cases Across Industries</h2>
+    <div class="use-cases">
+      <div class="use-case">
+        <div class="box">
+          <div class="image"><img src="" /></div>
+          <div class="heading">Validated terms and conditions for finance</div>
+          <div class="description">
+            Model lifecycle conditions for any asset type, automatically enforce
+            the rights and obligations between participants with a powerful
+            smart contract framework.
+          </div>
+        </div>
       </div>
+      <div class="use-case">
+        <div class="box">
+          <div class="image"><img src="" /></div>
+          <div class="heading">
+            Digital governance for organizations of all sizes
+          </div>
+          <div class="description">
+            Embed logic and dependencies with contract execution and signing to
+            enable organizational checks and balances.
+          </div>
+        </div>
+      </div>
+      <div class="use-case">
+        <div class="box">
+          <div class="image"><img src="" /></div>
+          <div class="heading">Complex compliance automation</div>
+          <div class="description">
+            Streamline and automate complex compliance workflows with a robust
+            and reliable contract specification language.
+          </div>
+        </div>
+      </div>
+      <div class="use-case">
+        <div class="box">
+          <div class="image"><img src="" /></div>
+          <div class="heading">Validated terms and conditions for finance</div>
+          <div class="description">
+            Model lifecycle conditions for any asset type, automatically enforce
+            the rights and obligations between participants with a powerful
+            smart contract framework.
+          </div>
+        </div>
+      </div>
+      <div class="use-case">
+        <div class="box">
+          <div class="image"><img src="" /></div>
+          <div class="heading">
+            Digital governance for organizations of all sizes
+          </div>
+          <div class="description">
+            Embed logic and dependencies with contract execution and signing to
+            enable organizational checks and balances.
+          </div>
+        </div>
+      </div>
+      <div class="use-case">
+        <div class="box">
+          <div class="image"><img src="" /></div>
+          <div class="heading">Complex compliance automation</div>
+          <div class="description">
+            Streamline and automate complex compliance workflows with a robust
+            and reliable contract specification language.
+          </div>
+        </div>
+      </div>
+      <div class="line"></div>
     </div>
-    <div class="use-case">
-      <div class="image"><img src="" /></div>
-      <div class="heading">
-        Digital governance for organizations of all sizes
-      </div>
-      <div class="description">
-        Embed logic and dependencies with contract execution and signing to
-        enable organizational checks and balances.
-      </div>
-    </div>
-    <div class="use-case">
-      <div class="image"><img src="" /></div>
-      <div class="heading">Complex compliance automation</div>
-      <div class="description">
-        Streamline and automate complex compliance workflows with a robust and
-        reliable contract specification language.
-      </div>
-    </div>
-    <div class="line"></div>
   </div>
   <div id="how-to">
-    <h2>How to get started</h2>
-    <div class="step">
-      <div class="image">
-        <img src="_public/homepage/how-to/install.png" />
-      </div>
-      <div class="text">
-        <div class="heading">Install</div>
-        <div class="description">Install the DotContract toolkit</div>
-      </div>
-    </div>
-    <div class="step">
-      <div class="image">
-        <img src="_public/homepage/how-to/write.png" />
-      </div>
-      <div class="text">
-        <div class="heading">Write</div>
-        <div class="description">
-          Build, update, review, and sign DotContracts, saving them as files
+    <h2>Smart Contracts that Work Anywhere</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="image">
+          <img src="_public/homepage/how-to/install.png" />
+        </div>
+        <div class="text">
+          <div class="heading">Install</div>
+          <div class="description">
+            Install or embed the DotContract toolkit
+          </div>
         </div>
       </div>
-    </div>
-    <div class="step">
-      <div class="image">
-        <img src="_public/homepage/how-to/share.png" />
+      <div class="step">
+        <div class="image">
+          <img src="_public/homepage/how-to/write.png" />
+        </div>
+        <div class="text">
+          <div class="heading">Write</div>
+          <div class="description">
+            Build, update, review, and sign DotContracts
+          </div>
+        </div>
       </div>
-      <div class="text">
-        <div class="heading">Share</div>
-        <div class="description">
-          Share DotContracts as email attachments or push them to an Origin Repo
+      <div class="step">
+        <div class="image">
+          <img src="_public/homepage/how-to/share.png" />
+        </div>
+        <div class="text">
+          <div class="heading">Share</div>
+          <div class="description">
+            Share as email attachments or push changes to a DotContract repo
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <div id="validated-and">
-    <h2>Validated and changeable with consensus, no blockchain required.</h2>
+  <div id="dev-features">
+    <h2>Made for Developers</h2>
+    <!-- <h2>Validated and changeable with consensus, no blockchain required.</h2> -->
     <div class="features">
       <div class="feature n01">
         <div class="heading">Evolvable Smart Contracts</div>
@@ -335,16 +415,26 @@
       </div>
     </div>
   </div>
+
+  <!-- <div id="made-for-everyone">
+    <h2>And for Everyone Else</h2>
+    <div>...</div>
+    <div>...</div>
+    <div>...</div>
+  </div> -->
+
   <div id="final-cta">
-    <h2 class="center">
-      We're building a global programmatic standard for digital consensus. We
-      aim to unlock smart contract technology for everyone.
+    <h2>
+      We're building the most robust <br />open-source standard for digital consensus.
+      <br />
+      Our mission is to unlock smart contracts for everyone.
+      <!-- We aim to unlock smart contract technology for everyone. -->
     </h2>
     <h2 class="center">
-      Join the community on
-      <a href="https://discord.gg/KpYFdrfnkS">Discord</a> or email us at
-      <a href="mailto:hello@dotcontract.xyz">hello@dotcontract.xyz</a> to build
-      with us.
+      Join our community on
+      <a href="https://discord.gg/KpYFdrfnkS">Discord</a> <br />or email us at
+      <a href="mailto:hello@dotcontract.xyz">hello@dotcontract.xyz</a> <br />
+      to build with us.
     </h2>
   </div>
 </main>
