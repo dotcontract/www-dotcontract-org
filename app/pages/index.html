@@ -18,7 +18,7 @@
   }
   @media (min-width: 800px) {
     h2 {
-      font-size: 40px;
+      font-size: 38px;
       padding-bottom: 40px;
       text-align: center;
     }
@@ -28,10 +28,11 @@
   }
   #hero .bg {
     position: absolute;
-    width: 50vw;
+    width: 100vw;
     top: 0;
     margin-top: 25vh;
     right: -10vw;
+    opacity: 20%;
     z-index: -1;
   }
   #hero,
@@ -68,7 +69,14 @@
     flex-direction: column;
     align-items: center;
   }
-  @media (min-width: 800px) {
+  @media (min-width: 821px) {
+    #hero .bg {
+      width: 50vw;
+      top: 0;
+      margin-top: 5vh;
+      right: -10vw;
+      opacity: 1;
+    }
     #hero .content {
       padding-left: 250px;
     }
@@ -84,18 +92,61 @@
       flex-direction: row;
       align-items: flex-start;
     }
+    #hero .cta a {
+      display: inline-block;
+      padding: 10px 16px;
+      color: #00ca88;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    #hero .cta a.get-started {
+      background: #00ca88;
+      color: white;
+      border-radius: 18px;
+    }
   }
-
 
   /* big-use-cases */
   #big-use-cases {
-    margin: 40px 0;
+    margin: 60px 0;
+    padding-top: 60px;
+    background: #202334;
+    color: white;
+    position: relative;
+  }
+  #big-use-cases .before-curve {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    margin-top: -150px;
+    top: 0;
+    right: 0;
+  }
+  #big-use-cases .before-curve svg {
+    height: 100%;
+    width: 100%;
+  }
+  #big-use-cases .before-curve svg path {
+    fill: #202334;
+  }
+  #big-use-cases .after-curve {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    top: 0;
+    left: 0;
+  }
+  #big-use-cases .after-curve svg {
+    height: 100%;
+    width: 100%;
+  }
+  #big-use-cases .after-curve svg path {
+    fill: #fff;
   }
   #big-use-cases h2 {
     display: inline-block;
     text-align: center;
     width: 100%;
-    font-size: 40px;
     margin-bottom: 0;
     padding-bottom: 0;
   }
@@ -127,6 +178,7 @@
     padding-bottom: 20px;
     box-shadow: 0px 3px 3px #ccc;
     background: white;
+    color: #444;
   }
   @media (min-width: 800px) {
     #big-use-cases .use-case {
@@ -330,6 +382,26 @@
     </div>
   </div>
   <div id="big-use-cases">
+    <div class="before-curve">
+      <svg viewBox="0 0 100 100" width="100" height="100">
+        <path
+          d="M 0 100
+               S 100 100 100 0
+               L 100 100 
+               z"
+        />
+      </svg>
+    </div>
+    <div class="after-curve">
+      <svg viewBox="0 0 100 100" width="100" height="100">
+        <path
+          d="M 100 0
+          S 0 0 0 100
+          L 0 0 
+          z"
+        />
+      </svg>
+    </div>
     <h2>Powering Use Cases Across Industries</h2>
     <div class="use-cases">
       <div class="use-case">
