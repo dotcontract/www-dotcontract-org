@@ -16,7 +16,7 @@ export default function Head(state) {
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>${title}</title>
       ${styles}
-      <link rel="icon" href="/_public/favicon.svg">
+      <link rel="icon" href="/_public/favicon.png">
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Sanchez&display=swap" rel="stylesheet">
