@@ -24,6 +24,15 @@
     }
   }
   #hero {
+    position: relative;
+  }
+  #hero .bg {
+    position: absolute;
+    width: 50vw;
+    top: 0;
+    margin-top: 25vh;
+    right: -10vw;
+    z-index: -1;
   }
   #hero,
   #hero .content {
@@ -43,12 +52,6 @@
     width: 800px;
     max-width: calc(100vw - 50px);
   }
-  @media (min-width: 800px) {
-    #hero .content h1 {
-      font-size: 80px;
-      font-weight: 300;
-    }
-  }
   #hero .content h1 .name {
     display: none;
   }
@@ -66,21 +69,23 @@
     align-items: center;
   }
   @media (min-width: 800px) {
+    #hero .content {
+      padding-left: 250px;
+    }
+    #hero .content h1 {
+      font-size: 70px;
+      font-weight: 300;
+    }
+    #hero .explanation {
+      font-size: 20px;
+      width: 650px;
+    }
     #hero .cta {
       flex-direction: row;
       align-items: flex-start;
     }
   }
-  #hero .cta a {
-    text-decoration: none;
-    padding: 8px 25px;
-    color: black;
-  }
-  #hero .cta .get-started {
-    border: 1px solid black;
-    background: greenyellow;
-    border-radius: 2px;
-  }
+
 
   /* big-use-cases */
   #big-use-cases {
@@ -195,7 +200,7 @@
   }
 
   #dev-features {
-    background: rgb(31,35,52);
+    background: rgb(31, 35, 52);
     color: white;
     padding: 20px;
   }
@@ -234,7 +239,6 @@
     padding: 0px;
     width: 900px;
     flex-grow: 1;
-    max-width: 60%;
   }
   #dev-features .terminal .header {
     display: flex;
@@ -307,6 +311,7 @@
 <main>
   <public-top-nav></public-top-nav>
   <div id="hero">
+    <div class="bg"><img src="/_public/homepage/hero-img.svg" /></div>
     <div class="content">
       <h1>
         <div class="name">DotContract</div>
@@ -315,7 +320,8 @@
       <div class="explanation">
         DotContract is an open-source smart contract standard for the
         specification, management, and automation of evolving contractual rights
-        and obligations.
+        and obligations for robust enterprise and consumer use across
+        industries.
       </div>
       <div class="cta">
         <a class="get-started" href="/">Get Started</a>
@@ -386,9 +392,7 @@
         <div class="box">
           <div class="image"><img src="" /></div>
           <div class="heading"></div>
-          <div class="description">
-            Turn your contracts into digital assets
-          </div>
+          <div class="description">Turn your contracts into digital assets</div>
         </div>
       </div>
       <div class="line"></div>
@@ -447,13 +451,9 @@
       </div>
       <div class="terminal">
         <div class="header">
-          <div class="left">
-            dotcontract-cli
-          </div>
-          <div class="right">
-            &lt;/&gt;
-          </div>
-        </div> 
+          <div class="left">dotcontract-cli</div>
+          <div class="right">&lt;/&gt;</div>
+        </div>
       </div>
     </div>
     <div class="features">
@@ -505,11 +505,15 @@
       We're building the most robust open-source standard for digital consensus.
       <br />
       <br />
-      Our mission is to unlock the power of smart contracts without blockchains for everyone.
+      Our mission is to unlock the power of smart contracts without blockchains
+      for everyone.
     </h2>
     <h2 class="center">
       Join our community on
-      <a href="https://github.com/dotcontract/DotContract-Community/discussions">GitHub</a> or email us at
+      <a href="https://github.com/dotcontract/DotContract-Community/discussions"
+        >GitHub</a
+      >
+      or email us at
       <a href="mailto:hello@dotcontract.xyz">hello@dotcontract.xyz</a>
       to build with us.
     </h2>

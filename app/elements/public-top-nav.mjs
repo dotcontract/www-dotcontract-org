@@ -20,8 +20,13 @@ export default function PublicTopNav({ html, state }) {
         font-size: 30px;
         font-weight: bold;
       }
+      .nav-logo img {
+        width: 161px;
+      }
       header .right {
         display: none;
+        font-size: 15px;
+        line-height: 1.5em;
       }
       @media (min-width: 800px) {
         header .right {
@@ -33,17 +38,18 @@ export default function PublicTopNav({ html, state }) {
         }
       }
       header .right a {
-        padding: 8px;
+        padding: 8px 20px;
       }
       .get-started {
-        border: 1px solid black;
-        background: greenyellow;
-        border-radius: 2px;
+        color: white;
+        font-weight: bold;
+        background: #00ca88;
+        border-radius: 20px;
       }
     </style>
     <header class="public-top-nav">
       <div class="left">
-        <a class="nav-logo" href="/">DotContract</a>
+        <a class="nav-logo" href="/"><img src="/_public/dotcontract-logo.png" alt="DotContract" /></a>
       </div>
       <div class="right">
         <a class="link" href="/">Products</a>
