@@ -9,7 +9,7 @@
     overflow: hidden;
   }
   h2 {
-    font-family: "Sanchez", "Open Sans", sans-serif;
+    font-family: "Hepta Slab", "Sanchez", "Open Sans", sans-serif;
     font-size: 30px;
     padding-bottom: 40px;
   }
@@ -47,10 +47,12 @@
     justify-content: flex-end;
   }
   #hero .content h1 {
-    font-family: "Sanchez", "Open Sans", sans-serif;
-    font-size: 60px;
+    font-family: "Hepta Slab", "Sanchez", "Open Sans", sans-serif;
+    font-size: 45px;
+    font-weight: 500;
     width: 800px;
     max-width: calc(100vw - 50px);
+    line-height: 1.2em;
   }
   #hero .content h1 .name {
     display: none;
@@ -60,7 +62,7 @@
     margin-top: 20px;
     margin-bottom: 50px;
     line-height: 1.5em;
-    font-size: 30px;
+    font-size: 25px;
     width: 750px;
   }
   #hero .cta {
@@ -68,20 +70,32 @@
     flex-direction: column;
     align-items: center;
   }
+  #hero .cta a {
+    margin: 10px 0;
+    display: inline-block;
+    padding: 10px 16px;
+    color: #00ca88;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  #hero .cta a.get-started {
+    background: #00ca88;
+    color: white;
+    border-radius: 18px;
+  }
   @media (min-width: 821px) {
     #hero .bg {
       width: 50vw;
       top: 0;
       margin-top: 5vh;
       right: -10vw;
-      opacity: 1;
     }
     #hero .content {
-      padding-left: 250px;
+      padding-left: 150px;
     }
     #hero .content h1 {
-      font-size: 70px;
-      font-weight: 300;
+      font-size: 60px;
+      font-weight: 500;
     }
     #hero .explanation {
       font-size: 20px;
@@ -91,17 +105,13 @@
       flex-direction: row;
       align-items: flex-start;
     }
-    #hero .cta a {
-      display: inline-block;
-      padding: 10px 16px;
-      color: #00ca88;
-      font-size: 16px;
-      font-weight: bold;
+  }
+  @media (min-width: 1500px) {
+    #hero .bg {
+      opacity: 1;
     }
-    #hero .cta a.get-started {
-      background: #00ca88;
-      color: white;
-      border-radius: 18px;
+    #hero .content {
+      padding-left: 250px;
     }
   }
 
@@ -367,7 +377,10 @@
     <div class="content">
       <h1>
         <div class="name">DotContract</div>
-        <div>Smart contracts without blockchains</div>
+        <div>
+          Smart contracts<br />
+          without blockchains
+        </div>
       </h1>
       <div class="explanation">
         DotContract is an open-source smart contract standard for the
