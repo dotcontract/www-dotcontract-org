@@ -166,46 +166,36 @@
     flex-direction: column;
     justify-content: space-evenly;
   }
-  @media (min-width: 800px) {
-    #big-use-cases .use-cases {
-      flex-wrap: wrap;
-      flex-direction: row;
-      justify-content: space-evenly;
-    }
-  }
+
   #big-use-cases .use-case {
     margin: 40px;
     width: calc(100vw - 80px);
+    min-width: 450px;
     line-height: 1.4em;
   }
   #big-use-cases .use-case .box {
     height: 100%;
     box-sizing: border-box;
     border: 1px solid #ccc;
-    border-radius: 15px;
-    padding: 25px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    box-shadow: 0px 3px 3px #ccc;
+    border-radius: 45px;
+    padding: 45px;
+    padding-top: 40px;
+    padding-bottom: 40px;
     background: white;
     color: #444;
   }
-  @media (min-width: 800px) {
-    #big-use-cases .use-case {
-      margin: 0;
-      width: 33%;
-      padding: 40px;
-    }
-    #big-use-cases .line {
-      position: absolute;
-      width: 100vw;
-      height: 50%;
-      border-bottom: 1px dashed #ccc;
-      z-index: -100;
-    }
+  #big-use-cases .use-case .industry {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    color: #00ca88;
+    letter-spacing: 1.5px;
+    padding-bottom: 12px;
   }
   #big-use-cases .use-case .image {
-    background: #ccc;
+    background: white;
+    border: 6px solid #ddd;
     border-radius: 50%;
     width: 75px;
     height: 75px;
@@ -217,6 +207,28 @@
     font-weight: 700;
     font-size: 18px;
     padding: 20px 0px;
+  }
+  @media (min-width: 800px) {
+    #big-use-cases .use-cases {
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+    #big-use-cases .use-case {
+      margin: 0;
+      width: 33%;
+      padding: 20px;
+    }
+    #big-use-cases .line {
+      display: none;
+    }
+  }
+  @media (min-width: 1000px) {
+    #big-use-cases .use-case {
+      margin: 0;
+      width: 33%;
+      padding: 40px;
+    } 
   }
 
   /* #how-to */
@@ -290,7 +302,7 @@
     border-top-left-radius: 4px;
   }
   #dev-features .example:last-of-type {
-    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
     border-bottom: 1px solid #4d4d50;
   }
   #dev-features .terminal {
@@ -419,6 +431,7 @@
     <div class="use-cases">
       <div class="use-case">
         <div class="box">
+          <div class="industry">Finance</div>
           <div class="image"><img src="" /></div>
           <div class="heading">Validated terms and conditions for finance</div>
           <div class="description">
@@ -430,6 +443,7 @@
       </div>
       <div class="use-case">
         <div class="box">
+          <div class="industry">Governance</div>
           <div class="image"><img src="" /></div>
           <div class="heading">
             Digital governance for organizations of all sizes
@@ -442,6 +456,7 @@
       </div>
       <div class="use-case">
         <div class="box">
+          <div class="industry">Compliance</div>
           <div class="image"><img src="" /></div>
           <div class="heading">Complex compliance automation</div>
           <div class="description">
@@ -452,8 +467,9 @@
       </div>
       <div class="use-case">
         <div class="box">
+          <div class="industry">Data</div>
           <div class="image"><img src="" /></div>
-          <div class="heading">Validated terms and conditions for finance</div>
+          <div class="heading">Break data silos across parties</div>
           <div class="description">
             Model lifecycle conditions for any asset type, automatically enforce
             the rights and obligations between participants with a powerful
@@ -463,9 +479,10 @@
       </div>
       <div class="use-case">
         <div class="box">
+          <div class="industry">Digital Assets</div>
           <div class="image"><img src="" /></div>
           <div class="heading">
-            Digital governance for organizations of all sizes
+            Turn any contract into digital assets
           </div>
           <div class="description">
             Embed logic and dependencies with contract execution and signing to
@@ -475,8 +492,9 @@
       </div>
       <div class="use-case">
         <div class="box">
+          <div class="industry">And More</div>
           <div class="image"><img src="" /></div>
-          <div class="heading"></div>
+          <div class="heading">Unlock the power of digital contracts</div>
           <div class="description">Turn your contracts into digital assets</div>
         </div>
       </div>
