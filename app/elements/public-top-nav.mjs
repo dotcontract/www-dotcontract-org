@@ -27,6 +27,7 @@ export default function PublicTopNav({ html, state }) {
         display: none;
         font-size: 15px;
         line-height: 1.5em;
+        font-weight: 500;
       }
       @media (min-width: 800px) {
         header .right {
@@ -39,8 +40,9 @@ export default function PublicTopNav({ html, state }) {
       }
       header .right a {
         padding: 8px 20px;
+        color: #222;
       }
-      .get-started {
+      header .right a.get-started {
         color: white;
         font-weight: bold;
         background: #00ca88;
