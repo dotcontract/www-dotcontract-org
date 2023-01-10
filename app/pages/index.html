@@ -229,7 +229,7 @@
       margin: 0;
       width: 33%;
       padding: 40px;
-    } 
+    }
   }
 
   /* #how-to */
@@ -288,20 +288,47 @@
     max-width: 100%;
     display: flex;
     flex-direction: row;
-    padding-bottom: 60px; 
+    padding-bottom: 60px;
   }
-  #dev-features .examples {
+  #dev-features .sidebar {
     width: 380px;
     max-width: 40%;
     margin-top: 60px;
     margin-bottom: 60px;
   }
+  #dev-features .sidebar .title {
+    text-align: center;
+    font-weight: 500;
+    font-size: 24px;
+    padding-bottom: 12px;
+    font-family: 'Hepta Slab', sans-serif;
+    text-align: left;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    display: inline-block;
+  }
   #dev-features .example {
     border: 1px solid #4d4d50;
     border-right: none;
     border-bottom: none;
-    padding: 14px 10px;
+    padding: 18px 12px;
     color: rgb(240, 240, 240);
+    cursor: pointer;
+  }
+
+  #dev-features .example.active {
+    /* background: #515986; */
+    /* font-weight: bold; */
+    border-right: 3px solid #00ca88;
+  }
+  #dev-features .example::before {
+    display: inline-block;
+    content: "⬦";
+    margin-right: 10px;
+    color: #00ca88;
+  }
+  #dev-features .example.active::before {
+    content: "⬥";
   }
   #dev-features .example:first-of-type {
     border-top-left-radius: 4px;
@@ -314,23 +341,58 @@
     border-radius: 8px;
     background: #2d3040;
     color: #9698a0;
-    font-family: monospace;
+    font-family: "Roboto Mono", monospace;
+    font-size: 20px;
     padding: 0px;
     width: 900px;
     flex-grow: 1;
+  }
+  #dev-features .terminal .terminal-example {
+    display: none;
+  }
+  #dev-features .terminal .terminal-example.active {
+    display: block;
   }
   #dev-features .terminal .header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     border-bottom: 1px solid #9698a0;
+    font-weight: 800;
+    color: white;
   }
   #dev-features .terminal .header .left {
-    padding: 10px;
+    padding: 18px 24px;
   }
   #dev-features .terminal .header .right {
-    padding: 10px;
+    padding: 18px 24px;
   }
+  #dev-features .terminal .bod {
+    padding: 12px 24px;
+    line-height: 1.3em;
+    font-size: 17px;
+    font-family: "Roboto Mono", monospace;
+  }
+  #dev-features .terminal .bod span.bold {
+    color: white;
+  }
+  #dev-features .terminal .bod span.green {
+    color: #00ca88;
+    color: #82b514;
+  }
+  #dev-features .terminal .bod span.purple {
+    color: #8b54fe;
+  }
+  #dev-features .terminal .bod span.blue {
+    color: #56c1d6;
+  }
+  #dev-features .terminal .bod span.orange {
+    color: #fc971e;
+  }
+  #dev-features .terminal .bod span.red {
+    color: #f92572;
+  }
+
   #dev-features .features {
     margin: 40px -20px;
     display: flex;
@@ -486,9 +548,7 @@
         <div class="box">
           <div class="industry">Digital Assets</div>
           <div class="image"><img src="" /></div>
-          <div class="heading">
-            Turn any contract into digital assets
-          </div>
+          <div class="heading">Turn any contract into digital assets</div>
           <div class="description">
             Embed logic and dependencies with contract execution and signing to
             enable organizational checks and balances.
@@ -548,19 +608,62 @@
     <h2>Made for Developers</h2>
     <!-- <h2>Validated and changeable with consensus, no blockchain required.</h2> -->
     <div class="examples-and-terminal">
-      <div class="examples">
-        <div class="example">Create a DotContract</div>
-        <div class="example">Start a Draft</div>
-        <div class="example">Add Rules in Modality</div>
-        <div class="example">Sign &amp; Commit a Draft</div>
-        <div class="example">Validate Commits</div>
-        <div class="example">Simulate Usage</div>
-        <div class="example">Pull &amp; Push a Hosted DotContract</div>
+      <div class="sidebar">
+        <div class="title">Engineer a Contract</div>
+        <div class="examples">
+          <div data-ex="create-or-clone" class="example">
+            Create or Clone a DotContract
+          </div>
+          <div data-ex="commit-history" class="example active">
+            Read its Commit History
+          </div>
+          <div data-ex="empty" class="example">Start a Draft</div>
+          <div data-ex="empty" class="example">Add Rules in Modality</div>
+          <div data-ex="empty" class="example">Sign &amp; Commit a Draft</div>
+          <div data-ex="empty" class="example">Validate Commits</div>
+          <div data-ex="empty" class="example">Simulate Usage</div>
+          <div data-ex="empty" class="example">
+            Pull &amp; Push a Hosted DotContract
+          </div>
+        </div>
       </div>
       <div class="terminal">
-        <div class="header">
-          <div class="left">dotcontract-cli</div>
-          <div class="right">&lt;/&gt;</div>
+        <div data-ex="empty" class="terminal-example">
+          <div class="header">
+            <div class="left">dotcontract-cli</div>
+            <div class="right">&lt;/&gt;</div>
+          </div>
+        </div>
+        <div data-ex="create-or-clone" class="terminal-example">
+          <div class="header">
+            <div class="left">dotcontract-cli</div>
+            <div class="right">&lt;/&gt;</div>
+          </div>
+        </div>
+        <div data-ex="commit-history" class="terminal-example active">
+          <div class="header">
+            <div class="left">% dotc log example-partnership.contract</div>
+            <div class="right">sh</div>
+          </div>
+          <pre class="bod">
+<span class="bold"># DotContract b45a777ffe355419b7d9a7859355818fe115a3d1</span>
+Name: Example Business Partnership
+Sort: Oldest to Newest
+
+<span class="bold">## Commit d4033751307f9ebbc36f11e3988c98d335746101</span>
+<span class="bold green">DEFINE</span>  <span class="blue">@party_a</span>, <span class="purple">crypto:/ed25519-pub/12D...</span>
+<span class="bold green">DEFINE</span>  <span class="blue">@party_b</span>, <span class="purple">crypto:/ed25519-key/12D...</span>
+<span class="bold green">RULE</span>    /, henceforth_must( signed_by( one_of( <span class="blue">@party_a</span>, <span class="blue">@party_b</span> ) ) )
+
+<span class="bold">## Commit b45a777ffe355419b7d9a7859355818fe115a3d1</span>
+<span class="bold green">DEFINE</span>  /docs, FileDirectory
+<span class="bold green">RULE</span>    /docs, henceforth_must( signed_by( all_of( <span class="blue">@party_a</span>, <span class="blue">@party_b</span> ) ) )
+<span class="bold green">SIGNED</span>  <span class="blue">@party_a</span>
+
+<span class="bold">## Commit 433cd4320dba0db724af8f9c85b42f67679113f8</span>
+<span class="bold green">POST  </span>  /docs/Operating Agreement.docx, <span class="purple">attach:/docs/Operating Agreement.docx</span>
+<span class="bold green">SIGNED</span>  <span class="blue">@party_a
+<span class="bold green">SIGNED</span>  <span class="blue">@party_b</pre>
         </div>
       </div>
     </div>
