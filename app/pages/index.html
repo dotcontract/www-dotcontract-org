@@ -12,6 +12,7 @@
     font-family: "Hepta Slab", "Sanchez", "Open Sans", sans-serif;
     font-size: 30px;
     padding-bottom: 40px;
+    line-height: 1.4em;
   }
   h2.center {
     text-align: center;
@@ -126,9 +127,9 @@
   }
   #big-use-cases .before-curve {
     position: absolute;
-    width: 150px;
-    height: 150px;
-    margin-top: -150px;
+    width: 100px;
+    height: 100px;
+    margin-top: calc(-100px + 1px);
     top: 0;
     right: -20px;
   }
@@ -141,10 +142,11 @@
   }
   #big-use-cases .after-curve {
     position: absolute;
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     top: 0px;
     left: -20px;
+    margin-top: -1px;
   }
   #big-use-cases .after-curve svg {
     height: 100%;
@@ -159,6 +161,7 @@
     width: 100%;
     margin-bottom: 0;
     padding-bottom: 0;
+    line-height: 1.4em;
   }
   #big-use-cases .use-cases {
     margin-top: 20px;
@@ -167,9 +170,8 @@
     flex-direction: column;
     justify-content: space-evenly;
   }
-
   #big-use-cases .use-case {
-    margin: 40px;
+    margin: 20px 40px;
     width: calc(100vw - 80px);
     min-width: 450px;
     line-height: 1.4em;
@@ -211,6 +213,20 @@
     padding: 20px 0px;
   }
   @media (min-width: 800px) {
+    #big-use-cases .use-case {
+      margin: 40px;
+    } 
+    #big-use-cases .before-curve {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      margin-top: calc(-150px + 1px);
+    } 
+    #big-use-cases .after-curve {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+    }
     #big-use-cases .use-cases {
       flex-wrap: wrap;
       flex-direction: row;
@@ -283,70 +299,47 @@
     padding-bottom: 60px;
     position: relative;
   }
+
   #dev-features .examples-and-terminal {
     margin: 0 auto;
-    width: 1280px;
-    max-width: 100%;
     display: flex;
-    flex-direction: row;
-    padding-bottom: 60px;
+    flex-direction: column;
   }
   #dev-features .sidebar {
-    width: 380px;
-    max-width: 40%;
-    margin-top: 60px;
-    margin-bottom: 60px;
+    text-align: center;
+    margin: 20px auto;
   }
   #dev-features .sidebar .title {
-    text-align: center;
-    font-weight: 500;
-    font-size: 24px;
-    padding-bottom: 12px;
-    font-family: 'Hepta Slab', sans-serif;
-    text-align: left;
-    margin-left: 10px;
-    margin-bottom: 5px;
-    display: inline-block;
-  }
-  #dev-features .example {
-    border: 1px solid #4d4d50;
-    border-right: none;
-    border-bottom: none;
-    padding: 18px 12px;
-    color: rgb(240, 240, 240);
-    cursor: pointer;
-  }
-
-  #dev-features .example.active {
-    /* background: #515986; */
-    /* font-weight: bold; */
-    border-right: 3px solid #00ca88;
-  }
-  #dev-features .example::before {
-    display: inline-block;
-    content: "⬦";
-    margin-right: 10px;
-    color: #00ca88;
-  }
-  #dev-features .example.active::before {
-    content: "⬥";
-  }
-  #dev-features .example:first-of-type {
-    border-top-left-radius: 4px;
-  }
-  #dev-features .example:last-of-type {
-    border-bottom-left-radius: 4px;
-    border-bottom: 1px solid #4d4d50;
-  }
+      text-align: center;
+      font-weight: 500;
+      font-size: 24px;
+      padding-bottom: 12px;
+      font-family: 'Hepta Slab', sans-serif;
+      margin-left: 10px;
+      margin-bottom: 5px;
+      display: block;
+    }
+    #dev-features .examples {
+      display: none;
+    }
+    #dev-features .examples-selector {
+      background:rgb(141, 141, 141);
+      color: white;
+      border-radius: 4px;
+      font-size: 14px;
+      text-align: center;
+      padding: 5px 8px;
+    }
   #dev-features .terminal {
     border-radius: 8px;
     background: #2d3040;
     color: #9698a0;
     font-family: "Roboto Mono", monospace;
     font-size: 20px;
-    padding: 0px;
-    width: 900px;
-    flex-grow: 1;
+    padding: 1px;
+    padding: 10px;
+    font-size: 12px;
+    margin-bottom: 10px;
   }
   #dev-features .terminal .terminal-example {
     display: none;
@@ -361,18 +354,13 @@
     border-bottom: 1px solid #9698a0;
     font-weight: 800;
     color: white;
-  }
-  #dev-features .terminal .header .left {
-    padding: 18px 24px;
-  }
-  #dev-features .terminal .header .right {
-    padding: 18px 24px;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
   }
   #dev-features .terminal .bod {
-    padding: 12px 24px;
     line-height: 1.3em;
-    font-size: 17px;
     font-family: "Roboto Mono", monospace;
+    overflow-x: scroll;
   }
   #dev-features .terminal .bod span.bold {
     color: white;
@@ -393,7 +381,6 @@
   #dev-features .terminal .bod span.red {
     color: #f92572;
   }
-
   #dev-features .features {
     margin: 40px -20px;
     display: flex;
@@ -402,27 +389,137 @@
     justify-content: space-between;
   }
   #dev-features .feature {
-    flex-basis: 45%;
+    flex-basis: 100%;
     box-sizing: border-box;
     padding: 40px;
     line-height: 1.5em;
+    font-size: 10px;
   }
   #dev-features .feature .heading {
     text-align: center;
     font-weight: bold;
     padding-bottom: 20px;
-    font-size: 18px;
+    font-size: 15px;
   }
-  #dev-features .feature.n01,
-  #dev-features .feature.n04 {
-    background: rgb(141, 141, 141);
+  @media (min-width: 800px) {
+    #dev-features .examples-and-terminal {
+      width: 1280px;
+      max-width: 100%;
+      flex-direction: row;
+      padding-bottom: 60px;
+    }
+    #dev-features .sidebar {
+      text-align: left;
+      width: 380px;
+      max-width: 40%;
+      margin-top: 60px;
+      margin-bottom: 60px;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    #dev-features .sidebar .title {
+      text-align: center;
+      font-weight: 500;
+      font-size: 24px;
+      padding-bottom: 12px;
+      font-family: 'Hepta Slab', sans-serif;
+      text-align: left;
+      margin-left: 10px;
+      margin-bottom: 5px;
+      display: inline-block;
+    }
+    #dev-features .examples-selector {
+      display: none;
+    }
+    #dev-features .examples {
+      display: block;
+    }
+    #dev-features .example {
+      border: 1px solid #4d4d50;
+      border-right: none;
+      border-bottom: none;
+      padding: 18px 12px;
+      color: rgb(240, 240, 240);
+      cursor: pointer;
+    }
+
+    #dev-features .example.active {
+      /* background: #515986; */
+      /* font-weight: bold; */
+      border-right: 3px solid #00ca88;
+    }
+    #dev-features .example::before {
+      display: inline-block;
+      content: "⬦";
+      margin-right: 10px;
+      color: #00ca88;
+    }
+    #dev-features .example.active::before {
+      content: "⬥";
+    }
+    #dev-features .example:first-of-type {
+      border-top-left-radius: 4px;
+    }
+    #dev-features .example:last-of-type {
+      border-bottom-left-radius: 4px;
+      border-bottom: 1px solid #4d4d50;
+    }
+    #dev-features .terminal {
+      border-radius: 8px;
+      background: #2d3040;
+      color: #9698a0;
+      font-family: "Roboto Mono", monospace;
+      font-size: 20px;
+      padding: 0px;
+      width: 900px;
+      flex-grow: 1;
+    } 
+    #dev-features .terminal .header {
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+    #dev-features .terminal .header .left {
+      padding: 18px 24px;
+    }
+    #dev-features .terminal .header .right {
+      padding: 18px 24px;
+    }
+    #dev-features .terminal .bod {
+      font-size: 18px;
+      padding: 18px 24px;
+    }
+    #dev-features .features {
+      margin: 40px -20px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    #dev-features .feature {
+      flex-basis: 45%;
+      box-sizing: border-box;
+      padding: 40px;
+      line-height: 1.5em;
+      font-size: 18px;
+    }
+    #dev-features .feature .heading {
+      text-align: center;
+      font-weight: bold;
+      padding-bottom: 20px;
+      font-size: 24px;
+    }
+    #dev-features .feature.n01,
+    #dev-features .feature.n04 {
+      background: rgb(48, 50, 52);
+    }
+    #dev-features .feature.n01 {
+      border-radius: 0 20px 20px 0;
+    }
+    #dev-features .feature.n04 {
+      border-radius: 20px 0 0 20px;
+    }
   }
-  #dev-features .feature.n01 {
-    border-radius: 0 20px 20px 0;
-  }
-  #dev-features .feature.n04 {
-    border-radius: 20px 0 0 20px;
-  }
+
   #final-cta {
     padding: 25px;
     margin: 50px auto;
@@ -611,12 +708,28 @@
     <div class="examples-and-terminal">
       <div class="sidebar">
         <div class="title">Engineer a Contract</div>
+        <select class="examples-selector">
+          <option data-ex="create-or-clone" class="example">
+            Create or Clone a DotContract
+          </option>
+          <option data-ex="commit-history" class="example active" selected>
+            Read Commit History
+          </option>
+          <option value="empty" class="example">Start a Draft</option>
+          <option value="empty" class="example">Add Rules in Modality</option>
+          <option value="empty" class="example">Sign &amp; Commit a Draft</option>
+          <option value="validate-commits" class="example">Validate Commits</option>
+          <option value="empty" class="example">Simulate Usage</option>
+          <option value="empty" class="example">
+            Pull &amp; Push a Hosted DotContract
+          </option>
+        </select>
         <div class="examples">
           <div data-ex="create-or-clone" class="example">
             Create or Clone a DotContract
           </div>
           <div data-ex="commit-history" class="example active">
-            Read its Commit History
+            Read Commit History
           </div>
           <div data-ex="empty" class="example">Start a Draft</div>
           <div data-ex="empty" class="example">Add Rules in Modality</div>
@@ -643,10 +756,12 @@
         </div>
         <div data-ex="commit-history" class="terminal-example active">
           <div class="header">
-            <div class="left">dotc log example-partnership.contract</div>
+            <div class="left">dotc log</div>
             <div class="right">sh</div>
           </div>
           <pre class="bod">
+<span class="bold">% dotc log example-partnership.contract</span>
+
 <span class="bold"># DotContract b45a777ffe355419b7d9a7859355818fe115a3d1</span>
 Name: Example Business Partnership
 Sort: Oldest to Newest
@@ -684,7 +799,7 @@ POST /rate, 7.750
 EOF</span>
 
 <span class="bold red"># Error</span>
-<span class="blue">/rate</span> must be equal or less than 7.00 when <span class="bold blue">/credit_rating</span> is BBB
+<span class="blue">/rate</span> must be less than or equal to 7.000 when <span class="bold blue">/credit_rating</span> is BBB
 
 <span class="bold">% dotc commit --sign-as admin.key << EOF
 POST /rate, 7.750
@@ -775,5 +890,11 @@ EOF</span>
       const el = document.querySelector(`.terminal-example[data-ex=${example_name}]`);
       el.classList.add('active'); 
     } 
+  };
+  document.querySelector("select.examples-selector").onchange = (e) => {
+    const example_name = e.target.value;
+    document.querySelector('.terminal-example.active').classList.remove('active');
+    const el = document.querySelector(`.terminal-example[data-ex=${example_name}]`);
+    el.classList.add('active'); 
   };
 </script>
