@@ -391,15 +391,15 @@
   #dev-features .feature {
     flex-basis: 100%;
     box-sizing: border-box;
-    padding: 40px;
+    padding: 25px 40px;
     line-height: 1.5em;
-    font-size: 10px;
+    font-size: 14px;
   }
   #dev-features .feature .heading {
     text-align: center;
     font-weight: bold;
     padding-bottom: 20px;
-    font-size: 15px;
+    font-size: 18px;
   }
   @media (min-width: 800px) {
     #dev-features .examples-and-terminal {
@@ -510,7 +510,7 @@
     }
     #dev-features .feature.n01,
     #dev-features .feature.n04 {
-      background: rgb(48, 50, 52);
+      background: #2e3040;
     }
     #dev-features .feature.n01 {
       border-radius: 0 20px 20px 0;
@@ -527,20 +527,17 @@
     max-width: 100vw;
   }
   #final-cta h2 {
-    font-size: 30px;
+    font-size: 26px;
     line-height: 50px;
     text-align: left;
   }
   @media (min-width: 800px) {
     #final-cta h2 {
-      text-align: center;
-      font-size: 40px;
+      text-align: left;
+      line-height: 1.4em;
+      font-size: 38px;
       margin: 0 auto;
-      width: 650px;
-    }
-    #final-cta h2.center {
-      margin-top: 20px;
-      text-align: center;
+      width: 750px;
     }
   }
   #final-cta a {
@@ -709,10 +706,10 @@
       <div class="sidebar">
         <div class="title">Engineer a Contract</div>
         <select class="examples-selector">
-          <option data-ex="create-or-clone" class="example">
+          <option value="create-or-clone" class="example">
             Create or Clone a DotContract
           </option>
-          <option data-ex="commit-history" class="example active" selected>
+          <option value="commit-history" class="example active" selected>
             Read Commit History
           </option>
           <option value="empty" class="example">Start a Draft</option>
@@ -893,6 +890,7 @@ EOF</span>
   };
   document.querySelector("select.examples-selector").onchange = (e) => {
     const example_name = e.target.value;
+    console.log(example_name);
     document.querySelector('.terminal-example.active').classList.remove('active');
     const el = document.querySelector(`.terminal-example[data-ex=${example_name}]`);
     el.classList.add('active'); 
