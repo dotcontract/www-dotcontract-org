@@ -176,6 +176,7 @@
   }
   #big-use-cases .use-case .box {
     height: 100%;
+    max-width: calc(100vw - 80px);
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 45px;
@@ -620,7 +621,7 @@
           <div data-ex="empty" class="example">Start a Draft</div>
           <div data-ex="empty" class="example">Add Rules in Modality</div>
           <div data-ex="empty" class="example">Sign &amp; Commit a Draft</div>
-          <div data-ex="empty" class="example">Validate Commits</div>
+          <div data-ex="validate-commits" class="example">Validate Commits</div>
           <div data-ex="empty" class="example">Simulate Usage</div>
           <div data-ex="empty" class="example">
             Pull &amp; Push a Hosted DotContract
@@ -642,7 +643,7 @@
         </div>
         <div data-ex="commit-history" class="terminal-example active">
           <div class="header">
-            <div class="left">% dotc log example-partnership.contract</div>
+            <div class="left">dotc log example-partnership.contract</div>
             <div class="right">sh</div>
           </div>
           <pre class="bod">
@@ -653,17 +654,49 @@ Sort: Oldest to Newest
 <span class="bold">## Commit d4033751307f9ebbc36f11e3988c98d335746101</span>
 <span class="bold green">DEFINE</span>  <span class="blue">@party_a</span>, <span class="purple">crypto:/ed25519-pub/12D...</span>
 <span class="bold green">DEFINE</span>  <span class="blue">@party_b</span>, <span class="purple">crypto:/ed25519-pub/12D...</span>
-<span class="bold green">RULE</span>    /, henceforth_must( signed_by( one_of( <span class="blue">@party_a</span>, <span class="blue">@party_b</span> ) ) )
+<span class="bold green">RULE</span>    <span class="blue">/</span>, henceforth_must( signed_by( one_of( <span class="blue">@party_a</span>, <span class="blue">@party_b</span> ) ) )
 
 <span class="bold">## Commit b45a777ffe355419b7d9a7859355818fe115a3d1</span>
-<span class="bold green">DEFINE</span>  /docs, FileDirectory
-<span class="bold green">RULE</span>    /docs, henceforth_must( signed_by( all_of( <span class="blue">@party_a</span>, <span class="blue">@party_b</span> ) ) )
+<span class="bold green">DEFINE</span>  <span class="blue">/docs</span>, FileDirectory
+<span class="bold green">RULE</span>    <span class="blue">/docs</span>, henceforth_must( signed_by( all_of( <span class="blue">@party_a</span>, <span class="blue">@party_b</span> ) ) )
 <span class="bold green">SIGNED</span>  <span class="blue">@party_a</span>
 
 <span class="bold">## Commit 433cd4320dba0db724af8f9c85b42f67679113f8</span>
-<span class="bold green">POST  </span>  /docs/Operating Agreement.docx, <span class="purple">attach:/docs/Operating Agreement.docx</span>
+<span class="bold green">POST  </span>  <span class="blue">/docs/Operating Agreement.docx</span>, <span class="purple">attach:/docs/Operating Agreement.docx</span>
 <span class="bold green">SIGNED</span>  <span class="blue">@party_a
 <span class="bold green">SIGNED</span>  <span class="blue">@party_b</pre>
+        </div>
+        <div data-ex="validate-commits" class="terminal-example">
+          <div class="header">
+            <div class="left">dotc commit</div>
+            <div class="right">sh</div>
+          </div>
+          <pre class="bod">
+<span class="bold">% dotc commit << EOF
+POST /rate, 7.750
+EOF</span>
+
+<span class="bold red"># Error</span>
+<span class="blue">/rate</span> change must be signed by <span class="bold blue">@admin</span>
+
+<span class="bold">% dotc commit --sign-as admin.key << EOF
+POST /rate, 7.750
+EOF</span>
+
+<span class="bold red"># Error</span>
+<span class="blue">/rate</span> must be equal or less than 7.00 when <span class="bold blue">/credit_rating</span> is BBB
+
+<span class="bold">% dotc commit --sign-as admin.key << EOF
+POST /rate, 7.750
+POST /credit_rating, BB
+EOF</span>
+
+<span class="bold green"># Success</span>
+<span class="bold">## Commit 349c3708cf3e4d568590bb86e8e9cc8ff35bee81</span>
+<span class="bold green">POST</span>    <span class="bold blue">/rate</span>, 7.750
+<span class="bold green">POST</span>    <span class="bold blue">/credit_rating</span>, BB
+<span class="bold green ">SIGNED</span>  <span class="bold blue">@admin</span>
+          </pre>
         </div>
       </div>
     </div>
@@ -730,3 +763,17 @@ Sort: Oldest to Newest
     </h2>
   </div>
 </main>
+<script defer>
+  const examples = document.getElementsByClassName("example");
+  for (var i=0; i < examples.length; i++) {
+    const ex = examples[i];
+    ex.onclick = function() {
+      document.querySelector('.example.active').classList.remove('active');
+      this.classList.add('active');
+      const example_name = this.dataset['ex'];
+      document.querySelector('.terminal-example.active').classList.remove('active');
+      const el = document.querySelector(`.terminal-example[data-ex=${example_name}]`);
+      el.classList.add('active'); 
+    } 
+  };
+</script>
