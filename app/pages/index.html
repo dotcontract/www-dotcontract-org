@@ -36,6 +36,7 @@
     margin-top: 25vh;
     right: -10vw;
     z-index: -1;
+    opacity: 30%;
   }
   #hero,
   #hero .content {
@@ -110,6 +111,10 @@
       align-items: flex-start;
     }
   }
+  @media (min-width: 1000px) {
+    #hero .bg {
+      opacity: 1;
+    }
   @media (min-width: 1500px) {
     #hero .bg {
       opacity: 1;
@@ -123,10 +128,11 @@
   #big-use-cases {
     margin: 60px 0;
     padding-top: 60px;
-    padding-bottom: 60px;
+    padding-bottom: 80px;
     background: #202333;
     color: white;
     position: relative;
+    text-align: center;
   }
   #big-use-cases .before-curve {
     position: absolute;
@@ -222,6 +228,16 @@
     max-width: 400px;
     margin: 0 auto;
   }
+  #big-use-cases a.get-started {
+    background: #00ca88;
+    border-radius: 18px;
+    margin: 0 auto;
+    display: inline-block;
+    padding: 10px 25px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 30px;
+  }
 
   @media (min-width: 960px) {
     #big-use-cases .use-case {
@@ -246,11 +262,7 @@
     }
     #big-use-cases .use-case {
       margin: 0;
-      width: 33%;
       padding: 20px;
-    }
-    #big-use-cases .line {
-      display: none;
     }
   }
   @media (min-width: 1000px) {
@@ -671,8 +683,8 @@
             for enterprise or consumer use.</div>
         </div>
       </div>
-      <div class="line"></div>
     </div>
+    <a class="get-started">Contact us</a>
   </div>
   <div id="how-to">
     <h2>Smart Contracts that Work Anywhere</h2>
