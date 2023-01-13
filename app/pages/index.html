@@ -1,6 +1,8 @@
 <style scope="global">
   body {
     font-family: "Inter", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    color: #071d2a;
     padding: 0;
     margin: 0;
   }
@@ -17,9 +19,9 @@
   h2.center {
     text-align: center;
   }
-  @media (min-width: 800px) {
+  @media (min-width: 960px) {
     h2 {
-      font-size: 38px;
+      font-size: 35px;
       padding-bottom: 40px;
       text-align: center;
     }
@@ -33,19 +35,20 @@
     top: 0;
     margin-top: 25vh;
     right: -10vw;
-    opacity: 20%;
     z-index: -1;
   }
   #hero,
   #hero .content {
-    min-height: 50vh;
+    min-height: 57vh;
+    max-width: 1190px;
+    margin: 0 auto;
   }
   #hero .content {
-    padding: 25px;
-    padding-bottom: 25px;
+    padding: 68px 0 68px 0;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    max-width: 90%;
   }
   #hero .content h1 {
     font-family: "Hepta Slab", "Sanchez", "Open Sans", sans-serif;
@@ -59,12 +62,11 @@
     display: none;
   }
   #hero .explanation {
-    max-width: 100%;
-    margin-top: 20px;
-    margin-bottom: 50px;
-    line-height: 1.5em;
-    font-size: 25px;
-    width: 750px;
+    max-width: 95%;
+    margin-top: 25px;
+    margin-bottom: 35px;
+    font-size: 17px;
+    line-height: 1.6em;
   }
   #hero .cta {
     display: flex;
@@ -76,7 +78,7 @@
     display: inline-block;
     padding: 10px 25px;
     color: #00ca88;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
   }
   #hero .cta a.get-started {
@@ -86,21 +88,22 @@
   }
   @media (min-width: 821px) {
     #hero .bg {
-      width: 50vw;
+      width: 43vw;
       top: 0;
-      margin-top: 5vh;
+      margin-top: 10vh;
       right: -10vw;
     }
     #hero .content {
-      padding-left: 150px;
     }
     #hero .content h1 {
       font-size: 60px;
       font-weight: 500;
     }
     #hero .explanation {
-      font-size: 20px;
-      width: 650px;
+      font-size: 17px;
+      max-width: 95%;
+      width: 540px;
+      line-height: 1.7em;
     }
     #hero .cta {
       flex-direction: row;
@@ -121,7 +124,7 @@
     margin: 60px 0;
     padding-top: 60px;
     padding-bottom: 60px;
-    background: #202334;
+    background: #202333;
     color: white;
     position: relative;
   }
@@ -159,60 +162,71 @@
     display: inline-block;
     text-align: center;
     width: 100%;
-    margin-bottom: 0;
-    padding-bottom: 0;
+    padding: 10px 0 35px 0;
     line-height: 1.4em;
   }
   #big-use-cases .use-cases {
-    margin-top: 20px;
+    max-width: 1150px;
+    margin: 0 auto;
     display: flex;
     position: relative;
     flex-direction: column;
     justify-content: space-evenly;
+    color: #071d2a;
   }
   #big-use-cases .use-case {
     margin: 20px 40px;
-    width: calc(100vw - 80px);
-    min-width: 450px;
+    min-width: 360px;
     line-height: 1.4em;
   }
   #big-use-cases .use-case .box {
     height: 100%;
     max-width: calc(100vw - 80px);
     box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 45px;
-    padding: 45px;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    border: 1px solid #ededed;
+    border-radius: 40px;
+    padding: 30px 45px 60px 45px;
     background: white;
-    color: #444;
   }
   #big-use-cases .use-case .industry {
     text-align: center;
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 11px;
     font-weight: 600;
     color: #00ca88;
     letter-spacing: 1.5px;
-    padding-bottom: 12px;
+    line-height: 4em;
   }
   #big-use-cases .use-case .image {
     background: white;
-    border: 6px solid #ddd;
+    border: 2px solid #ddd;
     border-radius: 50%;
-    width: 75px;
-    height: 75px;
+    width: 56px;
+    height: 56px;
     display: block;
     margin: 0 auto;
   }
   #big-use-cases .use-case .heading {
     text-align: center;
-    font-weight: 700;
-    font-size: 18px;
-    padding: 20px 0px;
+    font-weight: 500;
+    font-size: 15px;
+    padding: 15px 0px;
+    line-height: 1.3em;
+    max-width: 80%;
+    margin: 0 auto;
   }
-  @media (min-width: 800px) {
+  #big-use-cases .use-case .description {
+    text-align: center;
+    font-weight: 500;
+    font-size: 14px;
+    color: #686865;
+    line-height: 1.3em;
+    max-width: 96%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 960px) {
     #big-use-cases .use-case {
       margin: 40px;
     } 
@@ -228,6 +242,7 @@
       height: 150px;
     }
     #big-use-cases .use-cases {
+      color: #071d2a;
       flex-wrap: wrap;
       flex-direction: row;
       justify-content: space-evenly;
@@ -245,7 +260,6 @@
     #big-use-cases .use-case {
       margin: 0;
       width: 33%;
-      padding: 40px;
     }
   }
 
@@ -401,7 +415,7 @@
     padding-bottom: 20px;
     font-size: 18px;
   }
-  @media (min-width: 800px) {
+  @media (min-width: 960px) {
     #dev-features .examples-and-terminal {
       width: 1280px;
       max-width: 100%;
@@ -531,11 +545,11 @@
     line-height: 50px;
     text-align: left;
   }
-  @media (min-width: 800px) {
+  @media (min-width: 960px) {
     #final-cta h2 {
       text-align: left;
       line-height: 1.4em;
-      font-size: 38px;
+      font-size: 35px;
       margin: 0 auto;
       width: 750px;
     }
@@ -563,7 +577,7 @@
         industries.
       </div>
       <div class="cta">
-        <a class="get-started" href="/">Start Building</a>
+        <a class="get-started" href="/">Start building</a>
         <a href="/">Contact us →</a>
       </div>
     </div>
@@ -589,7 +603,7 @@
         />
       </svg>
     </div>
-    <h2>Powering Use Cases Across Industries</h2>
+    <h2>Powering use cases across industries</h2>
     <div class="use-cases">
       <div class="use-case">
         <div class="box">

@@ -25,7 +25,7 @@ export default function PublicTopNav({ html, state }) {
       }
       header .right {
         display: none;
-        font-size: 15px;
+        font-size: 14px;
         line-height: 1.5em;
         font-weight: 500;
       }
@@ -56,7 +56,7 @@ export default function PublicTopNav({ html, state }) {
       <div class="right">
         <a class="link" href="/">Products</a>
         <a class="link" href="/">Documentation</a>
-        <a class="link get-started" href="/">Get Started</a>
+        <a class="link get-started" href="/">Get started</a>
       </div>
     </header>
   `;
