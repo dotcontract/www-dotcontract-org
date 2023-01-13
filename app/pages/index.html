@@ -876,23 +876,23 @@ EOF</span>
   </div>
 </main>
 <script defer>
-  const examples = document.getElementsByClassName("example");
-  for (var i=0; i < examples.length; i++) {
-    const ex = examples[i];
+  document.querySelectorAll("div.example").forEach(ex => {
     ex.onclick = function() {
-      document.querySelector('.example.active').classList.remove('active');
+      // remove active on all
+      document.querySelectorAll('.example.active').forEach(el => el.classList.remove('active')); 
+      // add active on the new example
       this.classList.add('active');
+
+      // find matching terminal example
       const example_name = this.dataset['ex'];
-      document.querySelector('.terminal-example.active').classList.remove('active');
-      const el = document.querySelector(`.terminal-example[data-ex=${example_name}]`);
-      el.classList.add('active'); 
-    } 
-  };
+      document.querySelectorAll('.terminal-example.active').forEach(el => el.classList.remove('active'));
+      document.querySelector(`.terminal-example[data-ex=${example_name}]`).classList.add('active'); 
+    }
+  });
+
   document.querySelector("select.examples-selector").onchange = (e) => {
     const example_name = e.target.value;
-    console.log(example_name);
-    document.querySelector('.terminal-example.active').classList.remove('active');
-    const el = document.querySelector(`.terminal-example[data-ex=${example_name}]`);
-    el.classList.add('active'); 
+    document.querySelectorAll('.terminal-example.active').forEach(el => el.classList.remove('active'));
+    document.querySelector(`.terminal-example[data-ex=${example_name}]`).classList.add('active'); 
   };
 </script>
