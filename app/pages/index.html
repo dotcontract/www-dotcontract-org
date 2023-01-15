@@ -140,6 +140,22 @@
   #big-use-cases .before-curve svg path {
     fill: #202334;
   }
+
+  #big-use-cases .before-second-curve {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    margin-top: calc(-150px + 1px);
+    top: 0;
+  }
+  #big-use-cases .before-second-curve svg {
+    height: 100%;
+    width: 100%;
+  }
+  #big-use-cases .before-second-curve svg path {
+    fill: #202334;
+  }
+
   #big-use-cases .after-curve {
     position: absolute;
     width: 100px;
@@ -155,6 +171,23 @@
   #big-use-cases .after-curve svg path {
     fill: #fff;
   }
+
+  #big-use-cases .after-second-curve {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 0px;
+    top: 0;
+    right: -20px;
+  }
+  #big-use-cases .after-second-curve svg {
+    height: 100%;
+    width: 100%;
+  }
+  #big-use-cases .after-second-curve svg path {
+    fill: #fff;
+  }
+
   #big-use-cases h2 {
     display: inline-block;
     text-align: center;
@@ -226,6 +259,18 @@
       position: absolute;
       width: 150px;
       height: 150px;
+    }
+    #big-use-cases .before-second-curve {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+    } 
+    #big-use-cases .after-second-curve {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      margin-top: calc(150px+ 1px);
+      
     }
     #big-use-cases .use-cases {
       flex-wrap: wrap;
@@ -699,155 +744,181 @@
       </div>
     </div>
   </div>
-  <div id="dev-features">
-    <h2>Made for Developers</h2>
-    <!-- <h2>Validated and changeable with consensus, no blockchain required.</h2> -->
-    <div class="examples-and-terminal">
-      <div class="sidebar">
-        <div class="title">Engineer a Contract</div>
-        <select class="examples-selector">
-          <option value="create-or-clone" class="example">
-            Create or Clone a DotContract
-          </option>
-          <option value="commit-history" class="example active" selected>
-            Read Commit History
-          </option>
-          <option value="empty" class="example">Start a Draft</option>
-          <option value="empty" class="example">Add Rules in Modality</option>
-          <option value="empty" class="example">Sign &amp; Commit a Draft</option>
-          <option value="validate-commits" class="example">Validate Commits</option>
-          <option value="empty" class="example">Simulate Usage</option>
-          <option value="empty" class="example">
-            Pull &amp; Push a Hosted DotContract
-          </option>
-        </select>
-        <div class="examples">
-          <div data-ex="create-or-clone" class="example">
-            Create or Clone a DotContract
-          </div>
-          <div data-ex="commit-history" class="example active">
-            Read Commit History
-          </div>
-          <div data-ex="empty" class="example">Start a Draft</div>
-          <div data-ex="empty" class="example">Add Rules in Modality</div>
-          <div data-ex="empty" class="example">Sign &amp; Commit a Draft</div>
-          <div data-ex="validate-commits" class="example">Validate Commits</div>
-          <div data-ex="empty" class="example">Simulate Usage</div>
-          <div data-ex="empty" class="example">
-            Pull &amp; Push a Hosted DotContract
-          </div>
-        </div>
-      </div>
-      <div class="terminal">
-        <div data-ex="empty" class="terminal-example">
-          <div class="header">
-            <div class="left">dotcontract-cli</div>
-            <div class="right">&lt;/&gt;</div>
-          </div>
-        </div>
-        <div data-ex="create-or-clone" class="terminal-example">
-          <div class="header">
-            <div class="left">dotcontract-cli</div>
-            <div class="right">&lt;/&gt;</div>
-          </div>
-        </div>
-        <div data-ex="commit-history" class="terminal-example active">
-          <div class="header">
-            <div class="left">dotc log</div>
-            <div class="right">sh</div>
-          </div>
-          <pre class="bod">
-<span class="bold">% dotc log example-partnership.contract</span>
-
-<span class="bold"># DotContract b45a777ffe355419b7d9a7859355818fe115a3d1</span>
-Name: Example Business Partnership
-Sort: Oldest to Newest
-
-<span class="bold">## Commit d4033751307f9ebbc36f11e3988c98d335746101</span>
-<span class="bold green">DEFINE</span>  <span class="blue">@party_a</span>, <span class="purple">crypto:/ed25519-pub/12D...</span>
-<span class="bold green">DEFINE</span>  <span class="blue">@party_b</span>, <span class="purple">crypto:/ed25519-pub/12D...</span>
-<span class="bold green">RULE</span>    <span class="blue">/</span>, henceforth_must( signed_by( one_of( <span class="blue">@party_a</span>, <span class="blue">@party_b</span> ) ) )
-
-<span class="bold">## Commit b45a777ffe355419b7d9a7859355818fe115a3d1</span>
-<span class="bold green">DEFINE</span>  <span class="blue">/docs</span>, FileDirectory
-<span class="bold green">RULE</span>    <span class="blue">/docs</span>, henceforth_must( signed_by( all_of( <span class="blue">@party_a</span>, <span class="blue">@party_b</span> ) ) )
-<span class="bold green">SIGNED</span>  <span class="blue">@party_a</span>
-
-<span class="bold">## Commit 433cd4320dba0db724af8f9c85b42f67679113f8</span>
-<span class="bold green">POST  </span>  <span class="blue">/docs/Operating Agreement.docx</span>, <span class="purple">attach:/docs/Operating Agreement.docx</span>
-<span class="bold green">SIGNED</span>  <span class="blue">@party_a
-<span class="bold green">SIGNED</span>  <span class="blue">@party_b</pre>
-        </div>
-        <div data-ex="validate-commits" class="terminal-example">
-          <div class="header">
-            <div class="left">dotc commit</div>
-            <div class="right">sh</div>
-          </div>
-          <pre class="bod">
-<span class="bold">% dotc commit << EOF
-POST /rate, 7.750
-EOF</span>
-
-<span class="bold red"># Error</span>
-<span class="blue">/rate</span> change must be signed by <span class="bold blue">@admin</span>
-
-<span class="bold">% dotc commit --sign-as admin.key << EOF
-POST /rate, 7.750
-EOF</span>
-
-<span class="bold red"># Error</span>
-<span class="blue">/rate</span> must be less than or equal to 7.000 when <span class="bold blue">/credit_rating</span> is BBB
-
-<span class="bold">% dotc commit --sign-as admin.key << EOF
-POST /rate, 7.750
-POST /credit_rating, BB
-EOF</span>
-
-<span class="bold green"># Success</span>
-<span class="bold">## Commit 349c3708cf3e4d568590bb86e8e9cc8ff35bee81</span>
-<span class="bold green">POST</span>    <span class="bold blue">/rate</span>, 7.750
-<span class="bold green">POST</span>    <span class="bold blue">/credit_rating</span>, BB
-<span class="bold green ">SIGNED</span>  <span class="bold blue">@admin</span>
-          </pre>
-        </div>
-      </div>
+  <div id="big-use-cases">
+    
+    
+    <div class="before-second-curve">
+      <svg viewBox="0 0 100 100" width="100" height="100">
+        <path
+          d="M 100 100
+              S 0 100 0 0
+              L 0 100 0 100 100 100 
+              z"
+        />
+      </svg>
     </div>
-    <div class="features">
-      <div class="feature n01">
-        <div class="heading">Evolvable Smart Contracts</div>
-        <div class="description">
-          DotContracts start off blank, and by adding rules in the form of
-          formally specified rights and obligations, can be evolved into any
-          needed multi-party dynamic.
+    <div class="after-second-curve">
+      <svg viewBox="0 0 100 100" width="100" height="100">
+        <path
+          d="M 0 0
+          S 100 0 100 100
+          L 100 0
+          z"
+        />
+      </svg>
+    </div>
+    <div id="dev-features">
+      <h2>Made for Developers</h2>
+      <!-- <h2>Validated and changeable with consensus, no blockchain required.</h2> -->
+      <div class="examples-and-terminal">
+        <div class="sidebar">
+          <div class="title">Engineer a Contract</div>
+          <select class="examples-selector">
+            <option value="create-or-clone" class="example">
+              Create or Clone a DotContract
+            </option>
+            <option value="commit-history" class="example active" selected>
+              Read Commit History
+            </option>
+            <option value="empty" class="example">Start a Draft</option>
+            <option value="empty" class="example">Add Rules in Modality</option>
+            <option value="empty" class="example">Sign &amp; Commit a Draft</option>
+            <option value="validate-commits" class="example">Validate Commits</option>
+            <option value="empty" class="example">Simulate Usage</option>
+            <option value="empty" class="example">
+              Pull &amp; Push a Hosted DotContract
+            </option>
+          </select>
+          <div class="examples">
+            <div data-ex="create-or-clone" class="example">
+              Create or Clone a DotContract
+            </div>
+            <div data-ex="commit-history" class="example active">
+              Read Commit History
+            </div>
+            <div data-ex="empty" class="example">Start a Draft</div>
+            <div data-ex="empty" class="example">Add Rules in Modality</div>
+            <div data-ex="empty" class="example">Sign &amp; Commit a Draft</div>
+            <div data-ex="validate-commits" class="example">Validate Commits</div>
+            <div data-ex="empty" class="example">Simulate Usage</div>
+            <div data-ex="empty" class="example">
+              Pull &amp; Push a Hosted DotContract
+            </div>
+          </div>
+        </div>
+        <div class="terminal">
+          <div data-ex="empty" class="terminal-example">
+            <div class="header">
+              <div class="left">dotcontract-cli</div>
+              <div class="right">&lt;/&gt;</div>
+            </div>
+          </div>
+          <div data-ex="create-or-clone" class="terminal-example">
+            <div class="header">
+              <div class="left">dotcontract-cli</div>
+              <div class="right">&lt;/&gt;</div>
+            </div>
+          </div>
+          <div data-ex="commit-history" class="terminal-example active">
+            <div class="header">
+              <div class="left">dotc log</div>
+              <div class="right">sh</div>
+            </div>
+            <pre class="bod">
+  <span class="bold">% dotc log example-partnership.contract</span>
+  
+  <span class="bold"># DotContract b45a777ffe355419b7d9a7859355818fe115a3d1</span>
+  Name: Example Business Partnership
+  Sort: Oldest to Newest
+  
+  <span class="bold">## Commit d4033751307f9ebbc36f11e3988c98d335746101</span>
+  <span class="bold green">DEFINE</span>  <span class="blue">@party_a</span>, <span class="purple">crypto:/ed25519-pub/12D...</span>
+  <span class="bold green">DEFINE</span>  <span class="blue">@party_b</span>, <span class="purple">crypto:/ed25519-pub/12D...</span>
+  <span class="bold green">RULE</span>    <span class="blue">/</span>, henceforth_must( signed_by( one_of( <span class="blue">@party_a</span>, <span class="blue">@party_b</span> ) ) )
+  
+  <span class="bold">## Commit b45a777ffe355419b7d9a7859355818fe115a3d1</span>
+  <span class="bold green">DEFINE</span>  <span class="blue">/docs</span>, FileDirectory
+  <span class="bold green">RULE</span>    <span class="blue">/docs</span>, henceforth_must( signed_by( all_of( <span class="blue">@party_a</span>, <span class="blue">@party_b</span> ) ) )
+  <span class="bold green">SIGNED</span>  <span class="blue">@party_a</span>
+  
+  <span class="bold">## Commit 433cd4320dba0db724af8f9c85b42f67679113f8</span>
+  <span class="bold green">POST  </span>  <span class="blue">/docs/Operating Agreement.docx</span>, <span class="purple">attach:/docs/Operating Agreement.docx</span>
+  <span class="bold green">SIGNED</span>  <span class="blue">@party_a
+  <span class="bold green">SIGNED</span>  <span class="blue">@party_b</pre>
+          </div>
+          <div data-ex="validate-commits" class="terminal-example">
+            <div class="header">
+              <div class="left">dotc commit</div>
+              <div class="right">sh</div>
+            </div>
+            <pre class="bod">
+  <span class="bold">% dotc commit << EOF
+  POST /rate, 7.750
+  EOF</span>
+  
+  <span class="bold red"># Error</span>
+  <span class="blue">/rate</span> change must be signed by <span class="bold blue">@admin</span>
+  
+  <span class="bold">% dotc commit --sign-as admin.key << EOF
+  POST /rate, 7.750
+  EOF</span>
+  
+  <span class="bold red"># Error</span>
+  <span class="blue">/rate</span> must be less than or equal to 7.000 when <span class="bold blue">/credit_rating</span> is BBB
+  
+  <span class="bold">% dotc commit --sign-as admin.key << EOF
+  POST /rate, 7.750
+  POST /credit_rating, BB
+  EOF</span>
+  
+  <span class="bold green"># Success</span>
+  <span class="bold">## Commit 349c3708cf3e4d568590bb86e8e9cc8ff35bee81</span>
+  <span class="bold green">POST</span>    <span class="bold blue">/rate</span>, 7.750
+  <span class="bold green">POST</span>    <span class="bold blue">/credit_rating</span>, BB
+  <span class="bold green ">SIGNED</span>  <span class="bold blue">@admin</span>
+            </pre>
+          </div>
         </div>
       </div>
-      <div class="feature n02">
-        <div class="heading">Shareable Data Repos</div>
-        <div class="description">
-          DotContracts act as stand alone data repositories covering the full
-          lifecycle of an agreement. Share a .contract file as easily as .zip
-          file to let others interact with it as a data repo.
+      <div class="features">
+        <div class="feature n01">
+          <div class="heading">Evolvable Smart Contracts</div>
+          <div class="description">
+            DotContracts start off blank, and by adding rules in the form of
+            formally specified rights and obligations, can be evolved into any
+            needed multi-party dynamic.
+          </div>
         </div>
-      </div>
-      <div class="feature n03">
-        <div class="heading">Formal Models and Analysis</div>
-        <div class="description">
-          Unlike programming language based smart contracts, which are too
-          complex for formal analysis, DotContracts are written in a
-          specification language that makes it possible to fully model and
-          analyze all possible outcomes.
+        <div class="feature n02">
+          <div class="heading">Shareable Data Repos</div>
+          <div class="description">
+            DotContracts act as stand alone data repositories covering the full
+            lifecycle of an agreement. Share a .contract file as easily as .zip
+            file to let others interact with it as a data repo.
+          </div>
         </div>
-      </div>
-      <div class="feature n04">
-        <div class="heading">Hostable on Secure Networks</div>
-        <div class="description">
-          DotContracts can be optionally hosted on your own secure network,
-          enabling them to share state and common data feed values though
-          network synchronized message passing.
+        <div class="feature n03">
+          <div class="heading">Formal Models and Analysis</div>
+          <div class="description">
+            Unlike programming language based smart contracts, which are too
+            complex for formal analysis, DotContracts are written in a
+            specification language that makes it possible to fully model and
+            analyze all possible outcomes.
+          </div>
+        </div>
+        <div class="feature n04">
+          <div class="heading">Hostable on Secure Networks</div>
+          <div class="description">
+            DotContracts can be optionally hosted on your own secure network,
+            enabling them to share state and common data feed values though
+            network synchronized message passing.
+          </div>
         </div>
       </div>
     </div>
   </div>
+  
+  
 
   <!-- <div id="made-for-everyone">
     <h2>And for Everyone Else</h2>
@@ -887,12 +958,14 @@ EOF</span>
       const el = document.querySelector(`.terminal-example[data-ex=${example_name}]`);
       el.classList.add('active'); 
     } 
+
   };
+ 
   document.querySelector("select.examples-selector").onchange = (e) => {
     const example_name = e.target.value;
     console.log(example_name);
     document.querySelector('.terminal-example.active').classList.remove('active');
     const el = document.querySelector(`.terminal-example[data-ex=${example_name}]`);
-    el.classList.add('active'); 
+    el.classList.add('active');
   };
 </script>
