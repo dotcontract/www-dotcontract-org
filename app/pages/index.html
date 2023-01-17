@@ -33,23 +33,23 @@
     position: absolute;
     width: 100vw;
     top: 0;
-    margin-top: 25vh;
     right: -10vw;
     z-index: -1;
     opacity: 30%;
   }
-  #hero,
-  #hero .content {
+  #hero {
     min-height: 57vh;
-    max-width: 1190px;
-    margin: 0 auto;
+    width: 100vw;
   }
   #hero .content {
+    width: 1190px;
+    max-width: 90%;
+    min-height: 57vh;
+    margin: 0 auto;
     padding: 68px 0 68px 0;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    max-width: 90%;
   }
   #hero .content h1 {
     font-family: "Hepta Slab", "Sanchez", "Open Sans", sans-serif;
@@ -95,6 +95,7 @@
       right: -10vw;
     }
     #hero .content {
+      justify-content: center;
     }
     #hero .content h1 {
       font-size: 60px;
@@ -121,7 +122,6 @@
       opacity: 1;
     }
     #hero .content {
-      margin-left: -20px;
       padding-left: 0px;
     }
   }
@@ -152,7 +152,6 @@
     fill: #202334;
   }
 
-
   #big-use-cases .after-curve {
     position: absolute;
     width: 100px;
@@ -168,8 +167,6 @@
   #big-use-cases .after-curve svg path {
     fill: #fff;
   }
-
-
 
   #big-use-cases h2 {
     display: inline-block;
@@ -249,13 +246,13 @@
   @media (min-width: 960px) {
     #big-use-cases .use-case {
       margin: 40px;
-    } 
+    }
     #big-use-cases .before-curve {
       position: absolute;
       width: 150px;
       height: 150px;
       margin-top: calc(-150px + 1px);
-    } 
+    }
     #big-use-cases .after-curve {
       position: absolute;
       width: 150px;
@@ -265,13 +262,12 @@
       position: absolute;
       width: 150px;
       height: 150px;
-    } 
+    }
     #big-use-cases .after-second-curve {
       position: absolute;
       width: 150px;
       height: 150px;
       margin-top: calc(150px+ 1px);
-      
     }
     #big-use-cases .use-cases {
       color: #071d2a;
@@ -333,11 +329,11 @@
     }
   }
 
-  #made-for-developers {
+  #dev-features {
     position: relative;
   }
 
-  #made-for-developers .before-second-curve {
+  #dev-features .before-second-curve {
     position: absolute;
     width: 100px;
     height: 100px;
@@ -345,119 +341,28 @@
     left: -20px;
     top: 0;
   }
-  #made-for-developers .before-second-curve svg {
+  #dev-features .before-second-curve svg {
     height: 100%;
     width: 100%;
   }
-  #made-for-developers .before-second-curve svg path {
+  #dev-features .before-second-curve svg path {
     fill: #202334;
   }
 
-  #made-for-developers .after-second-curve {
+  #dev-features .after-second-curve {
     position: absolute;
     width: 100px;
     height: 100px;
     top: 0px;
     top: 0;
-    right: -25px ;
+    right: -25px;
   }
-  #made-for-developers .after-second-curve svg {
+  #dev-features .after-second-curve svg {
     height: 100%;
     width: 100%;
   }
-  #made-for-developers .after-second-curve svg path {
+  #dev-features .after-second-curve svg path {
     fill: #fff;
-  }
-
-  #dev-features {
-    background: rgb(31, 35, 52);
-    color: white;
-    padding: 20px;
-    padding-top: 60px;
-    padding-bottom: 60px;
-    position: relative;
-  }
-
-  #dev-features .examples-and-terminal {
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-  }
-  #dev-features .sidebar {
-    text-align: center;
-    margin: 20px auto;
-  }
-  #dev-features .sidebar .title {
-      text-align: center;
-      font-weight: 500;
-      font-size: 24px;
-      padding-bottom: 12px;
-      font-family: 'Hepta Slab', sans-serif;
-      margin-left: 10px;
-      margin-bottom: 5px;
-      display: block;
-    }
-    #dev-features .examples {
-      display: none;
-    }
-    #dev-features .examples-selector {
-      background:rgb(141, 141, 141);
-      color: white;
-      border-radius: 4px;
-      font-size: 14px;
-      text-align: center;
-      padding: 5px 8px;
-    }
-  #dev-features .terminal {
-    border-radius: 8px;
-    background: #2d3040;
-    color: #9698a0;
-    font-family: "Roboto Mono", monospace;
-    font-size: 20px;
-    padding: 1px;
-    padding: 10px;
-    font-size: 12px;
-    margin-bottom: 10px;
-  }
-  #dev-features .terminal .terminal-example {
-    display: none;
-  }
-  #dev-features .terminal .terminal-example.active {
-    display: block;
-  }
-  #dev-features .terminal .header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    border-bottom: 1px solid #9698a0;
-    font-weight: 800;
-    color: white;
-    padding-bottom: 8px;
-    margin-bottom: 8px;
-  }
-  #dev-features .terminal .bod {
-    line-height: 1.3em;
-    font-family: "Roboto Mono", monospace;
-    overflow-x: scroll;
-  }
-  #dev-features .terminal .bod span.bold {
-    color: white;
-  }
-  #dev-features .terminal .bod span.green {
-    color: #00ca88;
-    color: #82b514;
-  }
-  #dev-features .terminal .bod span.purple {
-    color: #8b54fe;
-  }
-  #dev-features .terminal .bod span.blue {
-    color: #56c1d6;
-  }
-  #dev-features .terminal .bod span.orange {
-    color: #fc971e;
-  }
-  #dev-features .terminal .bod span.red {
-    color: #f92572;
   }
   #dev-features .features {
     margin: 40px -20px;
@@ -472,6 +377,14 @@
     padding: 25px 40px;
     line-height: 1.5em;
     font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+  }
+  #dev-features .feature .content {
+    width: 450px;
+    max-width: 80vw; 
   }
   #dev-features .feature .heading {
     text-align: center;
@@ -479,14 +392,154 @@
     padding-bottom: 20px;
     font-size: 18px;
   }
+  #dev-features {
+    background: rgb(31, 35, 52);
+    color: white;
+    padding: 20px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    position: relative;
+  }
   @media (min-width: 960px) {
-    #dev-features .examples-and-terminal {
+    #dev-features .features {
+      margin: 40px -20px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    #dev-features .feature {
+      flex-basis: 45%;
+      box-sizing: border-box;
+      padding: 40px;
+      line-height: 1.5em;
+      font-size: 18px;
+    }
+    #dev-features .feature .heading {
+      text-align: center;
+      font-weight: bold;
+      padding-bottom: 20px;
+      font-size: 24px;
+    }
+    #dev-features .feature.n01,
+    #dev-features .feature.n04 {
+      background: #2e3040;
+    }
+    #dev-features .feature.n01 {
+      border-radius: 0 20px 20px 0;
+    }
+    #dev-features .feature.n04 {
+      border-radius: 20px 0 0 20px;
+    }
+    #dev-features .feature.n01,
+    #dev-features .feature.n03 {
+      justify-content: flex-end
+    }
+    #dev-features .feature.n02,
+    #dev-features .feature.n04 {
+      justify-content: flex-start;
+    }
+  }
+
+
+  #made-for-developers {
+    background: rgb(31, 35, 52);
+    color: white;
+    padding: 20px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    position: relative;
+  }
+  #made-for-developers .examples-and-terminal {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+  #made-for-developers .sidebar {
+    text-align: center;
+    margin: 20px auto;
+  }
+  #made-for-developers .sidebar .title {
+    text-align: center;
+    font-weight: 500;
+    font-size: 24px;
+    padding-bottom: 12px;
+    font-family: "Hepta Slab", sans-serif;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    display: block;
+  }
+  #made-for-developers .examples {
+    display: none;
+  }
+  #made-for-developers .examples-selector {
+    background: rgb(141, 141, 141);
+    color: white;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: center;
+    padding: 5px 8px;
+  }
+  #made-for-developers .terminal {
+    border-radius: 8px;
+    background: #2d3040;
+    color: #9698a0;
+    font-family: "Roboto Mono", monospace;
+    font-size: 20px;
+    padding: 1px;
+    padding: 10px;
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  #made-for-developers .terminal .terminal-example {
+    display: none;
+  }
+  #made-for-developers .terminal .terminal-example.active {
+    display: block;
+  }
+  #made-for-developers .terminal .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid #9698a0;
+    font-weight: 800;
+    color: white;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+  }
+  #made-for-developers .terminal .bod {
+    line-height: 1.3em;
+    font-family: "Roboto Mono", monospace;
+    overflow-x: scroll;
+  }
+  #made-for-developers .terminal .bod span.bold {
+    color: white;
+  }
+  #made-for-developers .terminal .bod span.green {
+    color: #00ca88;
+    color: #82b514;
+  }
+  #made-for-developers .terminal .bod span.purple {
+    color: #8b54fe;
+  }
+  #made-for-developers .terminal .bod span.blue {
+    color: #56c1d6;
+  }
+  #made-for-developers .terminal .bod span.orange {
+    color: #fc971e;
+  }
+  #made-for-developers .terminal .bod span.red {
+    color: #f92572;
+  }
+  
+  @media (min-width: 960px) {
+    #made-for-developers .examples-and-terminal {
       width: 1280px;
       max-width: 100%;
       flex-direction: row;
       padding-bottom: 60px;
     }
-    #dev-features .sidebar {
+    #made-for-developers .sidebar {
       text-align: left;
       width: 380px;
       max-width: 40%;
@@ -495,24 +548,24 @@
       margin-left: 0;
       margin-right: 0;
     }
-    #dev-features .sidebar .title {
+    #made-for-developers .sidebar .title {
       text-align: center;
       font-weight: 500;
       font-size: 24px;
       padding-bottom: 12px;
-      font-family: 'Hepta Slab', sans-serif;
+      font-family: "Hepta Slab", sans-serif;
       text-align: left;
       margin-left: 10px;
       margin-bottom: 5px;
       display: inline-block;
     }
-    #dev-features .examples-selector {
+    #made-for-developers .examples-selector {
       display: none;
     }
-    #dev-features .examples {
+    #made-for-developers .examples {
       display: block;
     }
-    #dev-features .example {
+    #made-for-developers .example {
       border: 1px solid #4d4d50;
       border-right: none;
       border-bottom: none;
@@ -521,28 +574,28 @@
       cursor: pointer;
     }
 
-    #dev-features .example.active {
+    #made-for-developers .example.active {
       /* background: #515986; */
       /* font-weight: bold; */
       border-right: 3px solid #00ca88;
     }
-    #dev-features .example::before {
+    #made-for-developers .example::before {
       display: inline-block;
       content: "⬦";
       margin-right: 10px;
       color: #00ca88;
     }
-    #dev-features .example.active::before {
+    #made-for-developers .example.active::before {
       content: "⬥";
     }
-    #dev-features .example:first-of-type {
+    #made-for-developers .example:first-of-type {
       border-top-left-radius: 4px;
     }
-    #dev-features .example:last-of-type {
+    #made-for-developers .example:last-of-type {
       border-bottom-left-radius: 4px;
       border-bottom: 1px solid #4d4d50;
     }
-    #dev-features .terminal {
+    #made-for-developers .terminal {
       border-radius: 8px;
       background: #2d3040;
       color: #9698a0;
@@ -552,18 +605,18 @@
       width: 900px;
       flex-grow: 1;
       text-align: initial;
-    } 
-    #dev-features .terminal .header {
+    }
+    #made-for-developers .terminal .header {
       padding-bottom: 0;
       margin-bottom: 0;
     }
-    #dev-features .terminal .header .left {
+    #made-for-developers .terminal .header .left {
       padding: 18px 24px;
     }
-    #dev-features .terminal .header .right {
+    #made-for-developers .terminal .header .right {
       padding: 18px 24px;
     }
-    #dev-features .terminal .bod {
+    #made-for-developers .terminal .bod {
       font-size: 18px;
       padding: 18px 24px;
     }
@@ -647,140 +700,7 @@
       </div>
     </div>
   </div>
-  <div id="big-use-cases">
-    <div class="before-curve">
-      <svg viewBox="0 0 100 100" width="100" height="100">
-        <path
-          d="M 0 100
-               S 100 100 100 0
-               L 100 100 
-               z"
-        />
-      </svg>
-    </div>
-    <div class="after-curve">
-      <svg viewBox="0 0 100 100" width="100" height="100">
-        <path
-          d="M 100 0
-          S 0 0 0 100
-          L 0 0 
-          z"
-        />
-      </svg>
-    </div>
-    <h2>Powering use cases across industries</h2>
-    <div class="use-cases">
-      <div class="use-case">
-        <div class="box">
-          <div class="industry">Finance</div>
-          <div class="image"><img src="/_public/homepage/finance.png" /></div>
-          <div class="heading">Validated terms and conditions for finance</div>
-          <div class="description">
-            Model lifecycle conditions for any asset type, automatically enforce
-            the rights and obligations between participants with a powerful
-            smart contract framework.
-          </div>
-        </div>
-      </div>
-      <div class="use-case">
-        <div class="box">
-          <div class="industry">Governance</div>
-          <div class="image"><img src="/_public/homepage/governance.png" /></div>
-          <div class="heading">
-            Digital governance for organizations of all sizes
-          </div>
-          <div class="description">
-            Embed logic and dependencies with contract execution and signing to
-            enable organizational checks and balances.
-          </div>
-        </div>
-      </div>
-      <div class="use-case">
-        <div class="box">
-          <div class="industry">Compliance</div>
-          <div class="image"><img src="/_public/homepage/compliance.png" /></div>
-          <div class="heading">Complex compliance automation</div>
-          <div class="description">
-            Streamline and automate complex compliance workflows with a robust
-            and reliable contract specification language.
-          </div>
-        </div>
-      </div>
-      <div class="use-case">
-        <div class="box">
-          <div class="industry">Data</div>
-          <div class="image"><img src="/_public/homepage/data.png" /></div>
-          <div class="heading">Break data silos across parties</div>
-          <div class="description">
-            Model lifecycle conditions for any asset type, automatically enforce
-            the rights and obligations between participants with a powerful
-            smart contract framework.
-          </div>
-        </div>
-      </div>
-      <div class="use-case">
-        <div class="box">
-          <div class="industry">Digital Assets</div>
-          <div class="image"><img src="/_public/homepage/digital-assets.png" /></div>
-          <div class="heading">Turn any contract into digital assets</div>
-          <div class="description">
-            Embed logic and dependencies with contract execution and signing to
-            enable organizational checks and balances.
-          </div>
-        </div>
-      </div>
-      <div class="use-case">
-        <div class="box">
-          <div class="industry">And More</div>
-          <div class="image"><img src="/_public/homepage/code.png" /></div>
-          <div class="heading">Unlock the power of digital contracts</div>
-          <div class="description">
-            A simple smart contract standard enables you to build and deploy smart contracts easily
-            for enterprise or consumer use.</div>
-        </div>
-      </div>
-    </div>
-    <a class="get-started">Contact us</a>
-  </div>
-  <div id="how-to">
-    <h2>Smart Contracts that Work Anywhere</h2>
-    <div class="steps">
-      <div class="step">
-        <div class="image">
-          <img src="_public/homepage/how-to/install.png" />
-        </div>
-        <div class="text">
-          <div class="heading">Install</div>
-          <div class="description">
-            Install or embed the DotContract toolkit
-          </div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="image">
-          <img src="_public/homepage/how-to/write.png" />
-        </div>
-        <div class="text">
-          <div class="heading">Write</div>
-          <div class="description">
-            Build, update, review, and sign DotContracts
-          </div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="image">
-          <img src="_public/homepage/how-to/share.png" />
-        </div>
-        <div class="text">
-          <div class="heading">Share</div>
-          <div class="description">
-            Share as email attachments or push changes to a DotContract repo
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div id="made-for-developers"> 
+  <div id="dev-features">
     <div class="before-second-curve">
       <svg viewBox="0 0 100 100" width="100" height="100">
         <path
@@ -792,7 +712,61 @@
       </svg>
     </div>
 
-    <div id="dev-features">
+    <div class="features">
+      <div class="feature n01">
+        <div class="content">
+        <div class="heading">Evolvable Smart Contracts</div>
+        <div class="description">
+          DotContracts start off blank, and by adding rules in the form of
+          formally specified rights and obligations, can be evolved into any
+          needed multi-party dynamic.
+        </div>
+        </div>
+      </div>
+      <div class="feature n02">
+        <div class="content">
+        <div class="heading">Shareable Data Repos</div>
+        <div class="description">
+          DotContracts act as stand alone data repositories covering the full
+          lifecycle of an agreement. Share a .contract file as easily as .zip
+          file to let others interact with it as a data repo.
+        </div>
+        </div>
+      </div>
+      <div class="feature n03">
+        <div class="content">
+        <div class="heading">Formal Verification and Analysis</div>
+        <div class="description">
+          Unlike programming language based smart contracts, which are too
+          complex for formal analysis, DotContracts are written in a
+          specification language that makes it possible to fully model and
+          analyze all possible outcomes.
+        </div>
+        </div>
+      </div>
+      <div class="feature n04">
+        <div class="content">
+        <div class="heading">Hostable on Secure Networks</div>
+        <div class="description">
+          DotContracts can be optionally hosted on your own secure network,
+          enabling them to share state and common data feed values though
+          network synchronized message passing.
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="after-second-curve">
+      <svg viewBox="0 0 100 100" width="100" height="100">
+        <path
+          d="M 0 0
+          S 100 0 100 100
+          L 100 0
+          z"
+        />
+      </svg>
+    </div>
+  </div>
+  <div id="made-for-developers"> 
       <h2>Made for Developers</h2>
       <!-- <h2>Validated and changeable with consensus, no blockchain required.</h2> -->
       <div class="examples-and-terminal">
@@ -868,8 +842,8 @@
   
   <span class="bold">## Commit 433cd4320dba0db724af8f9c85b42f67679113f8</span>
   <span class="bold green">POST  </span>  <span class="blue">/docs/Operating Agreement.docx</span>, <span class="purple">attach:/docs/Operating Agreement.docx</span>
-  <span class="bold green">SIGNED</span>  <span class="blue">@party_a
-  <span class="bold green">SIGNED</span>  <span class="blue">@party_b</pre>
+  <span class="bold green">SIGNED</span>  <span class="blue">@party_a</span>
+  <span class="bold green">SIGNED</span>  <span class="blue">@party_b</span>
           </div>
           <div data-ex="validate-commits" class="terminal-example">
             <div class="header">
@@ -905,55 +879,152 @@
           </div>
         </div>
       </div>
-      <div class="features">
-        <div class="feature n01">
-          <div class="heading">Evolvable Smart Contracts</div>
+    </div>
+  </div>
+
+
+
+  <div id="how-to">
+    <h2>Smart Contracts that Work Anywhere</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="image">
+          <img src="_public/homepage/how-to/install.png" />
+        </div>
+        <div class="text">
+          <div class="heading">Install</div>
           <div class="description">
-            DotContracts start off blank, and by adding rules in the form of
-            formally specified rights and obligations, can be evolved into any
-            needed multi-party dynamic.
+            Install or embed the DotContract toolkit
           </div>
         </div>
-        <div class="feature n02">
-          <div class="heading">Shareable Data Repos</div>
+      </div>
+      <div class="step">
+        <div class="image">
+          <img src="_public/homepage/how-to/write.png" />
+        </div>
+        <div class="text">
+          <div class="heading">Write</div>
           <div class="description">
-            DotContracts act as stand alone data repositories covering the full
-            lifecycle of an agreement. Share a .contract file as easily as .zip
-            file to let others interact with it as a data repo.
+            Build, update, review, and sign DotContracts
           </div>
         </div>
-        <div class="feature n03">
-          <div class="heading">Formal Models and Analysis</div>
-          <div class="description">
-            Unlike programming language based smart contracts, which are too
-            complex for formal analysis, DotContracts are written in a
-            specification language that makes it possible to fully model and
-            analyze all possible outcomes.
-          </div>
+      </div>
+      <div class="step">
+        <div class="image">
+          <img src="_public/homepage/how-to/share.png" />
         </div>
-        <div class="feature n04">
-          <div class="heading">Hostable on Secure Networks</div>
+        <div class="text">
+          <div class="heading">Share</div>
           <div class="description">
-            DotContracts can be optionally hosted on your own secure network,
-            enabling them to share state and common data feed values though
-            network synchronized message passing.
+            Share as email attachments or push changes to a DotContract repo
           </div>
         </div>
       </div>
     </div>
-    <div class="after-second-curve">
+  </div>
+
+  <div id="big-use-cases">
+    <div class="before-curve">
       <svg viewBox="0 0 100 100" width="100" height="100">
         <path
-          d="M 0 0
-          S 100 0 100 100
-          L 100 0
+          d="M 0 100
+               S 100 100 100 0
+               L 100 100 
+               z"
+        />
+      </svg>
+    </div>
+    <div class="after-curve">
+      <svg viewBox="0 0 100 100" width="100" height="100">
+        <path
+          d="M 100 0
+          S 0 0 0 100
+          L 0 0 
           z"
         />
       </svg>
     </div>
+    <h2>Powering use cases across industries</h2>
+    <div class="use-cases">
+      <div class="use-case">
+        <div class="box">
+          <div class="industry">Finance</div>
+          <div class="image"><img src="/_public/homepage/finance.png" /></div>
+          <div class="heading">Validated terms and conditions for finance</div>
+          <div class="description">
+            Model lifecycle conditions for any asset type, automatically enforce
+            the rights and obligations between participants with a powerful
+            smart contract framework.
+          </div>
+        </div>
+      </div>
+      <div class="use-case">
+        <div class="box">
+          <div class="industry">Governance</div>
+          <div class="image">
+            <img src="/_public/homepage/governance.png" />
+          </div>
+          <div class="heading">
+            Digital governance for organizations of all sizes
+          </div>
+          <div class="description">
+            Embed logic and dependencies with contract execution and signing to
+            enable organizational checks and balances.
+          </div>
+        </div>
+      </div>
+      <div class="use-case">
+        <div class="box">
+          <div class="industry">Compliance</div>
+          <div class="image">
+            <img src="/_public/homepage/compliance.png" />
+          </div>
+          <div class="heading">Complex compliance automation</div>
+          <div class="description">
+            Streamline and automate complex compliance workflows with a robust
+            and reliable contract specification language.
+          </div>
+        </div>
+      </div>
+      <div class="use-case">
+        <div class="box">
+          <div class="industry">Data</div>
+          <div class="image"><img src="/_public/homepage/data.png" /></div>
+          <div class="heading">Break data silos across parties</div>
+          <div class="description">
+            Model lifecycle conditions for any asset type, automatically enforce
+            the rights and obligations between participants with a powerful
+            smart contract framework.
+          </div>
+        </div>
+      </div>
+      <div class="use-case">
+        <div class="box">
+          <div class="industry">Digital Assets</div>
+          <div class="image">
+            <img src="/_public/homepage/digital-assets.png" />
+          </div>
+          <div class="heading">Turn any contract into digital assets</div>
+          <div class="description">
+            Embed logic and dependencies with contract execution and signing to
+            enable organizational checks and balances.
+          </div>
+        </div>
+      </div>
+      <div class="use-case">
+        <div class="box">
+          <div class="industry">And More</div>
+          <div class="image"><img src="/_public/homepage/code.png" /></div>
+          <div class="heading">Unlock the power of digital contracts</div>
+          <div class="description">
+            A simple smart contract standard enables you to build and deploy
+            smart contracts easily for enterprise or consumer use.
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="get-started">Contact us</a>
   </div>
-  
-  
 
   <!-- <div id="made-for-everyone">
     <h2>And for Everyone Else</h2>
@@ -982,25 +1053,34 @@
   </div>
 </main>
 <script defer>
-  document.querySelectorAll("div.example").forEach(ex => {
-    ex.onclick = function() {
+  document.querySelectorAll("div.example").forEach((ex) => {
+    ex.onclick = function () {
       // remove active on all
-      document.querySelectorAll('.example.active').forEach(el => el.classList.remove('active')); 
+      document
+        .querySelectorAll(".example.active")
+        .forEach((el) => el.classList.remove("active"));
       // add active on the new example
-      this.classList.add('active');
+      this.classList.add("active");
 
       // find matching terminal example
-      const example_name = this.dataset['ex'];
+      const example_name = this.dataset["ex"];
 
-      document.querySelectorAll('.terminal-example.active').forEach(el => el.classList.remove('active'));
-      document.querySelector(`.terminal-example[data-ex=${example_name}]`).classList.add('active'); 
-    }
+      document
+        .querySelectorAll(".terminal-example.active")
+        .forEach((el) => el.classList.remove("active"));
+      document
+        .querySelector(`.terminal-example[data-ex=${example_name}]`)
+        .classList.add("active");
+    };
   });
 
   document.querySelector("select.examples-selector").onchange = (e) => {
     const example_name = e.target.value;
-    document.querySelectorAll('.terminal-example.active').forEach(el => el.classList.remove('active'));
-    document.querySelector(`.terminal-example[data-ex=${example_name}]`).classList.add('active'); 
-
+    document
+      .querySelectorAll(".terminal-example.active")
+      .forEach((el) => el.classList.remove("active"));
+    document
+      .querySelector(`.terminal-example[data-ex=${example_name}]`)
+      .classList.add("active");
   };
 </script>
