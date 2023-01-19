@@ -38,13 +38,13 @@
     opacity: 30%;
   }
   #hero {
-    min-height: 57vh;
+    min-height: 60vh;
     width: 100vw;
   }
   #hero .content {
     width: 1190px;
     max-width: 90%;
-    min-height: 57vh;
+    min-height: 60vh;
     margin: 0 auto;
     padding: 68px 0 68px 0;
     display: flex;
@@ -338,6 +338,8 @@
   #dev-features h2 {
     padding-bottom: 0px;
     text-align: center;
+    max-width: 90%;
+    margin: 0 auto;
   }
 
   #dev-features .before-second-curve {
@@ -372,16 +374,18 @@
     fill: #fff;
   }
   #dev-features .features {
-    margin: 40px -20px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    padding-top: 50px;
+    width: 1190px;
+    max-width: 90%;
+    margin: 0 auto;
   }
   #dev-features .feature {
     flex-basis: 100%;
     box-sizing: border-box;
-    padding: 25px 40px;
     line-height: 1.5em;
     font-size: 14px;
     display: flex;
@@ -390,26 +394,32 @@
     margin: 20px 0;
   }
   #dev-features .feature .content {
-    width: 450px;
-    max-width: 80vw; 
+  }
+  #dev-features .feature .image img {
+    height: 68px;
+    margin-bottom: 12px;
+    padding-top: 20px;
   }
   #dev-features .feature .heading {
-    text-align: center;
-    font-weight: bold;
+    text-align: left;
     padding-bottom: 20px;
-    font-size: 18px;
+    font-size: 22px;
+  }
+  #dev-features .feature .description {
+    opacity: .6;
+    font-size: 16px;
+    line-height: 1.4em;
   }
   #dev-features {
     background: rgb(31, 35, 52);
     color: white;
     padding: 20px;
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 80px;
+    padding-bottom: 80px;
     position: relative;
   }
   @media (min-width: 960px) {
     #dev-features .features {
-      margin: 40px -20px;
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
@@ -417,20 +427,19 @@
     }
     #dev-features .feature {
       flex-basis: 45%;
+      max-width: 520px;
       box-sizing: border-box;
-      padding: 40px;
       line-height: 1.5em;
-      font-size: 18px;
+      font-size: 16px;
     }
     #dev-features .feature .heading {
       text-align: center;
-      font-weight: bold;
+      font-weight: 500;
       padding-bottom: 20px;
-      font-size: 24px;
+      font-size: 23px;
     }
     #dev-features .feature.n01,
     #dev-features .feature.n04 {
-      background: #2e3040;
     }
     #dev-features .feature.n01 {
       border-radius: 0 20px 20px 0;
@@ -632,7 +641,6 @@
       padding: 18px 24px;
     }
     #dev-features .features {
-      margin: 40px -20px;
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
@@ -641,25 +649,21 @@
     #dev-features .feature {
       flex-basis: 45%;
       box-sizing: border-box;
-      padding: 40px;
+      padding: 0;
       line-height: 1.5em;
       font-size: 18px;
     }
     #dev-features .feature .heading {
-      text-align: center;
-      font-weight: bold;
+      text-align: left;
       padding-bottom: 20px;
-      font-size: 24px;
+      font-size: 23px;
     }
     #dev-features .feature.n01,
     #dev-features .feature.n04 {
-      background: #2e3040;
     }
     #dev-features .feature.n01 {
-      border-radius: 0 20px 20px 0;
     }
     #dev-features .feature.n04 {
-      border-radius: 20px 0 0 20px;
     }
   }
 
@@ -701,7 +705,8 @@
       </h1>
       <div class="explanation">
         DotContract is an open-source smart contract standard for the
-        specification, management, and automation of evolving contractual rights and obligations.
+        specification, management, and automation of evolving contractual rights and obligations
+        through consensus.
         <!-- and obligations for robust enterprise and consumer use across
         industries. -->
       </div>
@@ -722,10 +727,11 @@
         />
       </svg>
     </div>
-    <h2>Expressive, Provable, and Secure</h2>
+    <h2>Expressive, provable, and secure</h2>
     <div class="features">
       <div class="feature n01">
         <div class="content">
+        <div class="image"><img src="_public/homepage/evolvable.png"></div>
         <div class="heading">Evolvable Smart Contracts</div>
         <div class="description">
           DotContracts start off blank, and by adding rules in the form of
@@ -736,6 +742,7 @@
       </div>
       <div class="feature n02">
         <div class="content">
+        <div class="image"><img src="_public/homepage/shareable.png"></div>
         <div class="heading">Shareable Data Repos</div>
         <div class="description">
           DotContracts act as stand alone data repositories covering the full
@@ -746,6 +753,7 @@
       </div>
       <div class="feature n03">
         <div class="content">
+        <div class="image"><img src="_public/homepage/formally-verified.png"></div>
         <div class="heading">Formal Verification and Analysis</div>
         <div class="description">
           Unlike programming language based smart contracts, which are too
@@ -757,6 +765,7 @@
       </div>
       <div class="feature n04">
         <div class="content">
+        <div class="image"><img src="_public/homepage/hostable.png"></div>
         <div class="heading">Hostable on Secure Networks</div>
         <div class="description">
           DotContracts can be optionally hosted on your own secure network,
