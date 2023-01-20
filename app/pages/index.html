@@ -288,39 +288,96 @@
 
   /* #how-to */
   #how-to {
-    margin-top: 50px;
-    margin-bottom: 50px;
-    padding: 25px;
+    width: 550px;
   }
-  #how-to h2 {
-    text-align: center;
+  #how-to {
+    width: 550px;
+    max-width: 90%;
+    margin: 0 auto;
+    min-height: 60vh;
+    padding: 68px 0 68px 0;
+  }
+  #how-to .how-to-left {
+    display: block;
+    text-align: left;
+    float: left;
+    width: 590px;
+    max-width: 90%;
+  }
+  #how-to .how-to-left h2 {
+    text-align: left;
+    max-width: 490px;
+    margin: 0 auto;
+    font-size: 45px;
+    padding-bottom: 20px;
+  }
+  #how-to .how-to-left .caption {
+    font-size: 16px;
+    line-height: 1.4em;
+    max-width: 490px;
+    margin: 0 auto;
+    padding-bottom: 20px;
   }
   #how-to .steps {
     display: flex;
     flex-direction: column;
+    width: 590px;
+    margin: 0 auto;
+    display: inline-block;
+    border-left: 2px solid #58c68d;
+    max-width: 90%;
   }
   #how-to .step {
     display: flex;
-    padding: 20px 0;
-  }
-  #how-to .image img {
-    width: 100px;
-    max-width: 100px;
   }
   #how-to .text {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     padding-left: 10px;
     line-height: 1.4em;
+    margin: 50px 0 50px 25px;
+  }
+  #how-to .text .numbered-step {
+    color: #58c68d;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: .15em;
+    line-height: 3.5em;
+  }
+  #how-to .text .numbered-step .dot {
+    position: absolute;
+    left: -36px;
+    margin-top: 16px;
+    display: inline-block;
+      content: " ";
+      margin-left: 5px;
+      margin-right: 15px;
+      color: #00ca88;
+      border: 1px solid #00ca88;
+      width: 10px;
+      height: 10px;
+      rotate: -45deg;
+      background: transparent;
+      background: #00ca88;
+      box-shadow: 0 0 10px 1px;
   }
   #how-to .text .heading {
-    font-weight: bold;
-    text-transform: uppercase;
-    padding-bottom: 3px;
+    font-weight: 500;
+    font-size: 23px;
+    line-height: 1.4em;
+    padding-bottom: 14px;
   }
-  @media (min-width: 600px) {
+  #how-to .text .description {
+    color: #606475;
+    font-size: 16px;
+  }
+  @media (min-width: 1320px) {
+    #how-to {
+      width: 1190px;
+    }
     #how-to .steps {
       flex-direction: row;
       justify-content: space-around;
@@ -910,38 +967,41 @@
 
 
   <div id="how-to">
-    <h2>Smart Contracts work anywhere</h2>
+    <div class="how-to-left">
+      <h2>Smart contracts that work anywhere</h2>
+      <div class="caption">
+        Creating, editing, and managing smart contracts is easy with an open source file format and desktop app usable by all.
+      </div>
+    </div>
     <div class="steps">
       <div class="step">
-        <div class="image">
-          <img src="_public/homepage/how-to/install.png" />
-        </div>
         <div class="text">
-          <div class="heading">Install</div>
+          <div class="numbered-step"><div class="dot"></div> 1 | INSTALL</div>
+          <div class="heading">Install or embed the DotContract toolkit</div>
           <div class="description">
-            Install or embed the DotContract toolkit
+            Install Explorer, a desktop application that lets you work with DotContract smart contracts with ease.
+            Developers may also access DotContracts using the DotContract CLI and libraries.
           </div>
         </div>
       </div>
       <div class="step">
-        <div class="image">
-          <img src="_public/homepage/how-to/write.png" />
-        </div>
         <div class="text">
-          <div class="heading">Write</div>
+          <div class="numbered-step"><div class="dot"></div> 2 | CREATE</div>
+          <div class="heading">Create, update, review, and sign DotContracts
+          </div>
           <div class="description">
-            Build, update, review, and sign DotContracts
+            Create a contract using Modality, a smart contract specification language, update rules with Modality, 
+            and sign using digital signing or cryptographic signing.          
           </div>
         </div>
       </div>
       <div class="step">
-        <div class="image">
-          <img src="_public/homepage/how-to/share.png" />
-        </div>
         <div class="text">
-          <div class="heading">Share</div>
+          <div class="numbered-step"><div class="dot"></div> 3 | SHARE</div>
+          <div class="heading">Share DotContracts as files via email or push to an Origin repo</div>
           <div class="description">
-            Share as email attachments or push changes to a DotContract repo
+            Share contracts easily via email with the .contract file format. Since each contract is a db or individual repo, 
+            DotContracts can be shared anywhere easily without losing history, revisions, and preserving rights and obligations. 
           </div>
         </div>
       </div>
