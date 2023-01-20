@@ -13,7 +13,6 @@
   h2 {
     font-family: "Hepta Slab", "Sanchez", "Open Sans", sans-serif;
     font-size: 30px;
-    padding-bottom: 40px;
     line-height: 1.4em;
   }
   h2.center {
@@ -63,11 +62,11 @@
     display: none;
   }
   #hero .explanation {
-    max-width: 95%;
+    max-width: 90%;
     margin-top: 25px;
     margin-bottom: 35px;
-    font-size: 17px;
-    line-height: 1.6em;
+    font-size: 16px;
+    line-height: 1.4em;
   }
   #hero .cta {
     display: flex;
@@ -102,10 +101,10 @@
       font-weight: 500;
     }
     #hero .explanation {
-      font-size: 17px;
-      max-width: 95%;
+      font-size: 16px;
+      max-width: 90%;
       width: 540px;
-      line-height: 1.7em;
+      line-height: 1.4em;
     }
     #hero .cta {
       flex-direction: row;
@@ -403,7 +402,7 @@
   #dev-features .feature .heading {
     text-align: left;
     padding-bottom: 20px;
-    font-size: 22px;
+    font-size: 20px;
   }
   #dev-features .feature .description {
     opacity: .6;
@@ -413,7 +412,6 @@
   #dev-features {
     background: rgb(31, 35, 52);
     color: white;
-    padding: 20px;
     padding-top: 80px;
     padding-bottom: 80px;
     position: relative;
@@ -430,7 +428,7 @@
       max-width: 520px;
       box-sizing: border-box;
       line-height: 1.5em;
-      font-size: 16px;
+      font-size: 15px;
     }
     #dev-features .feature .heading {
       text-align: center;
@@ -462,12 +460,13 @@
     background: rgb(31, 35, 52);
     color: white;
     padding: 20px;
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-bottom: 100px;
     position: relative;
   }
   #made-for-developers h2{
     text-align: center;
+    max-width: 90%;
+    margin: 0 auto;
   }
   #made-for-developers .examples-and-terminal {
     margin: 0 auto;
@@ -480,8 +479,8 @@
   }
   #made-for-developers .sidebar .title {
     text-align: center;
-    font-weight: 500;
-    font-size: 24px;
+    font-weight: 400;
+    font-size: 20px;
     padding-bottom: 12px;
     font-family: "Hepta Slab", sans-serif;
     margin-left: 10px;
@@ -502,12 +501,12 @@
   #made-for-developers .terminal {
     border-radius: 8px;
     background: #2d3040;
+    box-shadow: 0 5px 12px rgb(0 0 0 / 20%);
     color: #9698a0;
     font-family: "Roboto Mono", monospace;
-    font-size: 20px;
     padding: 1px;
     padding: 10px;
-    font-size: 12px;
+    font-size: 16px;
     margin-bottom: 10px;
   }
   #made-for-developers .terminal .terminal-example {
@@ -520,8 +519,8 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border-bottom: 1px solid #9698a0;
-    font-weight: 800;
+    border-bottom: 1px solid #3e4354;
+    font-weight: 500;
     color: white;
     padding-bottom: 8px;
     margin-bottom: 8px;
@@ -553,8 +552,8 @@
   
   @media (min-width: 960px) {
     #made-for-developers .examples-and-terminal {
-      width: 1280px;
-      max-width: 100%;
+      width: 1200px;
+      max-width: 98%;
       flex-direction: row;
       padding-bottom: 60px;
     }
@@ -569,8 +568,8 @@
     }
     #made-for-developers .sidebar .title {
       text-align: center;
-      font-weight: 500;
-      font-size: 24px;
+      font-weight: 400;
+      font-size: 20px;
       padding-bottom: 12px;
       font-family: "Hepta Slab", sans-serif;
       text-align: left;
@@ -585,13 +584,12 @@
       display: block;
     }
     #made-for-developers .example {
-      border: 1px solid #4d4d50;
+      border: 1px solid #3f4042;
       border-right: none;
       border-bottom: none;
-      padding: 18px 12px;
-      color: rgb(240, 240, 240);
+      padding: 19px 12px;
       cursor: pointer;
-      font-size: 16px;
+      font-size: 15px;
     }
 
     #made-for-developers .example.active {
@@ -601,12 +599,19 @@
     }
     #made-for-developers .example::before {
       display: inline-block;
-      content: "⬦";
-      margin-right: 10px;
+      content: " ";
+      margin-left: 5px;
+      margin-right: 15px;
       color: #00ca88;
+      border: 1px solid #00ca88;
+      width: 8px;
+      height: 8px;
+      rotate: -45deg;
+      background: transparent;
     }
     #made-for-developers .example.active::before {
-      content: "⬥";
+      background: #00ca88;
+      box-shadow: 0 0 10px 1px;
     }
     #made-for-developers .example:first-of-type {
       border-top-left-radius: 4px;
@@ -620,7 +625,7 @@
       background: #2d3040;
       color: #9698a0;
       font-family: "Roboto Mono", monospace;
-      font-size: 20px;
+      font-size: 16px;
       padding: 0px;
       width: 900px;
       flex-grow: 1;
@@ -637,8 +642,8 @@
       padding: 18px 24px;
     }
     #made-for-developers .terminal .bod {
-      font-size: 18px;
-      padding: 18px 24px;
+      font-size: 16px;
+      padding: 20px 5px;
     }
     #dev-features .features {
       display: flex;
@@ -787,11 +792,11 @@
     </div>
   </div>
   <div id="made-for-developers"> 
-      <h2>Made for Developers</h2>
+      <h2>Made for developers</h2>
       <!-- <h2>Validated and changeable with consensus, no blockchain required.</h2> -->
       <div class="examples-and-terminal">
         <div class="sidebar">
-          <div class="title">Engineer a Contract</div>
+          <div class="title">Build a Contract</div>
           <select class="examples-selector">
             <option value="create-or-clone" class="example">
               Create or Clone a DotContract
@@ -905,7 +910,7 @@
 
 
   <div id="how-to">
-    <h2>Smart Contracts that Work Anywhere</h2>
+    <h2>Smart Contracts work anywhere</h2>
     <div class="steps">
       <div class="step">
         <div class="image">
