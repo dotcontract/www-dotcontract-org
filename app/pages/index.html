@@ -303,6 +303,7 @@
     float: left;
     width: 590px;
     max-width: 90%;
+    padding-bottom: 50px;
   }
   #how-to .how-to-left h2 {
     text-align: left;
@@ -310,6 +311,7 @@
     margin: 0 auto;
     font-size: 45px;
     padding-bottom: 20px;
+    line-height: 1.2em;
   }
   #how-to .how-to-left .caption {
     font-size: 16px;
@@ -377,6 +379,12 @@
   @media (min-width: 1320px) {
     #how-to {
       width: 1190px;
+      display: flex;
+    }
+    #how-to .how-to-left {
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
     }
     #how-to .steps {
       flex-direction: row;
