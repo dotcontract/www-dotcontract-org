@@ -259,7 +259,7 @@
   @media (min-width: 960px) {
     #big-use-cases .use-case {
       margin: 40px;
-    }
+    } 
     #big-use-cases .use-cases {
       color: #071d2a;
       flex-wrap: wrap;
@@ -339,7 +339,7 @@
     color: #00ca88;
     font-weight: 700;
     font-size: 12px;
-    letter-spacing: 0.15em;
+    letter-spacing: .15em;
     line-height: 3.5em;
   }
   #how-to .text .numbered-step .dot {
@@ -347,17 +347,17 @@
     left: -36px;
     margin-top: 16px;
     display: inline-block;
-    content: " ";
-    margin-left: 5px;
-    margin-right: 15px;
-    color: #00ca88;
-    border: 1px solid #00ca88;
-    width: 10px;
-    height: 10px;
-    rotate: -45deg;
-    background: transparent;
-    background: #00ca88;
-    box-shadow: 0 0 10px 1px;
+      content: " ";
+      margin-left: 5px;
+      margin-right: 15px;
+      color: #00ca88;
+      border: 1px solid #00ca88;
+      width: 10px;
+      height: 10px;
+      rotate: -45deg;
+      background: transparent;
+      background: #00ca88;
+      box-shadow: 0 0 10px 1px;
   }
   #how-to .text .heading {
     font-weight: 500;
@@ -432,7 +432,7 @@
     font-size: 20px;
   }
   #dev-features .feature .description {
-    opacity: 0.6;
+    opacity: .6;
     font-size: 16px;
     line-height: 1.4em;
   }
@@ -474,13 +474,14 @@
     }
     #dev-features .feature.n01,
     #dev-features .feature.n03 {
-      justify-content: flex-end;
+      justify-content: flex-end
     }
     #dev-features .feature.n02,
     #dev-features .feature.n04 {
       justify-content: flex-start;
     }
   }
+
 
   #made-for-developers {
     background: rgb(31, 35, 52);
@@ -489,7 +490,7 @@
     padding-bottom: 100px;
     position: relative;
   }
-  #made-for-developers h2 {
+  #made-for-developers h2{
     text-align: center;
     max-width: 90%;
     margin: 0 auto;
@@ -576,7 +577,7 @@
   #made-for-developers .terminal .bod span.red {
     color: #f92572;
   }
-
+  
   @media (min-width: 960px) {
     #made-for-developers .examples-and-terminal {
       width: 1200px;
@@ -699,7 +700,7 @@
     }
   }
 
-  #final-cta {
+  #final-cta  {
     position: relative;
     width: 100vw;
   }
@@ -719,12 +720,14 @@
     flex-direction: column;
   }
   @media (min-width: 1050px) {
+    #final-cta .content {
+      display: flex;
+      align-items: center;
+    }
     #final-cta .final-cta-left {
-      float: left;
+      flex-basis: 590px;
     }
     #final-cta .final-cta-right {
-      float: right;
-      display: inline-block;
     }
   }
   #final-cta .final-cta-left .cta {
@@ -776,8 +779,7 @@
       <span>
         March 3, 2023 <br class="mobile-only" />
         <span class="not-mobile">|</span>
-        Join us at Modality Conf 1 in New York City</span
-      >
+        Join us at Modality Conf 1 in New York City</span>
       <br class="mobile-only" />
       <a class="cta" href="mailto:hello@dotcontract.xyz">RSVP ›</a>
     </div>
@@ -795,8 +797,8 @@
       </h1>
       <div class="explanation">
         DotContract is an open-source smart contract standard for the
-        specification, management, and automation of evolving contractual rights
-        and obligations through consensus.
+        specification, management, and automation of evolving contractual rights and obligations
+        through consensus.
         <!-- and obligations for robust enterprise and consumer use across
         industries. -->
       </div>
@@ -813,114 +815,97 @@
     <div class="features">
       <div class="feature n01">
         <div class="content">
-          <div class="image"><img src="_public/homepage/evolvable.png" /></div>
-          <div class="heading">Evolvable Smart Contracts</div>
-          <div class="description">
-            DotContracts start off blank, and by adding rules in the form of
-            formally specified rights and obligations, can be evolved into any
-            needed multi-party dynamic.
-          </div>
+        <div class="image"><img src="_public/homepage/evolvable.png"></div>
+        <div class="heading">Evolvable Smart Contracts</div>
+        <div class="description">
+          DotContracts start off blank, and by adding rules in the form of
+          formally specified rights and obligations, can be evolved into any
+          needed multi-party dynamic.
+        </div>
         </div>
       </div>
       <div class="feature n02">
         <div class="content">
-          <div class="image"><img src="_public/homepage/shareable.png" /></div>
-          <div class="heading">Shareable Data Repos</div>
-          <div class="description">
-            DotContracts act as stand alone data repositories covering the full
-            lifecycle of an agreement. Share a .contract file as easily as a
-            .zip file to let others interact with it as a data repo.
-          </div>
+        <div class="image"><img src="_public/homepage/shareable.png"></div>
+        <div class="heading">Shareable Data Repos</div>
+        <div class="description">
+          DotContracts act as stand alone data repositories covering the full
+          lifecycle of an agreement. Share a .contract file as easily as a .zip
+          file to let others interact with it as a data repo.
+        </div>
         </div>
       </div>
       <div class="feature n03">
         <div class="content">
-          <div class="image">
-            <img src="_public/homepage/formally-verified.png" />
-          </div>
-          <div class="heading">Formal Verification and Analysis</div>
-          <div class="description">
-            Unlike programming language based smart contracts, which are too
-            complex for formal analysis, DotContracts are written in a
-            specification language that lets you fully model and analyze all
-            possible outcomes.
-          </div>
+        <div class="image"><img src="_public/homepage/formally-verified.png"></div>
+        <div class="heading">Formal Verification and Analysis</div>
+        <div class="description">
+          Unlike programming language based smart contracts, which are too
+          complex for formal analysis, DotContracts are written in a
+          specification language that lets you fully model and
+          analyze all possible outcomes.
+        </div>
         </div>
       </div>
       <div class="feature n04">
         <div class="content">
-          <div class="image"><img src="_public/homepage/hostable.png" /></div>
-          <div class="heading">Hostable on Secure Networks</div>
-          <div class="description">
-            DotContracts can be optionally hosted on your own secure network,
-            enabling them to share state and common data feed values though
-            network synchronized message passing.
-          </div>
+        <div class="image"><img src="_public/homepage/hostable.png"></div>
+        <div class="heading">Hostable on Secure Networks</div>
+        <div class="description">
+          DotContracts can be optionally hosted on your own secure network,
+          enabling them to share state and common data feed values though
+          network synchronized message passing.
+        </div>
         </div>
       </div>
     </div>
   </div>
 
+
+
   <div id="how-to">
     <background-curve right above fill="#fff"></background-curve>
     <div class="content">
-      <div class="how-to-left">
-        <h2>Smart contracts that work anywhere</h2>
-        <div class="caption">
-          Creating, editing, and managing smart contracts is easy with an open
-          source file format and desktop app usable by all.
-        </div>
+
+    <div class="how-to-left">
+      <h2>Smart contracts that work anywhere</h2>
+      <div class="caption">
+        Creating, editing, and managing smart contracts is easy with an open source file format and desktop app usable by all.
       </div>
-      <div class="steps">
-        <div class="step">
-          <div class="text">
-            <div class="numbered-step">
-              <div class="dot"></div>
-              1 | INSTALL
-            </div>
-            <div class="heading">Install or embed the DotContract toolkit</div>
-            <div class="description">
-              Install Explorer, a desktop application that lets you work with
-              DotContract smart contracts with ease. Developers can also access
-              DotContracts using the DotContract CLI and libraries.
-            </div>
-          </div>
-        </div>
-        <div class="step">
-          <div class="text">
-            <div class="numbered-step">
-              <div class="dot"></div>
-              2 | CREATE
-            </div>
-            <div class="heading">
-              Create, update, review, and sign DotContracts
-            </div>
-            <div class="description">
-              Create a DotContract and then use <u>Modality</u>, a smart
-              contract specification language, to add and revise rules. Agree to
-              changes and take actions by cryptographically signing commits.
-            </div>
-          </div>
-        </div>
-        <div class="step">
-          <div class="text">
-            <div class="numbered-step">
-              <div class="dot"></div>
-              3 | SHARE
-            </div>
-            <div class="heading">
-              Share DotContracts as files or push changes to them as hosted
-              repos
-            </div>
-            <div class="description">
-              Share contracts easily via email with the .contract file format.
-              Since each contract acts as a standalone database or repo,
-              DotContracts can be shared anywhere easily without losing history,
-              revisions, and preserving rights and obligations.
-            </div>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="text">
+          <div class="numbered-step"><div class="dot"></div> 1 | INSTALL</div>
+          <div class="heading">Install or embed the DotContract toolkit</div>
+          <div class="description">
+            Install Explorer, a desktop application that lets you work with DotContract smart contracts with ease.
+            Developers can also access DotContracts using the DotContract CLI and libraries.
           </div>
         </div>
       </div>
+      <div class="step">
+        <div class="text">
+          <div class="numbered-step"><div class="dot"></div> 2 | CREATE</div>
+          <div class="heading">Create, update, review, and sign DotContracts
+          </div>
+          <div class="description">
+            Create a DotContract and then use <u>Modality</u>, a smart contract specification language, to add and revise rules. 
+            Agree to changes and take actions by cryptographically signing commits.
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="text">
+          <div class="numbered-step"><div class="dot"></div> 3 | SHARE</div>
+          <div class="heading">Share DotContracts as files or push changes to them as hosted repos</div>
+          <div class="description">
+            Share contracts easily via email with the .contract file format. Since each contract acts as a standalone database or repo, 
+            DotContracts can be shared anywhere easily without losing history, revisions, and preserving rights and obligations. 
+          </div>
+        </div>
+      </div>
+    </div>
     </div>
   </div>
 
@@ -1019,31 +1004,26 @@
   <div id="final-cta">
     <background-curve left above fill="#fff"></background-curve>
     <div class="content">
-      <div class="final-cta-left">
-        <div class="cta">
-          We're building the most robust open-source standard for digital
-          consensus
-        </div>
-        <div class="caption">
-          with the mission to unlock the power of smart contracts without
-          blockchains for everyone.
-        </div>
+    <div class="final-cta-left">
+      <div class="cta">
+        We're building the most robust open-source standard for digital consensus
       </div>
-      <div class="final-cta-right">
-        <div class="community">
-          Join our community
-          <br />
-          <a
-            href="https://github.com/dotcontract/DotContract-Community/discussions"
-            >GitHub</a
-          >
-        </div>
-        <div class="email">
-          Email to learn more and build with us
-          <br />
-          <a href="mailto:hello@dotcontract.xyz">hello@dotcontact.xyz</a>
-        </div>
+      <div class="caption">
+        with the mission to unlock the power of smart contracts without blockchains for everyone.
       </div>
+    </div>
+    <div class="final-cta-right">
+      <div class="community">
+        Join our community
+        <br />
+        <a href="https://github.com/dotcontract/DotContract-Community/discussions">GitHub</a>
+      </div>
+      <div class="email">
+        Email to learn more and build with us
+        <br />
+        <a href="mailto:hello@dotcontract.xyz">hello@dotcontact.xyz</a>
+      </div>
+    </div>
     </div>
   </div>
 </main>
