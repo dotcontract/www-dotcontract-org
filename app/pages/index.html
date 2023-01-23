@@ -25,6 +25,53 @@
       text-align: center;
     }
   }
+  #fixed-banner {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: #59c58d;
+    color: white;
+    padding: 18px 10px;
+    text-align: center;
+  }
+  #fixed-banner .content {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+  }
+  #fixed-banner .content {
+    line-height: 1.6em;
+  }
+  #fixed-banner .content a {
+    color: #59c58d;
+    background: white;
+    padding: 6px 16px;
+    margin-left: 10px;
+    border-radius: 16px;
+    font-size: 14px;
+  }
+  #fixed-banner .not-mobile {
+    display: none;
+  }
+  #fixed-banner .content a {
+    display: inline-block;
+    margin-top: 10px;
+  }
+  @media (min-width: 600px) {
+    #fixed-banner .not-mobile {
+      display: inherit;
+    }
+    #fixed-banner .content {
+      line-height: 1.2em;
+    }
+    #fixed-banner .content br.mobile-only {
+      display: none;
+    }
+    #fixed-banner .content a {
+      display: inline-block;
+      margin-top: 0px;
+    }
+  }
   #hero {
     position: relative;
   }
@@ -725,6 +772,16 @@
   }
 </style>
 <main>
+  <div id="fixed-banner">
+    <div class="content">
+      <span>
+        March 3, 2023 <br class="mobile-only" />
+        <span class="not-mobile">|</span>
+        Join us at Modality Conf 1 in New York City</span>
+      <br class="mobile-only" />
+      <a class="cta" href="mailto:hello@dotcontract.xyz">RSVP ›</a>
+    </div>
+  </div>
   <public-top-nav></public-top-nav>
   <div id="hero">
     <div class="bg"><img src="/_public/homepage/hero-img.svg" /></div>
@@ -879,6 +936,7 @@
   <span class="bold green">POST  </span>  <span class="blue">/docs/Operating Agreement.docx</span>, <span class="purple">attach:/docs/Operating Agreement.docx</span>
   <span class="bold green">SIGNED</span>  <span class="blue">@party_a</span>
   <span class="bold green">SIGNED</span>  <span class="blue">@party_b</span>
+  </pre>
           </div>
           <div data-ex="validate-commits" class="terminal-example">
             <div class="header">
