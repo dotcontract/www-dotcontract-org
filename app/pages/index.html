@@ -134,38 +134,6 @@
     position: relative;
     text-align: center;
   }
-  #big-use-cases .before-curve {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    margin-top: calc(-100px + 1px);
-    top: 0;
-    right: -20px;
-  }
-  #big-use-cases .before-curve svg {
-    height: 100%;
-    width: 100%;
-  }
-  #big-use-cases .before-curve svg path {
-    fill: #202334;
-  }
-
-  #big-use-cases .after-curve {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    top: 0px;
-    left: -20px;
-    margin-top: -1px;
-  }
-  #big-use-cases .after-curve svg {
-    height: 100%;
-    width: 100%;
-  }
-  #big-use-cases .after-curve svg path {
-    fill: #fff;
-  }
-
   #big-use-cases h2 {
     display: inline-block;
     text-align: center;
@@ -244,29 +212,7 @@
   @media (min-width: 960px) {
     #big-use-cases .use-case {
       margin: 40px;
-    }
-    #big-use-cases .before-curve {
-      position: absolute;
-      width: 150px;
-      height: 150px;
-      margin-top: calc(-150px + 1px);
-    }
-    #big-use-cases .after-curve {
-      position: absolute;
-      width: 150px;
-      height: 150px;
-    }
-    #big-use-cases .before-second-curve {
-      position: absolute;
-      width: 150px;
-      height: 150px;
-    }
-    #big-use-cases .after-second-curve {
-      position: absolute;
-      width: 150px;
-      height: 150px;
-      margin-top: calc(150px+ 1px);
-    }
+    } 
     #big-use-cases .use-cases {
       color: #071d2a;
       flex-wrap: wrap;
@@ -287,9 +233,10 @@
 
   /* #how-to */
   #how-to {
-    width: 550px;
+    position: relative;
+    width: 100%;
   }
-  #how-to {
+  #how-to .content {
     width: 550px;
     max-width: 90%;
     margin: 0 auto;
@@ -376,7 +323,7 @@
     font-size: 16px;
   }
   @media (min-width: 1320px) {
-    #how-to {
+    #how-to .content {
       width: 1190px;
       display: flex;
     }
@@ -405,37 +352,6 @@
     margin: 0 auto;
   }
 
-  #dev-features .before-second-curve {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    margin-top: calc(-100px + 1px);
-    left: -20px;
-    top: 0;
-  }
-  #dev-features .before-second-curve svg {
-    height: 100%;
-    width: 100%;
-  }
-  #dev-features .before-second-curve svg path {
-    fill: #202334;
-  }
-
-  #dev-features .after-second-curve {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    top: 0px;
-    top: 0;
-    right: -25px;
-  }
-  #dev-features .after-second-curve svg {
-    height: 100%;
-    width: 100%;
-  }
-  #dev-features .after-second-curve svg path {
-    fill: #fff;
-  }
   #dev-features .features {
     display: flex;
     flex-direction: row;
@@ -736,7 +652,11 @@
     }
   }
 
-  #final-cta {
+  #final-cta  {
+    position: relative;
+    width: 100vw;
+  }
+  #final-cta .content {
     max-width: 1190px;
     width: 90%;
     margin: 0 auto;
@@ -829,16 +749,8 @@
     </div>
   </div>
   <div id="dev-features">
-    <div class="before-second-curve">
-      <svg viewBox="0 0 100 100" width="100" height="100">
-        <path
-          d="M 100 100
-              S 0 100 0 0
-              L 0 100 0 100 100 100 
-              z"
-        />
-      </svg>
-    </div>
+    <background-curve right above fill="#202334"></background-curve>
+    <background-curve left below fill="#fff"></background-curve>
     <h2>Expressive, provable, and secure</h2>
     <div class="features">
       <div class="feature n01">
@@ -886,16 +798,6 @@
         </div>
         </div>
       </div>
-    </div>
-    <div class="after-second-curve">
-      <svg viewBox="0 0 100 100" width="100" height="100">
-        <path
-          d="M 0 0
-          S 100 0 100 100
-          L 100 0
-          z"
-        />
-      </svg>
     </div>
   </div>
   <div id="made-for-developers"> 
@@ -1017,6 +919,9 @@
 
 
   <div id="how-to">
+    <background-curve right above fill="#fff"></background-curve>
+    <div class="content">
+
     <div class="how-to-left">
       <h2>Smart contracts that work anywhere</h2>
       <div class="caption">
@@ -1056,29 +961,12 @@
         </div>
       </div>
     </div>
+    </div>
   </div>
 
   <div id="big-use-cases">
-    <div class="before-curve">
-      <svg viewBox="0 0 100 100" width="100" height="100">
-        <path
-          d="M 0 100
-               S 100 100 100 0
-               L 100 100 
-               z"
-        />
-      </svg>
-    </div>
-    <div class="after-curve">
-      <svg viewBox="0 0 100 100" width="100" height="100">
-        <path
-          d="M 100 0
-          S 0 0 0 100
-          L 0 0 
-          z"
-        />
-      </svg>
-    </div>
+    <background-curve right below fill="#fff"></background-curve>
+    <background-curve left above fill="#202334"></background-curve>
     <h2>Powering use cases across industries</h2>
     <div class="use-cases">
       <div class="use-case">
@@ -1169,6 +1057,8 @@
   </div> -->
 
   <div id="final-cta">
+    <background-curve left above fill="#fff"></background-curve>
+    <div class="content">
     <div class="final-cta-left">
       <div class="cta">
         We're building the most robust open-source standard for digital consensus
@@ -1188,6 +1078,7 @@
         </br>
         <a href="mailto:hello@dotcontract.xyz">hello@dotcontact.xyz</a>
       </div>
+    </div>
     </div>
   </div>
 </main>
