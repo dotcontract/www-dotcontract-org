@@ -56,7 +56,7 @@ export default function PublicTopNav({ html, state }) {
       <div class="right">
         <a class="link" href="/"><!--Products--></a>
         <a class="link" href="/"><!--Documentation--></a>
-        <a class="link get-started" href="/">View GitHub</a>
+        <a class="link get-started" href="https://github.com/dotcontract">View GitHub</a>
       </div>
     </header>
   `;
