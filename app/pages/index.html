@@ -670,7 +670,7 @@
     }
     #made-for-developers .terminal .bod {
       font-size: 16px;
-      padding: 20px 5px;
+      padding: 20px;
     }
     #dev-features .features {
       display: flex;
@@ -781,7 +781,11 @@
         Join us at Modality Conf 1 in New York City</span
       >
       <br class="mobile-only" />
-      <a class="cta" href="https://www.eventbrite.com/e/modality-conf-1-tickets-523097668207">RSVP ›</a>
+      <a
+        class="cta"
+        href="https://www.eventbrite.com/e/modality-conf-1-tickets-523097668207"
+        >RSVP ›</a
+      >
     </div>
   </div>
   <public-top-nav></public-top-nav>
@@ -803,7 +807,9 @@
         industries. -->
       </div>
       <div class="cta">
-        <a class="get-started" href="https://github.com/dotcontract">View GitHub</a>
+        <a class="get-started" href="https://github.com/dotcontract"
+          >View GitHub</a
+        >
         <a href="mailto:hello@dotcontract.xyz" _href="/contact">Contact us →</a>
       </div>
     </div>
@@ -858,6 +864,126 @@
             enabling them to share state and common data feed values though
             network synchronized message passing.
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="made-for-developers">
+    <h2>Made for developers</h2>
+    <!-- <h2>Validated and changeable with consensus, no blockchain required.</h2> -->
+    <div class="examples-and-terminal">
+      <div class="sidebar">
+        <div class="title">Build a Contract</div>
+        <select class="examples-selector">
+          <option value="create-or-clone" class="example">
+            Create or Clone a DotContract
+          </option>
+          <option value="commit-history" class="example active" selected>
+            Read Commit History
+          </option>
+          <option value="empty" class="example">Start a Draft</option>
+          <option value="empty" class="example">Add Rules in Modality</option>
+          <option value="empty" class="example">
+            Sign &amp; Commit a Draft
+          </option>
+          <option value="validate-commits" class="example">
+            Validate Commits
+          </option>
+          <option value="empty" class="example">Simulate Usage</option>
+          <option value="empty" class="example">
+            Pull &amp; Push a Hosted DotContract
+          </option>
+        </select>
+        <div class="examples">
+          <div data-ex="create-or-clone" class="example">
+            Create or Clone a DotContract
+          </div>
+          <div data-ex="commit-history" class="example active">
+            Read Commit History
+          </div>
+          <div data-ex="empty" class="example">Start a Draft</div>
+          <div data-ex="empty" class="example">Add Rules in Modality</div>
+          <div data-ex="empty" class="example">Sign &amp; Commit a Draft</div>
+          <div data-ex="validate-commits" class="example">Validate Commits</div>
+          <div data-ex="empty" class="example">Simulate Usage</div>
+          <div data-ex="empty" class="example">
+            Pull &amp; Push a Hosted DotContract
+          </div>
+        </div>
+      </div>
+      <div class="terminal">
+        <div data-ex="empty" class="terminal-example">
+          <div class="header">
+            <div class="left">dotcontract-cli</div>
+            <div class="right">&lt;/&gt;</div>
+          </div>
+        </div>
+        <div data-ex="create-or-clone" class="terminal-example">
+          <div class="header">
+            <div class="left">dotcontract-cli</div>
+            <div class="right">&lt;/&gt;</div>
+          </div>
+        </div>
+        <div data-ex="commit-history" class="terminal-example active">
+          <div class="header">
+            <div class="left">dotc log</div>
+            <div class="right">sh</div>
+          </div>
+          <pre class="bod">
+<span class="bold">% dotc log example-partnership.contract</span>
+
+<span class="bold"># DotContract b45a777ffe355419b7d9a7859355818fe115a3d1</span>
+Name: Example Business Partnership
+Sort: Oldest to Newest
+
+<span class="bold">## Commit d4033751307f9ebbc36f11e3988c98d335746101</span>
+<span class="bold green">DEFINE</span>  <span class="blue">@party_a</span>, <span class="purple">crypto:/ed25519-pub/12D...</span>
+<span class="bold green">DEFINE</span>  <span class="blue">@party_b</span>, <span class="purple">crypto:/ed25519-pub/12D...</span>
+<span class="bold green">RULE</span>    <span class="blue">/</span>, henceforth_must( signed_by( one_of( <span class="blue">@party_a</span>, <span class="blue">@party_b</span> ) ) )
+
+<span class="bold">## Commit b45a777ffe355419b7d9a7859355818fe115a3d1</span>
+<span class="bold green">DEFINE</span>  <span class="blue">/docs</span>, FileDirectory
+<span class="bold green">RULE</span>    <span class="blue">/docs</span>, henceforth_must( signed_by( all_of( <span class="blue">@party_a</span>, <span class="blue">@party_b</span> ) ) )
+<span class="bold green">SIGNED</span>  <span class="blue">@party_a</span>
+
+<span class="bold">## Commit 433cd4320dba0db724af8f9c85b42f67679113f8</span>
+<span class="bold green">POST  </span>  <span class="blue">/docs/Operating Agreement.docx</span>, <span class="purple">attach:/docs/Operating Agreement.docx</span>
+<span class="bold green">SIGNED</span>  <span class="blue">@party_a</span>
+<span class="bold green">SIGNED</span>  <span class="blue">@party_b</span>
+</pre>
+        </div>
+        <div data-ex="validate-commits" class="terminal-example">
+          <div class="header">
+            <div class="left">dotc commit</div>
+            <div class="right">sh</div>
+          </div>
+          <pre class="bod">
+<span class="bold">% dotc commit << EOF
+POST /rate, 7.750
+EOF</span>
+
+<span class="bold red"># Error</span>
+<span class="blue">/rate</span> change must be signed by <span class="bold blue">@admin</span>
+
+<span class="bold">% dotc commit --sign-as admin.key << EOF
+POST /rate, 7.750
+EOF</span>
+
+<span class="bold red"># Error</span>
+<span class="blue">/rate</span> must be less than or equal to 7.000 when <span class="bold blue">/credit_rating</span> is BBB
+
+<span class="bold">% dotc commit --sign-as admin.key << EOF
+POST /rate, 7.750
+POST /credit_rating, BB
+EOF</span>
+
+<span class="bold green"># Success</span>
+<span class="bold">## Commit 349c3708cf3e4d568590bb86e8e9cc8ff35bee81</span>
+<span class="bold green">POST</span>    <span class="bold blue">/rate</span>, 7.750
+<span class="bold green">POST</span>    <span class="bold blue">/credit_rating</span>, BB
+<span class="bold green ">SIGNED</span>  <span class="bold blue">@admin</span>
+          </pre>
         </div>
       </div>
     </div>
@@ -966,8 +1092,8 @@
           </div>
           <div class="heading">Complex compliance automation</div>
           <div class="description">
-            Model and automate complex compliance checks with a robust
-            and reliable contract specification language.
+            Model and automate complex compliance checks with a robust and
+            reliable contract specification language.
           </div>
         </div>
       </div>
@@ -988,10 +1114,13 @@
           <div class="image">
             <img src="/_public/homepage/digital-assets.png" />
           </div>
-          <div class="heading">Extend Digital Contracts into Custodial Assets</div>
+          <div class="heading">
+            Extend Digital Contracts into Custodial Assets
+          </div>
           <div class="description">
-           Easy to follow, semantic code that's maintainable by record keepers and 
-           custodians. Portable files make it simple to share with analysts and investors. 
+            Easy to follow, semantic code that's maintainable by record keepers
+            and custodians. Portable files make it simple to share with analysts
+            and investors.
           </div>
         </div>
       </div>
@@ -1007,7 +1136,9 @@
         </div>
       </div>
     </div>
-    <a class="get-started" href="mailto:hello@dotcontract.xyz" _href="/contact">Contact us</a>
+    <a class="get-started" href="mailto:hello@dotcontract.xyz" _href="/contact"
+      >Contact us</a
+    >
   </div>
 
   <!-- <div id="made-for-everyone">
