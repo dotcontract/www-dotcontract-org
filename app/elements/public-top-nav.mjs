@@ -51,7 +51,7 @@ export default function PublicTopNav({ html, state }) {
     </style>
     <header class="public-top-nav">
       <div class="left">
-        <a class="nav-logo" href="/"><img src="/_public/dotcontract-logo-color.png" alt="DotContract" /></a>
+        <a class="nav-logo" href="/"><img src="/_public/dotcontract-logo-color.svg" alt="DotContract" /></a>
       </div>
       <div class="right">
         <a class="link" href="/"><!--Products--></a>

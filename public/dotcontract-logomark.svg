@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 27.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 29 29" style="enable-background:new 0 0 29 29;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#111536;}
+	.st1{fill:#111536;}
+</style>
+<g>
+	<g>
+		<rect x="2" y="2" class="st0" width="2" height="25"/>
+		<path class="st1" d="M4.5,27.5h-2c-0.55,0-1-0.45-1-1v-24c0-0.55,0.45-1,1-1h2V27.5z M2.5,26.5h1v-24h-1V26.5z"/>
+	</g>
+	<g>
+		<rect x="25" y="2" class="st0" width="2" height="25"/>
+		<path class="st1" d="M26.5,27.5h-2v-26h2c0.55,0,1,0.45,1,1v24C27.5,27.05,27.05,27.5,26.5,27.5z M25.5,26.5h1v-24h-1V26.5z"/>
+	</g>
+	<g>
+		<rect x="13.5" y="-9.5" transform="matrix(4.456530e-11 -1 1 4.456530e-11 11.5 17.5)" class="st0" width="2" height="25"/>
+		<path class="st1" d="M27.5,4.5h-26v-2c0-0.55,0.45-1,1-1h24c0.55,0,1,0.45,1,1V4.5z M2.5,3.5h24v-1h-24V3.5z"/>
+	</g>
+	<g>
+		<rect x="13.5" y="13.5" transform="matrix(4.456530e-11 -1 1 4.456530e-11 -11.5 40.5)" class="st0" width="2" height="25"/>
+		<path class="st1" d="M26.5,27.5h-24c-0.55,0-1-0.45-1-1v-2h26v2C27.5,27.05,27.05,27.5,26.5,27.5z M2.5,26.5h24v-1h-24V26.5z"/>
+	</g>
+	<g>
+		<rect x="8" y="7.85" class="st0" width="13" height="1.9"/>
+		<g>
+			<path class="st1" d="M21.72,10.17H8.28c-0.55,0-1-0.45-1-1V8.35c0-0.55,0.45-1,1-1h12.44c0.55,0,1,0.45,1,1V10.17z"/>
+			<g>
+				<path class="st1" d="M15.94,15.94H8.28c-0.55,0-1-0.45-1-1v-0.89c0-0.55,0.45-1,1-1h6.67c0.55,0,1,0.45,1,1V15.94z"/>
+				<path class="st1" d="M9.17,21.72H8.28c-0.55,0-1-0.45-1-1v-0.89c0-0.55,0.45-1,1-1h0.89c0.55,0,1,0.45,1,1v0.89
+					C10.17,21.27,9.72,21.72,9.17,21.72z"/>
+				<path class="st1" d="M15.94,14.06v6.67c0,0.55-0.45,1-1,1h-0.89c-0.55,0-1-0.45-1-1v-7.67h1.89
+					C15.5,13.06,15.94,13.5,15.94,14.06z"/>
+			</g>
+			<path class="st1" d="M21.72,8.35v12.44c0,0.55-0.45,1-1,1h-0.82c-0.55,0-1-0.45-1-1V7.35h1.82C21.27,7.35,21.72,7.8,21.72,8.35z"
+				/>
+		</g>
+	</g>
+</g>
+</svg>
