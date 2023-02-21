@@ -927,11 +927,11 @@
         </div>
         <div data-ex="commit-history" class="terminal-example active">
           <div class="header">
-            <div class="left">dotc log</div>
+            <div class="left">contract log</div>
             <div class="right">sh</div>
           </div>
           <pre class="bod">
-<span class="bold">% dotc log example-partnership.contract</span>
+<span class="bold">% contract log example-partnership.contract</span>
 
 <span class="bold"># DotContract b45a777ffe355419b7d9a7859355818fe115a3d1</span>
 Name: Example Business Partnership
@@ -955,25 +955,25 @@ Sort: Oldest to Newest
         </div>
         <div data-ex="validate-commits" class="terminal-example">
           <div class="header">
-            <div class="left">dotc commit</div>
+            <div class="left">contract commit</div>
             <div class="right">sh</div>
           </div>
           <pre class="bod">
-<span class="bold">% dotc commit << EOF
+<span class="bold">% contract commit << EOF
 POST /rate, 7.750
 EOF</span>
 
 <span class="bold red"># Error</span>
 <span class="blue">/rate</span> change must be signed by <span class="bold blue">@admin</span>
 
-<span class="bold">% dotc commit --sign-as admin.key << EOF
+<span class="bold">% contract commit --sign-as admin.key << EOF
 POST /rate, 7.750
 EOF</span>
 
 <span class="bold red"># Error</span>
 <span class="blue">/rate</span> must be less than or equal to 7.000 when <span class="bold blue">/credit_rating</span> is BBB
 
-<span class="bold">% dotc commit --sign-as admin.key << EOF
+<span class="bold">% contract commit --sign-as admin.key << EOF
 POST /rate, 7.750
 POST /credit_rating, BB
 EOF</span>
