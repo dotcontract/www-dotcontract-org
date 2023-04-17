@@ -1,7 +1,7 @@
 export async function get() {
   return {
     json: {
-      pageTitle: 'Smart contracts without blockchains',
+      pageTitle: 'digital contract platform and standard',
     }
   }
 }
