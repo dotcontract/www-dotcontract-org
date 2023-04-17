@@ -25,7 +25,7 @@ export default function PublicTopNav({ html, state }) {
       }
       header .right {
         display: none;
-        font-size: 14px;
+        font-size: 16px;
         line-height: 1.5em;
         font-weight: 500;
       }
@@ -34,19 +34,24 @@ export default function PublicTopNav({ html, state }) {
           margin-left: 20px;
           display: flex;
           flex-grow: 1;
-          max-width: 40vw;
+          max-width: 30vw;
           justify-content: space-between;
         }
       }
       header .right a {
         padding: 8px 20px;
         color: #222;
+        font-weight: bold;
       }
       header .right a.get-started {
-        color: white;
+        display: flex;
+        justify-content: center;
         font-weight: bold;
-        background: #00ca88;
+        border: 2px solid #00ca88;
         border-radius: 20px;
+      }
+      header .right a.get-started img {
+        padding-right: 0.5em;
       }
     </style>
     <header class="public-top-nav">
@@ -54,9 +59,9 @@ export default function PublicTopNav({ html, state }) {
         <a class="nav-logo" href="/"><img src="/_public/dotcontract-logo-color.svg" alt="DotContract" /></a>
       </div>
       <div class="right">
-        <a class="link" href="/"><!--Products--></a>
-        <a class="link" href="/"><!--Documentation--></a>
-        <a class="link get-started" href="https://github.com/dotcontract">View GitHub</a>
+        <a class="link href="/solutions">Solutions</a>
+        <a class="link href="/resources">Resources</a>
+        <a class="link get-started" href="https://dotcontract.cloud"><img style="display: inline-block;" src="/_public/icons/cloud.svg" /> Cloud Login</a>
       </div>
     </header>
   `;
