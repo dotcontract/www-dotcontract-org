@@ -18,7 +18,13 @@
   h2.center {
     text-align: center;
   }
+  .desktop-only {
+    display: none;
+  }
   @media (min-width: 960px) {
+    .desktop-only {
+      display: inherit;
+    }
     h2 {
       font-size: 35px;
       padding-bottom: 40px;
@@ -147,7 +153,7 @@
       justify-content: center;
     }
     #hero .content h1 {
-      font-size: 55px;
+      font-size: 50px;
       font-weight: 500;
       line-height: 1.35em;
     }
@@ -799,7 +805,7 @@
       <h1>
         <div class="name">DotContract</div>
         <div>
-          Create, track, and share<br />
+          Create, track, and share<br class="desktop-only" />
           <span class="digital-contracts">digital contracts</span> over their
           full lifecycle
         </div>
@@ -1013,8 +1019,8 @@ EOF</span>
             <div class="heading">Install or embed the DotContract toolkit</div>
             <div class="description">
               Install Explorer, a desktop application that lets you work with
-              DotContract digital contracts with ease. Developers can also access
-              DotContracts using the DotContract CLI and libraries.
+              DotContract digital contracts with ease. Developers can also
+              access DotContracts using the DotContract CLI and libraries.
             </div>
           </div>
         </div>
