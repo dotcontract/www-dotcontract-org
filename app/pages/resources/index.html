@@ -1,0 +1,69 @@
+<style scope="global">
+  body {
+    font-family: "Inter", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    color: #071d2a;
+    padding: 0;
+    margin: 0;
+  }
+  main {
+    max-width: 100vw;
+    overflow: hidden;
+  }
+  h1 {
+    font-family: "Hepta Slab", "Sanchez", "Open Sans", sans-serif;
+    font-size: 30px;
+    line-height: 1.4em;
+    font-weight: 500;
+    padding-bottom: 20px;
+  }
+  h1.center {
+    text-align: center;
+  }
+  h2 {
+    font-family: "Hepta Slab", "Sanchez", "Open Sans", sans-serif;
+    font-size: 24px;
+    line-height: 1.4em;
+    padding-bottom: 20px;
+  }
+  h2.center {
+    text-align: center;
+  }
+  .desktop-only {
+    display: none;
+  }
+  @media (min-width: 960px) {
+    .desktop-only {
+      display: inherit;
+    }
+    h1 {
+      font-size: 50px;
+      padding-bottom: 40px;
+      text-align: center;
+    }
+    h2 {
+      font-size: 35px;
+      padding-bottom: 40px;
+    }
+  }
+  section {
+    margin: 20px auto;
+    margin-bottom: 60px;
+    max-width: calc(100vw - 40px);
+    width: 1400px;
+    text-align: left;
+  }
+  section p {
+    line-height: 1.5em;
+  }
+  section p + p {
+    margin-top: 20px;
+  }
+</style>
+<main>
+  <public-top-nav></public-top-nav>
+  <section id="h1-holder">
+    <h1>User &amp; Developer Resources</h1>
+  </section>
+  <public-bottom-footer></public-bottom-footer>
+</main>

@@ -34,6 +34,7 @@ export default function PublicTopNav({ html, state }) {
           margin-left: 20px;
           display: flex;
           flex-grow: 1;
+          min-width: 500px;
           max-width: 30vw;
           justify-content: space-between;
         }
@@ -59,8 +60,8 @@ export default function PublicTopNav({ html, state }) {
         <a class="nav-logo" href="/"><img src="/_public/dotcontract-logo-color.svg" alt="DotContract" /></a>
       </div>
       <div class="right">
-        <a class="link href="">Solutions</a>
-        <a class="link href="">Resources</a>
+        <a class="link" href="/solutions">Solutions</a>
+        <a class="link" href="/resources">Resources</a>
         <a class="link get-started" href="http://dotcontract.cloud"><img style="display: inline-block;" src="/_public/icons/cloud.svg" /> Cloud Login</a>
       </div>
     </header>
