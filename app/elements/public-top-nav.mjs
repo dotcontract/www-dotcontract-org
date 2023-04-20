@@ -53,6 +53,7 @@ export default function PublicTopNav({ html, state }) {
       }
       header .right a.get-started img {
         padding-right: 0.5em;
+        width: 24px;
       }
     </style>
     <header class="public-top-nav">
