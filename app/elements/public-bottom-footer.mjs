@@ -35,7 +35,7 @@ const styles = `<style>
   }
   #public-bottom-footer .public-bottom-footer-left .cta {
     font-family: "Hepta Slab", "Sanchez", "Open Sans", sans-serif;
-    font-size: 38px;
+    font-size: 32px;
     line-height: 1.2em;
     width: 490px;
     max-width: 90%;
@@ -50,6 +50,7 @@ const styles = `<style>
     color: #686865;
     line-height: 1.3em;
     padding-bottom: 58px;
+    -display: none;
   }
   #public-bottom-footer .public-bottom-footer-right {
     width: 590px;
@@ -84,12 +85,10 @@ export default function PublicTopNav({ html, state }) {
       <div class="content">
         <div class="public-bottom-footer-left">
           <div class="cta">
-            We're building the most robust open-source standard for digital
-            agreement
+            We're building the most robust digital contract platform and standard
           </div>
           <div class="caption">
-            with the mission to unlock the power of digital contracts for
-            everyone.
+            with a mission to unlock the power of digital contracts for everyone using formal specification and programmatic use.
           </div>
         </div>
         <div class="public-bottom-footer-right">
