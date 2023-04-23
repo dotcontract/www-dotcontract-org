@@ -1,3 +1,4 @@
+import arc from '@architect/functions';
 import { getLinkTag, getStyleTag } from "@enhance/arc-plugin-styles/get-styles";
 
 export default function Head(state) {

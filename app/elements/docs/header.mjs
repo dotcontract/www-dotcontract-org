@@ -6,20 +6,34 @@ export default function PublicTopNav({ html, state }) {
         padding: 10px 20px;
       }
       header {
+        font-family: "Inter", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        color: #071d2a;
+        padding: 0;
+        margin: 0;
         display: flex;
         width: calc(100%);
         justify-content: space-between;
-        align-items: center;
       }
       header a {
         color: #000;
         text-decoration: none;
       }
       header .left {
-        display: block;
+        display: flex;
+        align-items: center;
         margin-right: 20px;
         font-size: 30px;
         font-weight: bold;
+      }
+      header .left span {
+        font-size: 20px;
+        margin: 5px 10px;
+      }
+      header .left a {
+        font-size: 22px;
+        text-decoration: underline;
+        color: #222;
       }
       .nav-logo img {
         width: 161px;
@@ -56,14 +70,19 @@ export default function PublicTopNav({ html, state }) {
         padding-right: 0.5em;
         width: 24px;
       }
+      .invisible {
+        visibility: none;
+      }
     </style>
     <header class="public-top-nav">
       <div class="left">
         <a class="nav-logo" href="/"><img src="/_public/dotcontract-logo-color.svg" alt="DotContract" /></a>
+        <span>&gt;</span>
+        <a href="/docs">Docs</a>
       </div>
       <div class="right">
-        <a class="link" href="/solutions">Solutions</a>
-        <a class="link" href="/resources">Resources</a>
+        <a class="link invisible" href="/solutions">Solutions</a>
+        <a class="link invisible" href="/resources">Resources</a>
         <a class="link get-started" href="http://dotcontract.cloud"><img style="display: inline-block;" src="/_public/icons/cloud.svg" /> Cloud Login</a>
       </div>
     </header>
