@@ -54,6 +54,15 @@ export default function DocsNav({ html, state }) {
 
   return html`
     <style>
+      nav {
+        position: sticky;
+        display: flex;
+        flex-direction: row;
+        border-right-width: 1px;
+        border-right-style: solid;
+        border-right-color: rgba(227,232,237,1.00);
+        padding-top: 30px;
+      }
       nav > ul > li {
         margin-bottom: 2rem;
       }
@@ -67,8 +76,8 @@ export default function DocsNav({ html, state }) {
       li a {
         color: var(--rift-princess);
         padding-left: 6px;
-        padding-top: 5px;
-        padding-bottom: 5px;
+        margin-top: 5px;
+        margin-bottom: 5px;
       }
       li a:hover {
         margin-left: -3px;
@@ -81,7 +90,8 @@ export default function DocsNav({ html, state }) {
         background-color: var(--cloud-ateneo);
       }
       .category-label {
-        color: var(--purple-white);
+        font-weight: 700;
+        line-height: 1.6em;
       }
       .description {
         color: var(--inky-lily);

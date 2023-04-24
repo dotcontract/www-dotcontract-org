@@ -14,6 +14,11 @@ export default function PublicTopNav({ html, state }) {
         display: flex;
         width: calc(100%);
         justify-content: space-between;
+        padding-bottom: 20px;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: rgba(227,232,237,1.00);
+        margin-bottom: 0;
       }
       header a {
         color: #000;

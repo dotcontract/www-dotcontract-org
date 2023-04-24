@@ -8,26 +8,45 @@ const TYPE = {
 export const data = [
   {
     type: TYPE.category,
-    label: "Docs",
-    slug: "",
-    // items: [
-    //   {
-    //     type: TYPE.link,
-    //     label: "Welcome",
-    //     slug: "welcome",
-    //   },
-    // ]
+    label: "Overview",
+    path: '/docs',
+    items: [
+      {
+        type: TYPE.link,
+        label: "FAQs",
+        path: "/docs/faqs",
+      },
+    ]
   },
+
   {
     type: TYPE.category,
     label: "Get Started",
     slug: "get-started",
     items: [
-      // {
-      //   type: TYPE.link,
-      //   label: "Basics",
-      //   slug: "basics",
-      // },
+      {label: 'Windows Install', slug: 'windows-install'},
+      {label: 'MacOS Install', slug: 'macos-install'},
+      {label: 'Linux Install', slug: 'linux-install'},
+      {label: 'DotContract Cloud', slug: 'dotcontract-cloud'},
+    ]
+  },
+
+  {
+    type: TYPE.category,
+    label: "CLI",
+    slug: "cli",
+    items: [
+      {label: 'create'},
+      {label: 'commit'},
+      {label: 'query'},
+      {label: 'info'},
+      {label: 'log'},
+      {label: 'push'},
+      {label: 'pull'},
+      {label: 'pack'},
+      {label: 'unpack'},
+      {label: 'extract'},
+      {label: 'gen-keypair'},
     ]
   },
   {
@@ -49,13 +68,6 @@ export const data = [
   },
   {
     type: TYPE.category,
-    label: "CLI",
-    slug: "cli",
-    items: [
-    ]
-  },
-  {
-    type: TYPE.category,
     label: "Modality",
     slug: "modality",
     items: [
@@ -66,6 +78,16 @@ export const data = [
     label: "Concepts",
     slug: "concepts",
     items: [
+      {
+        type: TYPE.doc,
+        label: 'Temporal Modal Logic',
+        slug: 'temporal-modal-logic',
+      },
+      {
+        type: TYPE.doc,
+        label: 'Kripke Machine',
+        slug: 'kripke-machine',
+      }
     ]
   },
 ];
@@ -108,6 +130,9 @@ function parseItems(items, root, activePath) {
     } else {
       if (!item.type) {
         item.type = "doc";
+      }
+      if (item.label && !item.slug) {
+        item.slug = item.label;
       }
       if (!item.path) {
         item.path = `/${root}/${item.slug}`;

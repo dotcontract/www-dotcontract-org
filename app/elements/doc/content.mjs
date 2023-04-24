@@ -2,7 +2,7 @@ export default function DocContent({ html }) {
   return html`
     <style scope="global">
       body {
-        font-family: "Inter", sans-serif;
+        -font-family: "Inter", sans-serif;
         -webkit-font-smoothing: antialiased;
         color: #071d2a;
         padding: 0;
@@ -31,6 +31,7 @@ export default function DocContent({ html }) {
 
       :host > ::slotted([slot]) > * {
         margin-bottom: 1.5rem;
+        padding-top: 30px;
       }
 
       :host > ::slotted([slot]) > h1,

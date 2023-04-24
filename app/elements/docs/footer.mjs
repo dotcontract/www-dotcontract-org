@@ -82,31 +82,6 @@ export default function PublicTopNav({ html, state }) {
   return html`
     ${styles}
     <footer id="public-bottom-footer">
-      <div class="content">
-        <div class="public-bottom-footer-left">
-          <div class="cta">
-            We're building the most robust digital contract platform and standard
-          </div>
-          <div class="caption">
-            with a mission to unlock the power of digital contracts for everyone using formal specification and programmatic use.
-          </div>
-        </div>
-        <div class="public-bottom-footer-right">
-          <div class="community">
-            Join our community
-            <br />
-            <a
-              href="https://github.com/dotcontract/DotContract-Community/discussions"
-              >GitHub ›</a
-            >
-          </div>
-          <div class="email">
-            Email to learn more and build with us
-            <br />
-            <a href="mailto:hello@dotcontract.xyz">hello@dotcontract.xyz ›</a>
-          </div>
-        </div>
-      </div>
     </footer>
   `;
 }

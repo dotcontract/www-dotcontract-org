@@ -8,10 +8,13 @@ export default function DocsPage({ html, state }) {
       body {
         background-color: var(--white-denim);
         color: var(--rift-white);
-        font-family: rubik;
+        font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
       }
-      a {
-        color: var(--purple-princess);
+      article a {
+        text-decoration: underline;
+      }
+      article p {
+        text-align: justify;
       }
 
       /* Scrollbars */
@@ -41,7 +44,7 @@ export default function DocsPage({ html, state }) {
         grid-template-areas:
           'header'
           'content';
-        gap: 0 1rem;
+        gap: 0 0;
         height: 100vh;
       }
       #header {
@@ -68,7 +71,7 @@ export default function DocsPage({ html, state }) {
           height: 100vh;
 
           grid-template-columns: 16rem 1fr;
-          grid-template-rows: minmax(auto, 4.5rem) auto;
+          grid-template-rows: minmax(auto, 50px) auto;
           grid-template-areas:
             'header   header'
             'sidebar content'

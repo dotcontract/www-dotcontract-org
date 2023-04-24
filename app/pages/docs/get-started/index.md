@@ -1,3 +1,3 @@
 ---
-title: 'Get Started'
+title: 'Get Started with DotContract'
 ---

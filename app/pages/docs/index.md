@@ -1,3 +1,5 @@
 ---
-title: Docs
+title: DotContract Docs
 ---
+
+## Welcome!

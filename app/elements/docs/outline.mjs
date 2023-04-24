@@ -48,14 +48,16 @@ export default function DocOutline({ html, state }) {
         padding-left: 0.7rem;
       }
       li a {
-        color: var(--rift-princess);
       }
-
       nav.toc ul li {
         margin-bottom: 0.7rem;
       }
       nav.toc li > ul {
         margin-top: 0.7rem;
+      }
+      aside {
+        padding-top: 30px;
+        font-size: 14px;
       }
     </style>
 

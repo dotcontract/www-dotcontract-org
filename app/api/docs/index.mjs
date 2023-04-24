@@ -49,7 +49,7 @@ export async function get(request) {
     if (!docPath.endsWith("/index")) {
       const docPathParts = docPath.split("/");
       searchTerm = docPathParts.pop();
-      searchTerm = null; //unslug(searchTerm)
+      searchTerm = unslug(searchTerm);
     }
     const initialState = {
       doc: {
@@ -69,7 +69,7 @@ export async function get(request) {
 
   let gitHubLink =
     "https://github.com/dotcontract/www-dotcontract-xyz/edit/main/";
-  gitHubLink += `app/docs/md/${docPath}.md`;
+  gitHubLink += `app/pages/${activePath.replace(/^\//,'')}/index.md`;
 
   const initialState = {
     doc,
