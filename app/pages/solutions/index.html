@@ -12,10 +12,11 @@
   }
   h1 {
     font-family: "Hepta Slab", "Sanchez", "Open Sans", sans-serif;
-    font-size: 30px;
+    font-size: 24px;
     line-height: 1.4em;
     font-weight: 500;
     padding-bottom: 20px;
+    text-align: center;
   }
   h1.center {
     text-align: center;
@@ -31,6 +32,31 @@
   }
   .desktop-only {
     display: none;
+  }
+  #hero {
+    margin-top: 50px;
+  }
+  #hero .image {
+    margin: 0 auto;
+    width: 1000px;
+    max-width: calc(100vw - 40px);
+  }
+  #hero .things {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 15px;
+    color: #444;
+    font-weight: 600;
+    text-align: center;
+  }
+  #hero .things img {
+    width: 75px;
+    display: inline-block;
+  }
+  #hero .things .thing div {
+    padding: 10px 20px;
+    line-height: 1.4em;
   }
   @media (min-width: 960px) {
     .desktop-only {
@@ -62,9 +88,29 @@
 </style>
 <main>
   <public-top-nav></public-top-nav>
-  <section id="h1-holder">
-    <h1>Solutions for Digital Contracts</h1>
-    <p>
+  <section id="hero">
+    <h1>
+      <div>A robust digital contract platform.</div>
+      <div>A powerful contract standard.</div>
+    </h1>
+    <div class="image">
+      <img src="/_public/solutions/dotcontract-repo.png" />
+    </div>'
+    <div class="things">
+      <div class="thing">
+        <img src="/_public/solutions/cryptographic.png" />
+        <div>Advanced cryptographic security</div>
+      </div>
+      <div class="thing">
+        <img src="/_public/solutions/permissioned.png" />
+        <div>Permissioned access control</div>
+      </div>
+      <div class="thing">
+        <img src="/_public/solutions/recordkeeping.png" />
+        <div>Secure and reliable recordkeeping</div>
+      </div>
+    </div>
+    <!-- <p>
       DotContract is a powerful platform and standard that allows you to
       securely record and manage a project's governance, compliance, and
       accounting data in a standalone repository. With its advanced
@@ -74,7 +120,7 @@
       data. Whether you're a business owner, legal professional, or software
       developer, DotContract provides a secure and flexible solution for
       managing your project's important data.
-    </p>
+    </p> -->
   </section>
   <section>
     <h2>Virtual Data Rooms</h2>
