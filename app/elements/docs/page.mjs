@@ -15,7 +15,7 @@ export default function DocsPage({ html, state }) {
         text-decoration: underline;
       }
       article p {
-        text-align: justify;
+        -text-align: justify;
       }
 
       /* Scrollbars */

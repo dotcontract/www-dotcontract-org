@@ -24,10 +24,11 @@ export const data = [
     label: "Get Started",
     slug: "get-started",
     items: [
-      {label: 'Windows Install', slug: 'windows-install'},
-      {label: 'MacOS Install', slug: 'macos-install'},
-      {label: 'Linux Install', slug: 'linux-install'},
-      {label: 'DotContract Cloud', slug: 'dotcontract-cloud'},
+      // {label: "CLI Install", slug: "cli-install"},
+      // {label: 'Windows Install', slug: 'windows-install'},
+      // {label: 'MacOS Install', slug: 'macos-install'},
+      // {label: 'Linux Install', slug: 'linux-install'},
+      // {label: 'DotContract Cloud', slug: 'dotcontract-cloud'},
     ]
   },
 
