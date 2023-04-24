@@ -144,7 +144,7 @@ export default function DocsPage({ html, state }) {
       ${doc.tocHtml?.indexOf("<li>") > 0
         ? /* html */ `
       <div slot="toc">
-        <h3 class="mb-2 font-medium">On this page</h3>
+        <h3 class="mb-2 font-semibold">On this page</h3>
         ${doc.tocHtml}
       </div>`
         : ""}

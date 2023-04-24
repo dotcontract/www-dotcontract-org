@@ -72,7 +72,7 @@ export default function DocOutline({ html, state }) {
       <!-- "Edit this page" -->
       ${gitHubLink
         ? /* html  */ `
-        <p class="mb2">
+        <p class="mb2 font-semibold">
           <a href="${gitHubLink}" target="_blank">Edit this page</a>
         </p>
           `
