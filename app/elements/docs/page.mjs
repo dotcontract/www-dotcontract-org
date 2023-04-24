@@ -1,6 +1,6 @@
 export default function DocsPage({ html, state }) {
-  const { store } = state
-  const { doc = {} } = store
+  const { store } = state;
+  const { doc = {} } = store;
 
   return html`
     <style scope="global">
@@ -8,7 +8,8 @@ export default function DocsPage({ html, state }) {
       body {
         background-color: var(--white-denim);
         color: var(--rift-white);
-        font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
+          Arial, sans-serif;
       }
       article a {
         text-decoration: underline;
@@ -40,23 +41,30 @@ export default function DocsPage({ html, state }) {
       /* single col */
       :host {
         display: grid;
-        grid-template-rows: minmax(auto, 8rem) auto;
+        grid-template-rows: minmax(auto, 60px) auto;
         grid-template-areas:
-          'header'
-          'content';
+          "header"
+          "content"
+          "sidebar";
         gap: 0 0;
         height: 100vh;
       }
       #header {
         grid-area: header;
+        background: white;
+      }
+      #header header {
+        background: white;
       }
       #sidebar {
         grid-area: sidebar;
-        display: none;
+        position: relative;
       }
       #content {
         grid-area: content;
-        overflow-y: auto;
+        position: relative;
+        width: 100vw;
+        height: auto;
       }
       #outline {
         grid-area: outline;
@@ -71,11 +79,11 @@ export default function DocsPage({ html, state }) {
           height: 100vh;
 
           grid-template-columns: 16rem 1fr;
-          grid-template-rows: minmax(auto, 50px) auto;
+          grid-template-rows: minmax(auto, 75px) auto;
           grid-template-areas:
-            'header   header'
-            'sidebar content'
-            'sidebar content';
+            "header header"
+            "sidebar content"
+            "sidebar content";
         }
 
         #sidebar {
@@ -86,6 +94,10 @@ export default function DocsPage({ html, state }) {
         #sidebar,
         #outline {
           position: sticky;
+        }
+
+        #content {
+          width: auto;
         }
 
         #sidebar,
@@ -104,9 +116,9 @@ export default function DocsPage({ html, state }) {
 
           grid-template-columns: 16rem 4fr 16rem;
           grid-template-areas:
-            'header  header   header'
-            'sidebar content outline'
-            'sidebar content outline';
+            "header  header   header"
+            "sidebar content outline"
+            "sidebar content outline";
         }
         #outline {
           display: block;
@@ -118,24 +130,24 @@ export default function DocsPage({ html, state }) {
 
     <docs-header id="header" class=""></docs-header>
 
-    <nav id="sidebar" class="pt1-lg overflow-y-auto-lg" aria-label="sidebar">
+    <nav id="sidebar" class="overflow-y-auto-lg" aria-label="sidebar">
       <docs-nav></docs-nav>
     </nav>
 
-    <doc-content id="content" class="overflow-y-auto-lg p1-lg pb2">
+    <doc-content id="content" class="overflow-y-auto-lg pb2">
       <article slot="doc" class="block leading2">
-        ${doc.title ? `<h1>${doc.title}</h1>` : ''} ${doc.html}
+        ${doc.title ? `<h1>${doc.title}</h1>` : ""} ${doc.html}
       </article>
     </doc-content>
 
-    <docs-outline id="outline" class="pt1-lg overflow-y-auto-lg">
-      ${doc.tocHtml?.indexOf('<li>') > 0
+    <docs-outline id="outline" class=" overflow-y-auto-lg">
+      ${doc.tocHtml?.indexOf("<li>") > 0
         ? /* html */ `
       <div slot="toc">
         <h3 class="mb-2 font-medium">On this page</h3>
         ${doc.tocHtml}
       </div>`
-        : ''}
+        : ""}
     </docs-outline>
 
     <google-analytics code="${state.store.gacode}"></google-analytics>
@@ -143,20 +155,20 @@ export default function DocsPage({ html, state }) {
     <script type="module">
       class Layout extends HTMLElement {
         constructor() {
-          super()
-          let sidebar = this.querySelector('#sidebar')
+          super();
+          let sidebar = this.querySelector("#sidebar");
 
-          let top = sessionStorage.getItem('docs-sidebar-scroll')
+          let top = sessionStorage.getItem("docs-sidebar-scroll");
           if (top !== null) {
-            sidebar.scrollTop = parseInt(top, 10)
+            sidebar.scrollTop = parseInt(top, 10);
           }
 
-          window.addEventListener('beforeunload', () => {
-            sessionStorage.setItem('docs-sidebar-scroll', sidebar.scrollTop)
-          })
+          window.addEventListener("beforeunload", () => {
+            sessionStorage.setItem("docs-sidebar-scroll", sidebar.scrollTop);
+          });
         }
       }
-      customElements.define('docs-layout', Layout)
+      customElements.define("docs-layout", Layout);
     </script>
-  `
+  `;
 }

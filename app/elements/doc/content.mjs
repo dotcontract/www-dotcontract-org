@@ -23,6 +23,8 @@ export default function DocContent({ html }) {
     <style>
       :host {
         padding: 1rem;
+        font-size: 16px;
+        color: #333;
       }
       :host > * {
         max-width: 52rem;
@@ -31,7 +33,6 @@ export default function DocContent({ html }) {
 
       :host > ::slotted([slot]) > * {
         margin-bottom: 1.5rem;
-        padding-top: 30px;
       }
 
       :host > ::slotted([slot]) > h1,
@@ -39,10 +40,13 @@ export default function DocContent({ html }) {
       :host > ::slotted([slot]) > h3,
       :host > ::slotted([slot]) > h4 {
         margin-bottom: 0.75rem;
-        font-weight: 500;
+        font-weight: 700;
+        color: #323;
+        line-height: 1.5em;
       }
       h1 {
         font-size: 1.953rem;
+        font-weight: 40px;
       }
       h2 {
         font-size: 1.563rem;
