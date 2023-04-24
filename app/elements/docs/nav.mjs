@@ -28,7 +28,7 @@ function Link(item) {
 function Category(item) {
   return `
 <div>
-  <a href="${item.path}" class="category-label font-medium uppercase">${item.label}</a>
+  <a href="${item.path}" class="category-label font-medium uppercase ${item.active ? " active" : ""}">${item.label}</a>
   ${Description(item)}
 </div>
 ${item.items?.length > 0 ? List(item.items) : ""}
@@ -81,7 +81,7 @@ export default function DocsNav({ html, state }) {
       }
       li a:hover {
         margin-left: -3px;
-        border-left: 3px solid #00ca88;
+        border-left: 3px solid #95e7cc;
         background-color: var(--cloud-ateneo);
       }
       li a.active {
