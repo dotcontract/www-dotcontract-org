@@ -5,7 +5,6 @@ const styles = `<style>
   }
   #public-bottom-footer {
     position: relative;
-    width: 100vw;
   }
   #public-bottom-footer .content {
     max-width: 1190px;

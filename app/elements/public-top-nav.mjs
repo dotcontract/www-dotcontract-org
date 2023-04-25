@@ -59,7 +59,26 @@ export default function PublicTopNav({ html, state }) {
       header .right .link.get-started {
         display: none;
       }
+
+      header .below {
+        display: none;
+        width: 100vw;
+        flex-direction: column;
+        align-items: center;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 20px;
+      }
+      header .below a {
+        padding: 20px;
+        margin: 20px auto;
+      }
+      header .below.visible {
+        display: flex;
+      }
       @media (min-width: 800px) {
+        header .below.visible {
+          display: none;
+        }
         header .right a.menu-icon {
           display: none;
         }
@@ -74,21 +93,6 @@ export default function PublicTopNav({ html, state }) {
           max-width: 30vw;
           justify-content: space-between;
         }
-      }
-      header .below {
-        display: none;
-        width: 100vw;
-        flex-direction: column;
-        align-items: center;
-        border-bottom: 1px solid #ddd;
-        padding-bottom: 20px;
-      }
-      header .below.visible {
-        display: flex;
-      }
-      header .below a {
-        padding: 20px;
-        margin: 20px auto;
       }
     </style>
     <header class="public-top-nav">
