@@ -48,50 +48,6 @@
   .desktop-only {
     display: none;
   }
-  #hero {
-    margin-top: 50px;
-  }
-  #hero .image {
-    margin: 0 auto;
-    width: 1000px;
-    max-width: calc(100vw - 40px);
-  }
-  #hero .things {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    font-size: 15px;
-    color: #444;
-    font-weight: 600;
-    text-align: center;
-  }
-  #hero .things img {
-    display: inline-block;
-  }
-  #hero .things .thing div {
-    padding: 10px 20px;
-    line-height: 1.4em;
-  }
-  #hero .things {
-    font-size: 12px;
-  }
-  #hero .things img {
-    width: 55px;
-  }
-  #hero .things .thing div {
-    padding: 5px 10px;
-  }
-  @media (min-width: 500px) {
-    #hero .things {
-      font-size: 15px;
-    }
-    #hero .things img {
-      width: 75px;
-    }
-    #hero .things .thing div {
-      padding: 10px 20px;
-    }
-  }
 
   @media (min-width: 960px) {
     .desktop-only {
@@ -115,7 +71,7 @@
     width: 100vw;
     text-align: left;
   }
-  section h2 {
+  section:not(.text-and-image) h2 {
     margin: 0 auto;
     max-width: calc(100vw - 40px);
     width: 800px;
@@ -133,192 +89,61 @@
     background: rgb(31, 35, 52);
     color: white;
   }
-  #big-use-cases {
-    padding-top: 60px;
-    padding-bottom: 80px;
-    background: #202333;
-    color: white;
-    position: relative;
-    text-align: center;
-  }
-  #big-use-cases h2 {
-    display: inline-block;
-    text-align: center;
-    width: 90%;
-    padding: 10px 0 35px 0;
-    line-height: 1.4em;
-  }
-  #big-use-cases .use-cases {
-    max-width: 1190px;
-    margin: 0 auto;
+  section.text-and-image {
     display: flex;
-    position: relative;
+    align-items: center;
     flex-direction: column;
-    justify-content: space-evenly;
-    color: #071d2a;
   }
-  #big-use-cases .use-case {
-    margin: 20px 40px;
-    min-width: 360px;
-    line-height: 1.4em;
+  section.text-and-image .text {
   }
-  #big-use-cases .use-case .box {
-    height: 100%;
-    max-width: calc(100vw - 80px);
-    box-sizing: border-box;
-    border: 1px solid #ededed;
-    border-radius: 40px;
-    padding: 30px 45px 60px 45px;
-    background: white;
+  section.text-and-image .text ul {
+    padding: 0 10px;
   }
-  #big-use-cases .use-case .industry {
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 11px;
-    font-weight: 600;
-    color: #00ca88;
-    letter-spacing: 1.5px;
-    line-height: 4em;
+  section.text-and-image .text li {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    line-height: 30px;
+    list-style: none;
   }
-  #big-use-cases .use-case .image {
-    width: 60px;
-    height: 60px;
+  section.text-and-image .text li:before {
     display: block;
-    margin: 0 auto;
+    flex-shrink: 0;
+    width: 12px;
+    height: 12px;
+    margin-right: 10px;
+    vertical-align: middle;
+    background: url("/_static/icons/green-checkmark.svg") no-repeat left center;
+    background-size: contain;
+    content: "";
   }
-  #big-use-cases .use-case .heading {
-    text-align: center;
-    font-weight: 500;
-    font-size: 15px;
-    padding: 15px 0px;
-    line-height: 1.3em;
-    max-width: 80%;
-    margin: 0 auto;
-  }
-  #big-use-cases .use-case .description {
-    text-align: center;
-    font-size: 14px;
-    color: #686865;
-    line-height: 1.3em;
-    max-width: 96%;
-    max-width: 400px;
-    margin: 0 auto;
-  }
-  #big-use-cases a.get-started {
-    background: #00ca88;
-    border-radius: 18px;
-    margin: 0 auto;
-    display: inline-block;
-    padding: 10px 25px;
-    font-size: 14px;
-    font-weight: bold;
-    margin-top: 30px;
-  }
-
-  @media (min-width: 960px) {
-    #big-use-cases .use-case {
-      margin: 40px;
+  @media screen and (min-width: 0px) {
+    section.text-and-image .image {
+      margin-top: 30px;
     }
-    #big-use-cases .use-cases {
-      color: #071d2a;
-      flex-wrap: wrap;
+  }
+  @media screen and (min-width: 850px) {
+    section.text-and-image {
       flex-direction: row;
-      justify-content: space-evenly;
+      width: 1200px;
+      max-width: calc(100vw - 40px);
+      justify-content: space-around;
     }
-    #big-use-cases .use-case {
-      margin: 0;
-      padding: 20px;
+    section.text-and-image .text {
+      flex-basis: 40%;
     }
-  }
-  @media (min-width: 1000px) {
-    #big-use-cases .use-case {
-      margin: 0;
-      width: 33%;
+    section.text-and-image .image {
+      flex-basis: 60%;
+      margin-top: 0;
     }
   }
 </style>
 <main>
   <public-top-nav></public-top-nav>
-  <section id="hero">
-    <h1>
-      <div>A robust digital contract platform.</div>
-      <div>A powerful contract standard.</div>
-    </h1>
-    <div class="image">
-      <img src="/_public/solutions/dotcontract-repo.png" />
-    </div>
-    '
-    <div class="things">
-      <div class="thing">
-        <img src="/_public/solutions/cryptographic.png" />
-        <div>Advanced cryptographic security</div>
-      </div>
-      <div class="thing">
-        <img src="/_public/solutions/permissioned.png" />
-        <div>Permissioned access control</div>
-      </div>
-      <div class="thing">
-        <img src="/_public/solutions/recordkeeping.png" />
-        <div>Secure and reliable recordkeeping</div>
-      </div>
-    </div>
-    <!-- <p>
-      DotContract is a powerful platform and standard that allows you to
-      securely record and manage a project's governance, compliance, and
-      accounting data in a standalone repository. With its advanced
-      cryptographic security and permissioned access control, DotContract
-      provides a comprehensive solution for businesses and organizations looking
-      to maintain a secure and reliable record of their project's important
-      data. Whether you're a business owner, legal professional, or software
-      developer, DotContract provides a secure and flexible solution for
-      managing your project's important data.
-    </p> -->
-  </section>
-  <section class="dark">
-    <background-curve right above fill="#202334"></background-curve>
-    <background-curve left below fill="#fff"></background-curve>
-    <h2>Virtual Data Rooms</h2>
-    <p>
-      DotContract enables the creation of bespoke virtual data rooms that can be
-      accessed via DotContract Cloud's easy web interface or by developers as a
-      data repository. With its advanced cryptographic security and permissioned
-      access control, DotContract provides a secure and reliable repository for
-      sensitive project data. Users can easily upload and manage documents,
-      contracts, and other important information within the virtual data room,
-      while controlling access permissions and ensuring that data remains
-      confidential and protected at all times.
-    </p>
-  </section>
-  <section class="dark">
-    <h2>Programmatic Reference</h2>
-    <p>
-      DotContract provides users with a powerful tool for programmatically
-      referencing state data and the possible outcomes of a contract using the
-      Modality language. With Modality, users can easily define the state of a
-      contract, including its initial state, possible transitions, and the
-      outcomes that may result from each transition. Modality also allows users
-      to define the logic and conditions that must be met for each transition to
-      occur, as well as any data that must be collected or verified during the
-      transition. This makes it easy for users to automate contract workflows
-      and ensure that all parties are following the same set of rules and
-      guidelines. Additionally, Modality's intuitive syntax and robust
-      error-checking tools make it easy for users to write and test their code,
-      even if they are not experienced programmers. With Modality and
-      DotContract, users can easily define, manage, and execute contracts with
-      confidence and ease.
-    </p>
-  </section>
-  <section>
-    <background-curve right above fill="#fff"></background-curve>
-    <h2>Synced Models</h2>
-    <p>
-      DotContract makes it easy for users to sync models to the data contained
-      within the DotContract repository. By creating a synced model, users can
-      ensure that data is automatically updated and synchronized between
-      different systems, eliminating the need for manual data entry and reducing
-      the risk of errors and discrepancies.
-    </p>
-  </section>
+  <homepage-hero></homepage-hero>
+  <homepage-vdr></homepage-vdr>
+  <homepage-programmatic-use></homepage-programmatic-use>
+  <homepage-synced-models></homepage-synced-models>
   <section>
     <h2>Data Feeds</h2>
     <p>
@@ -467,93 +292,6 @@
       accountability, and ensuring long-term success.
     </p>
   </section>
-  <div id="big-use-cases">
-    <background-curve right below fill="#fff"></background-curve>
-    <background-curve left above fill="#202334"></background-curve>
-    <h2>Powering use cases across industries</h2>
-    <div class="use-cases">
-      <div class="use-case">
-        <div class="box">
-          <div class="industry">Finance</div>
-          <div class="image"><img src="/_public/homepage/finance.png" /></div>
-          <div class="heading">Validated terms and conditions for finance</div>
-          <div class="description">
-            Model lifecycle conditions for any asset type, automatically enforce
-            the rights and obligations between participants with a powerful
-            digital contract framework.
-          </div>
-        </div>
-      </div>
-      <div class="use-case">
-        <div class="box">
-          <div class="industry">Governance</div>
-          <div class="image">
-            <img src="/_public/homepage/governance.png" />
-          </div>
-          <div class="heading">
-            Digital governance for organizations of all sizes
-          </div>
-          <div class="description">
-            Embed logic and dependencies with contract execution and signing to
-            enable organizational checks and balances.
-          </div>
-        </div>
-      </div>
-      <div class="use-case">
-        <div class="box">
-          <div class="industry">Compliance</div>
-          <div class="image">
-            <img src="/_public/homepage/compliance.png" />
-          </div>
-          <div class="heading">Complex compliance automation</div>
-          <div class="description">
-            Model and automate complex compliance checks with a robust and
-            reliable contract specification language.
-          </div>
-        </div>
-      </div>
-      <div class="use-case">
-        <div class="box">
-          <div class="industry">Data</div>
-          <div class="image"><img src="/_public/homepage/data.png" /></div>
-          <div class="heading">Break data silos across parties</div>
-          <div class="description">
-            Use hosted contracts to enable direct access and data feeds to
-            relevant participants.
-          </div>
-        </div>
-      </div>
-      <div class="use-case">
-        <div class="box">
-          <div class="industry">Digital Assets</div>
-          <div class="image">
-            <img src="/_public/homepage/digital-assets.png" />
-          </div>
-          <div class="heading">
-            Extend digital contracts into custodial assets
-          </div>
-          <div class="description">
-            Easy to follow, semantic code that's maintainable by record keepers
-            and custodians. Portable files make it simple to share with analysts
-            and investors.
-          </div>
-        </div>
-      </div>
-      <div class="use-case">
-        <div class="box">
-          <div class="industry">And More</div>
-          <div class="image"><img src="/_public/homepage/code.png" /></div>
-          <div class="heading">Unlock the power of digital contracts</div>
-          <div class="description">
-            A simple digital contract standard enables you to build and deploy
-            digital contracts easily for enterprise or consumer use.
-          </div>
-        </div>
-      </div>
-    </div>
-    <a class="get-started" href="mailto:hello@dotcontract.xyz" _href="/contact"
-      >Contact us ›</a
-    >
-  </div>
+  <homepage-big-use-cases></homepage-big-use-cases>
   <public-bottom-footer></public-bottom-footer>
 </main>
