@@ -1,4 +1,4 @@
-export default function PublicTopNav({ html, state }) {
+export default function CommonHeader({ html, state }) {
   return html`
     <style>
       :host {

@@ -57,7 +57,6 @@ export default function HomepageHero({ html, state }) {
       <div class="image">
         <img src="/_public/solutions/dotcontract-repo.png" />
       </div>
-      '
       <div class="things">
         <div class="thing">
           <img src="/_public/solutions/cryptographic.png" />
@@ -72,16 +71,5 @@ export default function HomepageHero({ html, state }) {
           <div>Secure and reliable recordkeeping</div>
         </div>
       </div>
-      <!-- <p>
-    DotContract is a powerful platform and standard that allows you to
-    securely record and manage a project's governance, compliance, and
-    accounting data in a standalone repository. With its advanced
-    cryptographic security and permissioned access control, DotContract
-    provides a comprehensive solution for businesses and organizations looking
-    to maintain a secure and reliable record of their project's important
-    data. Whether you're a business owner, legal professional, or software
-    developer, DotContract provides a secure and flexible solution for
-    managing your project's important data.
-  </p> -->
     </section>`;
 }

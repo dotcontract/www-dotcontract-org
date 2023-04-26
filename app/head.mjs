@@ -1,13 +1,14 @@
-import arc from '@architect/functions';
+import arc from "@architect/functions";
 import { getLinkTag, getStyleTag } from "@enhance/arc-plugin-styles/get-styles";
 
 export default function Head(state) {
   const styles = process.env.ARC_LOCAL ? getLinkTag() : getStyleTag();
-
   const { store, status, req, error } = state;
   const { path } = req;
-  const title = store?.pageTitle
-    ? `DotContract — ${store?.pageTitle}`
+  const title = store?.pageSubtitle
+    ? `${store?.pageSubtitle} | DotContract`
+    : store?.pageTitle
+    ? `${store?.pageTitle}`
     : `DotContract`;
   return `
     <!DOCTYPE html>
@@ -16,8 +17,9 @@ export default function Head(state) {
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>${title}</title>
+      <link rel="stylesheet" href="${arc.static("/css/common.css")}">
       ${styles}
-      <link rel="icon" href="/_public/favicon.svg">
+      <link rel="icon" href="${arc.static("/favicon.svg")}">
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Sanchez&display=swap" rel="stylesheet">

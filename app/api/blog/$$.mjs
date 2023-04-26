@@ -3,10 +3,6 @@ import { existsSync, readFileSync } from "fs";
 import { URL } from "url";
 import { Arcdown } from "arcdown";
 import arcStaticImg from "markdown-it-arc-static-img";
-import navDataLoader, {
-  unslug,
-  other as otherLinks,
-} from "../../data/docs/common.mjs";
 import HljsLineWrapper from "../../helpers/hljs-line-wrapper.mjs";
 
 const arcdown = new Arcdown({
@@ -28,8 +24,8 @@ export async function get(request) {
   const gacode = process.env.ARC_ENV === "production" ? "G-TODO" : "G-TODO";
 
   const { path: activePath } = request;
-  let docPath = activePath.replace(/^\/?docs\/{0,1}/, "");
-  let docURL = new URL(`../../pages/docs/${docPath}/index.md`, import.meta.url);
+  let docPath = activePath.replace(/^\/?blog\/{0,1}/, "");
+  let docURL = new URL(`../../pages/blog/${docPath}/index.md`, import.meta.url);
   if (!existsSync(docURL.pathname)) {
     if (existsSync(docURL.pathname)) {
       return {
@@ -39,44 +35,27 @@ export async function get(request) {
     }
   }
 
-  const sidebarData = navDataLoader('docs', activePath)
-
-  let docMarkdown;
+  let postMarkdown;
   try {
-    docMarkdown = readFileSync(docURL.pathname, "utf-8");
+    postMarkdown = readFileSync(docURL.pathname, "utf-8");
   } catch (_err) {
     let searchTerm = null;
-    if (!docPath.endsWith("/index")) {
-      const docPathParts = docPath.split("/");
-      searchTerm = docPathParts.pop();
-      searchTerm = unslug(searchTerm);
-    }
     const initialState = {
-      doc: {
+      post: {
         title: "404",
         path: docPath,
         html: `<docs-404 search-term="${searchTerm}"></docs-404>`,
       },
-      otherLinks,
-      sidebarData,
-      searchTerm,
       gacode,
     };
 
     return { statusCode: 404, json: initialState };
   }
-  const doc = await arcdown.render(docMarkdown);
-
-  let gitHubLink =
-    "https://github.com/dotcontract/www-dotcontract-xyz/edit/main/";
-  gitHubLink += `app/pages/${activePath.replace(/^\//,'')}/index.md`;
+  const post = await arcdown.render(postMarkdown);
 
   const initialState = {
-    pageSubtitle: doc?.title,
-    doc,
-    gitHubLink,
-    otherLinks,
-    sidebarData,
+    pageSubtitle: post?.title,
+    post,
     gacode,
   };
 
