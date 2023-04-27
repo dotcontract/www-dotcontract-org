@@ -17,7 +17,7 @@ export default function Component({ html, state }) {
         </ul>
       </div>
       <div class="image">
-        <img src="${arc.static('/homepage/audit-trails.png')}" />
+        <img src="${arc.static('/homepage/audit-trail.png')}" />
       </div>
     </section>`;
 }
