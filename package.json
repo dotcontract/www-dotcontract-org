@@ -1,5 +1,5 @@
 {
-  "name": "www-dotcontract-xyz",
+  "name": "www-dotcontract-org",
   "version": "3.2.1",
   "scripts": {
     "postinstall": "node ./scripts/createManifest.js",

@@ -197,7 +197,7 @@ export default function Blank({ html, state }) {
       </div>
       <a
         class="get-started"
-        href="mailto:hello@dotcontract.xyz"
+        href="mailto:hello@dotcontract.org"
         _href="/contact"
         >Contact us ›</a
       >

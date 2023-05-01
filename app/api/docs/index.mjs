@@ -68,7 +68,7 @@ export async function get(request) {
   const doc = await arcdown.render(docMarkdown);
 
   let gitHubLink =
-    "https://github.com/dotcontract/www-dotcontract-xyz/edit/main/";
+    "https://github.com/dotcontract/www-dotcontract-org/edit/main/";
   gitHubLink += `app/pages/${activePath.replace(/^\//,'')}/index.md`;
 
   const initialState = {

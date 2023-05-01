@@ -102,7 +102,7 @@ export default function PublicTopNav({ html, state }) {
           <div class="email">
             Email to learn more and build with us
             <br />
-            <a href="mailto:hello@dotcontract.xyz">hello@dotcontract.xyz ›</a>
+            <a href="mailto:hello@dotcontract.org">hello@dotcontract.org ›</a>
           </div>
         </div>
       </div>
