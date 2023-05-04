@@ -9,7 +9,7 @@ title: 'create'
 ## Synopsis
 
 ```wrapped
-contract create [-f | --file | -o | --output <filepath>] [--dir <dirpath>]
+contract create [-f | --file <file.contract>] [-d | --dir <dotcontract_dir>]
 ```
 
 ## Description
@@ -20,12 +20,11 @@ The `create` command creates a new dotcontract file or directory. If a file is s
 ```flags
 -f
 --file
--o
---output
 ```
 Any of the above will specify where to create a new dotcontract file.
 
 ```flags
+-d
 --dir
 ```
 Specifies where to create a new dotcontract directory.
