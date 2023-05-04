@@ -4,7 +4,7 @@ title: 'commit'
 
 ## Overview
 
-`contract commit` is a command that adds a commit to dotcontract.
+`contract commit` is a command that adds a commit to a dotcontract.
 
 ## Synopsis
 
@@ -19,21 +19,25 @@ contract commit [-f | --file <file.contract>] [-d | --dir <dotcontract_dir>] [-o
 
 ```flags
 -f
+--file
 ```
 Specifies the dotcontract file to use. If neither `-f` nor `-d` are used, the CLI will use the present working directory or its closest parent directory that is a dotcontract directory.
 
 ```flags
 -d
+--dir
 ```
 Specifies the dotcontract directory to use. If neither `-f` nor `-d` are used, the CLI will use the present working directory or its closest parent directory that is a dotcontract directory.
 
 ```flags
 -o
+--output
 ```
 Specifies an output dotcontract file to write a revised dotcontract to, instead of modifying the input. If `-o` is not used, the input dotcontract file or dotcontract directory will be modified.
 
 ```flags
 -m
+--message
 ```
 Includes a message within the commit. Use a message to explain the purpose of the commit. Note that messages are not formally verified and may misstate the effect of the commit.
 
