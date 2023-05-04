@@ -8,8 +8,8 @@ title: 'create'
 
 ## Synopsis
 
-```
-contract create [--file | -c | --contract | -o | --output = <filepath>] [--dir = <dirpath>]
+```wrapped
+contract create [-f | --file | -o | --output <filepath>] [--dir <dirpath>]
 ```
 
 ## Description
@@ -18,9 +18,8 @@ The `create` command creates a new dotcontract file or directory. If a file is s
 ## Options
 
 ```flags
+-f
 --file
--c
---contract
 -o
 --output
 ```
@@ -35,13 +34,13 @@ Specifies where to create a new dotcontract directory.
 
 Create a new dotcontract file:
 
-```bash
+```shell
 contract create --file example.contract
 ```
 
 Create a new dotcontract directory:
 
-```bash
+```shell
 contract create --dir example
 ```
 

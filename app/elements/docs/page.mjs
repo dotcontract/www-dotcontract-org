@@ -132,6 +132,12 @@ export default function DocsPage({ html, state }) {
         padding-right: 0;
         padding-bottom: 0;
       }
+      code[data-language='wrapped'] {
+        white-space: pre-wrap;
+      }
+      code[data-language='shell'] {
+        white-space: pre-wrap;
+      }
     </style>
 
     <docs-symbols></docs-symbols>
