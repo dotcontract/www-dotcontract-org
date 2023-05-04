@@ -125,6 +125,14 @@ export default function DocsPage({ html, state }) {
         }
       }
     </style>
+    <style>
+      code[data-language='flags'] {
+        font-weight: bold;
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+      }
+    </style>
 
     <docs-symbols></docs-symbols>
 
