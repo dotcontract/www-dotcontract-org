@@ -17,6 +17,16 @@ contract pack
 
 ## Options
 
+```flags
+-f
+```
+Specifies the dotcontract file to use as input.
+
+```flags
+-o
+```
+Specifies an output path for the unpacked dotcontract directory.
+
 ## Examples
 
 ## See Also

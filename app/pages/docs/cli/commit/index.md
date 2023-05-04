@@ -20,17 +20,17 @@ contract commit [-f | --file <file.contract>] [-d | --dir <dotcontract_dir>] [-o
 ```flags
 -f
 ```
-Specifies the dotcontract file to commit to. Either -f or -d must be specified.
+Specifies the dotcontract file to use. If neither `-f` nor `-d` are used, the CLI will use the present working directory or its closest parent directory that is a dotcontract directory.
 
 ```flags
 -d
 ```
-Specifies the dotcontract directory to commit to. Either -f or -d must be specified.
+Specifies the dotcontract directory to use. If neither `-f` nor `-d` are used, the CLI will use the present working directory or its closest parent directory that is a dotcontract directory.
 
 ```flags
 -o
 ```
-Specifies an output dotcontract file to write the revised dotcontract to.
+Specifies an output dotcontract file to write a revised dotcontract to, instead of modifying the input. If `-o` is not used, the input dotcontract file or dotcontract directory will be modified.
 
 ```flags
 -m
