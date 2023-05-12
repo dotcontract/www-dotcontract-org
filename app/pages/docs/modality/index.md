@@ -12,7 +12,9 @@ We believe that no contract should be exploitable by bug or defect. The only way
 
 If you're a software developer without any hardware development experience, Modality will feel alien to you. Software programming languages are typically maximally expressive, allowing you to express any composition of procedures. But that expressivity comes at cost, namely that it is impossible to verify that a software program will not exhibit unexpected behavior.
 
-In contrast, because hardware must ship free of defects, hardware specification languages have been designed to be verifiable. Contracts, like hardware, should be free of defects. Thus, Modality has inherited its approach not from software development, but instead from the world of hardware verification. More abstractly, this approach is known as formal verification and model checking. In fact, Modality was ideated by a team of formal verification and model checking experts, including [Bud Mishra](https://en.wikipedia.org/wiki/Bud_Mishra), the first person to use model checking to identify a real-life hardware bug.
+In contrast, because hardware must ship free of defects, hardware specification languages have been designed to be verifiable. Contracts, like hardware, should be free of defects. Thus, Modality has inherited its approach not from software development, but instead from the world of hardware verification.
+
+More abstractly, this approach is known as formal verification and model checking. In fact, Modality was ideated by a team of formal verification and model checking experts, including [Bud Mishra](https://en.wikipedia.org/wiki/Bud_Mishra), the first person to use model checking to identify a real-life hardware bug.
 
 ## How to Learn Modality
 
