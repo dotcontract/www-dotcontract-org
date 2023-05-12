@@ -72,6 +72,11 @@ export const data = [
     label: "Modality",
     slug: "modality",
     items: [
+      {label: 'Rules and Models', slug: 'rules-and-models'},
+      {label: 'Necessity and Possibility', slug: 'necessity-and-possibility'},
+      {label: 'Can and Must', slug: 'can-and-must'},
+      {label: 'Fixed Point Operators', slug: 'fixed-point-operators'},
+      {label: 'Henceforth and Until', slug: 'henceforth-and-until'},
     ]
   },
   {
