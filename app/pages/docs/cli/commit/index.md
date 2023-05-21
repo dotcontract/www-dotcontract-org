@@ -44,7 +44,7 @@ Includes a message within the commit. Use a message to explain the purpose of th
 ```flags
 --post
 ```
-Includes a post within the commit. The first argument is dotcontract endpoint, and the second argument is the value.
+Includes a post within the commit. It requires two arguments `[path] [value]`. The first argument is dotcontract endpoint, and the second argument is the value.
 
 ```flags
 --rule
@@ -68,6 +68,11 @@ Specifies a keypair file to sign the commit with.
 
 ## Examples
 
+Commit to a file: 
+
+```shell
+$ contract commit -f example.contract --post "./example.text" "hellow world" 
+```
 
 ## See Also
 
