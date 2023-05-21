@@ -18,6 +18,12 @@ The `create` command creates a new dotcontract file or directory. If a file is s
 ## Options
 
 ```flags
+-h
+--help
+```
+Show help 
+
+```flags
 -f
 --file
 ```
@@ -29,18 +35,40 @@ Any of the above will specify where to create a new dotcontract file.
 ```
 Specifies where to create a new dotcontract directory.
 
+One of the two options need to be specified. 
+
 ## Examples
+
+Get help: 
+
+```shell
+$ contract create --help 
+
+contract create
+
+creates a new contract
+
+Options:
+      --version  Show version number  [boolean]
+  -h, --help     Show help  [boolean]
+  -f, --file     where to output a dotcontract file [filepath]
+  -d, --dir      creates a new dotcontract directory [dirpath]
+```
 
 Create a new dotcontract file:
 
 ```shell
-contract create --file example.contract
+$ contract create --file example.contract
+
+dotcontract file created at: example.contract
 ```
 
 Create a new dotcontract directory:
 
 ```shell
-contract create --dir example
+$ contract create --dir example
+
+dotcontract directory created at: example
 ```
 
 ## See Also
