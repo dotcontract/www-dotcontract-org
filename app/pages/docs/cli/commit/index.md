@@ -71,7 +71,7 @@ Specifies a keypair file to sign the commit with.
 Commit to a file: 
 
 ```shell
-$ contract commit -f example.contract --post "./example.text" "hellow world" 
+$ contract commit -f example.contract --post "./example.text" "hello world" 
 ```
 
 ## See Also
