@@ -339,7 +339,7 @@ body {
 .leading5{line-height: 2;}
 .leading4{line-height: 1.625;}
 .leading3{line-height: 1.5;}
-.leading2{line-height: 1.475;}
+.leading2{line-height: 1.375;}
 .leading1{line-height: 1.25;}
 .leading0,
 .leading-none{line-height:1;}
@@ -845,7 +845,7 @@ body {
 .leading5-lg{line-height: 2;}
 .leading4-lg{line-height: 1.625;}
 .leading3-lg{line-height: 1.5;}
-.leading2-lg{line-height: 1.475;}
+.leading2-lg{line-height: 1.375;}
 .leading1-lg{line-height: 1.25;}
 .leading0-lg,
 .leading-none-lg{line-height:1;}

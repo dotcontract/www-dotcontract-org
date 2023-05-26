@@ -25,17 +25,28 @@ export async function get(request) {
 
   const { path: activePath } = request;
 
-  const blogdir_filenames = readdirSync(new URL(`../../pages/blog`, import.meta.url));
+  const blogdir_filenames = readdirSync(
+    new URL(`../../pages/blog`, import.meta.url)
+  );
   const blog_posts = [];
   for (const fn of blogdir_filenames) {
     if (fn.match(/\.(html|mjs)$/)) {
       continue;
+    } else {
+      let post;
+      try {
+        const postMarkdown = readFileSync(new URL(`../../pages/blog/${fn}/index.md`, import.meta.url), "utf-8");
+        post = await arcdown.render(postMarkdown);
+      } catch (_err) {
+        console.log(_err);
+        continue;
+      }
+      blog_posts.push(post);
     }
-    blog_posts.push(fn);
   }
 
   const initialState = {
-    pageSubtitle: 'Blog',
+    pageSubtitle: "Blog",
     posts: blog_posts,
     gacode,
   };

@@ -4,11 +4,13 @@ export default function Component({ html, state }) {
   const { store } = state;
   const { posts = [] } = store;
 
-  const CSS = /*css*/`
-  .blog-posts {
-    width: 1200px;
+  const CSS = /*css*/ `
+  main {
+    width: calc(100vw - 40px);
     max-width: calc(100vw - 40px);
     margin: 40px auto;
+  }
+  .blog-posts {
   }
   h1 {
     font-family: "Hepta Slab", "Sanchez", "Open Sans", sans-serif;
@@ -33,15 +35,63 @@ export default function Component({ html, state }) {
       font-size: 50px;
     }
   }
+
+  .blog-posts {
+    display: flex;
+    flex-direction: columns;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .blog-post {
+    max-width: 100%;
+    width: 400px;
+  }
+  .blog-post .image {
+    max-width: 100%;
+    width: 400px;
+    height: 400px;
+    border: 1px solid #ccc;
+    overflow: hidden;
+  }
+  .blog-post .image img {
+    width: 100%;
+  }
+  .blog-post .title {
+    font-size: 15px;
+    padding-top: 1em;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .blog-post .date {
+    font-size: 18px;
+    padding-top: 1em;
+  }
   `;
 
-  return html` <style>
+  return html`<style>
       ${CSS}
     </style>
-    <div class="blog-posts">
+    <main>
       <h1>Blog</h1>
-      ${posts.map(post => `
-        <a href="/blog/${post}">${post}</a>
-      `).join('\n')}
-    </div>`;
+      <div class="blog-posts">
+        ${posts
+          .map(
+            (post) => `
+        <div class="blog-post">
+           <a href="/blog/${post.slug}">
+            <div class="image"><img src="${
+              arc.static(post.frontmatter?.hero_image) ||
+              arc.static("/blog/default.png")
+            }" /></div>
+            <div class="title">${post.title}</div>
+            <div class="date">${new Intl.DateTimeFormat("en-US", {
+              dateStyle: "long",
+            }).format(post.frontmatter.date)}</div>
+          </a>
+        </div>
+      `
+          )
+          .join("\n")}
+      </div>
+    </main>`;
 }
