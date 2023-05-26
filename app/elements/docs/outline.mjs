@@ -62,6 +62,10 @@ export default function DocOutline({ html, state }) {
         padding-top: 30px;
         font-size: 14px;
       }
+      .edit-link img {
+        display: inline;
+        vertical-align: bottom;
+      }
     </style>
 
     <aside>
@@ -76,7 +80,7 @@ export default function DocOutline({ html, state }) {
       ${gitHubLink
         ? /* html  */ `
         <p class="mb2 font-semibold">
-          <a href="${gitHubLink}" target="_blank">Edit this page</a>
+          <a class="edit-link" href="${gitHubLink}" target="_blank"><img src="/_public/icons/edit-page.svg" /> Edit this page</a>
         </p>
           `
         : ''}
