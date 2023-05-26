@@ -8,8 +8,8 @@ export default function DocsPage({ html, state }) {
       body {
         background-color: var(--white-denim);
         color: var(--rift-white);
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
-          Arial, sans-serif;
+        font-family: 'Inter';
+        -webkit-font-smoothing: antialiased;
       }
       article a {
         text-decoration: underline;
@@ -94,7 +94,11 @@ export default function DocsPage({ html, state }) {
         #sidebar,
         #outline {
           position: sticky;
+          font-family: 'Inter';
+          color: #7d7d7d;
+          -webkit-font-smoothing: antialiased;
         }
+
 
         #content {
           width: auto;

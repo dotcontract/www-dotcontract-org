@@ -13,7 +13,7 @@ export default function DocContent({ html }) {
         overflow: hidden;
       }
       h2, h3, h4 {
-        font-family: "Open Sans", sans-serif;
+        font-family: "Inter", sans-serif;
       }
       h2 {
         font-size: 30px;
@@ -123,6 +123,7 @@ export default function DocContent({ html }) {
         tab-size: 2;
         -webkit-overflow-scrolling: touch;
         overflow-x: auto;
+        line-height: 1.3em;
       }
       pre button {
         display: none;

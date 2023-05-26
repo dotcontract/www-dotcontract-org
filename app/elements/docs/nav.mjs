@@ -55,6 +55,8 @@ export default function DocsNav({ html, state }) {
   return html`
     <style>
       nav {
+        -webkit-font-smoothing: antialiased;
+        font-family: 'Inter';
         position: sticky;
         display: flex;
         flex-direction: row;
@@ -62,6 +64,8 @@ export default function DocsNav({ html, state }) {
         border-right-style: solid;
         border-right-color: rgba(227,232,237,1.00);
         padding-top: 30px;
+        font-size: 15px;
+        color: #7d7d7d;
       }
       nav > ul > li {
         margin-bottom: 2rem;
@@ -90,6 +94,8 @@ export default function DocsNav({ html, state }) {
         background-color: var(--cloud-ateneo);
       }
       .category-label {
+        font-size: 14px;
+        color: #071d2a;
         font-weight: 700;
         line-height: 1.6em;
       }

@@ -38,7 +38,10 @@ export default function DocOutline({ html, state }) {
   return html`
     <style>
       h3 {
-        color: var(--purple-white);
+        color: #071d2a;
+      }
+      p {
+        color: #071d2a;
       }
       ul {
         list-style: none;
