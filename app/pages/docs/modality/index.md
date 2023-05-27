@@ -1,8 +1,7 @@
 ---
-title:" Modality"
+title: "Modality"
+next_doc: "/modality/rules-and-models"
 ---
-
-# Modality
 
 DotContract rules and queries are written in Modality, a formal specification language for encoding the terms of any multi-party agreement.
 

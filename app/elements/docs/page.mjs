@@ -8,7 +8,7 @@ export default function DocsPage({ html, state }) {
       body {
         background-color: var(--white-denim);
         color: var(--rift-white);
-        font-family: 'Inter';
+        font-family: "Inter";
         -webkit-font-smoothing: antialiased;
       }
       article a {
@@ -94,11 +94,10 @@ export default function DocsPage({ html, state }) {
         #sidebar,
         #outline {
           position: sticky;
-          font-family: 'Inter';
+          font-family: "Inter";
           color: #7d7d7d;
           -webkit-font-smoothing: antialiased;
         }
-
 
         #content {
           width: auto;
@@ -128,18 +127,25 @@ export default function DocsPage({ html, state }) {
           display: block;
         }
       }
+      .doc-prev-and-next {
+        margin-top: 40px;
+        display: flex;
+        flex-direction: columns;
+        justify-content: space-between;
+        font-weight: bold;
+      }
     </style>
     <style>
-      code[data-language='flags'] {
+      code[data-language="flags"] {
         font-weight: bold;
         padding-left: 0;
         padding-right: 0;
         padding-bottom: 0;
       }
-      code[data-language='wrapped'] {
+      code[data-language="wrapped"] {
         white-space: pre-wrap;
       }
-      code[data-language='shell'] {
+      code[data-language="shell"] {
         white-space: pre-wrap;
       }
     </style>
@@ -155,6 +161,12 @@ export default function DocsPage({ html, state }) {
     <doc-content id="content" class="overflow-y-auto-lg pb2">
       <article slot="doc" class="block leading2">
         ${doc.title ? `<h1>${doc.title}</h1>` : ""} ${doc.html}
+        ${(doc.frontmatter?.next_doc || doc.frontmatter?.prev_doc) && `
+          <div class="doc-prev-and-next">
+            ${doc.frontmatter?.prev_doc ? `<a href="/docs/${doc.frontmatter?.prev_doc}" class="prev">← Prev</a>` : '<span></span>'}
+            ${doc.frontmatter?.next_doc ? `<a href="/docs/${doc.frontmatter?.next_doc}" class="next">Next →</a>` : '<span></span>'}
+          </div>
+        `}
       </article>
     </doc-content>
 
