@@ -52,6 +52,7 @@ export default function Component({ html, state }) {
   }
   .blog-hero > div {
     flex-grow: 1;
+    flex-shrink: 0;
   }
   .blog-hero > .text {
     padding-bottom: 20px;
@@ -63,6 +64,9 @@ export default function Component({ html, state }) {
     .blog-hero {
       display: flex;
       flex-direction: columns;
+    }
+    .blog-hero > div {
+      flex-basis: 50%;
     }
     .blog-hero > .text {
       padding-bottom: 0;

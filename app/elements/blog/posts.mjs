@@ -75,6 +75,7 @@ export default function Component({ html, state }) {
       <h1>Blog</h1>
       <div class="blog-posts">
         ${posts
+          .filter(p => !p.frontmatter?.hidden)
           .map(
             (post) => `
         <div class="blog-post">
