@@ -8,7 +8,7 @@ In Modality, we specify that a certain behavior is either necessary or possible,
 
 ## Box `[ ]` means necessity along a path
 
-Consider the following model, showing that to from home to work we may either walk, bike, or drive.
+Consider the following model, showing that to get from home to work we may either walk, bike, or drive.
 
 ```mermaid
 flowchart LR
