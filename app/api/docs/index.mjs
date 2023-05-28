@@ -3,6 +3,7 @@ import { existsSync, readFileSync } from "fs";
 import { URL } from "url";
 import { Arcdown } from "arcdown";
 import arcStaticImg from "markdown-it-arc-static-img";
+import markdownItMermaid from "../../lib/markdown-it-mermaid.mjs";
 import navDataLoader, {
   unslug,
   other as otherLinks,
@@ -16,8 +17,11 @@ const arcdown = new Arcdown({
       listType: "ul",
     },
   },
-  plugins: [arcStaticImg],
+  plugins: [markdownItMermaid, arcStaticImg],
   hljs: {
+    languages: {
+      mermaid: false,
+    },
     sublanguages: { javascript: ["xml", "css"] },
     plugins: [new HljsLineWrapper({ className: "code-line" })],
   },

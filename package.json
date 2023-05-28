@@ -33,6 +33,7 @@
   "dependencies": {
     "@enhance/arc-plugin-enhance": "^4.3.1",
     "arcdown": "^2.1.1",
-    "markdown-it-arc-static-img": "^2.1.0"
+    "markdown-it-arc-static-img": "^2.1.0",
+    "mermaid": "9.2"
   }
 }
