@@ -148,6 +148,17 @@ export default function DocsPage({ html, state }) {
       code[data-language="shell"] {
         white-space: pre-wrap;
       }
+      note {
+        display: block;
+        margin-bottom: 1.5rem;
+        padding: 5px;
+        background: #fff9d8;
+        border: none;
+        padding: 1.25em;
+        margin-left: 0;
+        margin-top: 0.25em;
+        font-size: 14px;
+      }
     </style>
 
     <docs-symbols></docs-symbols>

@@ -51,3 +51,27 @@ So what if we wanted a rule to require walking to work? Which of these two rules
 </details>
 
 ## Diamond `< >` means possibility along a path
+
+Not all rules specify obligations, some specify rights. A right is rule that ensure that some act remains possible.
+
+Going back to our example, we can write a rule to ensure that commuting by bike remains possible. To do this we use the angle brackets `< >` known as diamond:
+
+`<bike> true`
+
+The final `true` indicates that the rule should be evaluated as true if a path including `bike` is possible. Once committed to a contract, such a rule prevents any new rule restricting us from biking to work from also being committed.
+
+## Multiple Steps
+
+Now consider a model where we commute to work and then back home:
+
+```mermaid
+flowchart LR
+    home((fa:fa-home home)) -->|fa:fa-walking walk| work((fa:fa-building work))
+    home -->|fa:fa-bicycle bike| work
+    home -->|fa:fa-drive drive| work
+    work -->|fa:fa-walking walk| home2((fa:fa-home home))
+    work -->|fa:fa-bicycle bike| home2
+    work -->|fa:fa-drive drive| home2
+```
+
+Let's try writing
