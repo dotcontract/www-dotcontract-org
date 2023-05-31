@@ -42,7 +42,7 @@ flowchart LR
     s4((s4)) -->|+signed| s5((s5))
 ```
 
-Even worse, evolved models might use transition depth to evade what we intend. How can we get a rule to apply no matter how many transitions occur?
+But how can we get a rule to apply no matter how many transitions occur?
 
 ## Greatest Fixed Point
 

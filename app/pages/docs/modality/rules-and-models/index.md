@@ -51,10 +51,10 @@ DotContract comes with tools to help create your models automatically for you, a
 
 ## Rules versus Models
 
-In Modality, the rules of a contract are respected as canon, while models are always subject to change. You can think of the model as a user submitted interpretation of the rules. It may be inefficient or it may be overly restrictive. What you can be sure of is that if a contract accepts a model then its satisfies the rules.
+In Modality, the rules of a contract are respected as canon, while models are always subject to change. You can think of the model as a user submitted interpretation of the rules. It may be inefficient or it may be overly restrictive. What you can be sure of is that if a contract accepts a model then it satisfies the rules.
 
 Each contract use a [Kripke Machine](/docs/concepts/kripke-machine) to maintain the integrity of a contract. The Kripke Machine works by tracking the contract state and doing model checking. If at any point a user submits a rule breaking model, then the Kripke Machine will reject it.
 
 ## Model Evolution
 
-At first a contract has no rules and any model will satisfy it. Over time, as rules are collected, our model will need to evolve. Each time a model changes a user is responsible for submitting an evolution. That evolution will connect the past model to the incoming model, allowing for a preservation of a contract's state. DotContract comes with tools to help create your evolutions for you automatically.
+At first a contract has no rules and any model will satisfy it. Over time, as rules are collected, our model will need to evolve. Each time a model changes a user is responsible for submitting an evolution. That evolution will connect the past model to the evolved model, allowing for a continuity of a contract's state. DotContract comes with tools to help create your evolutions for you automatically.
