@@ -19,7 +19,11 @@ flowchart LR
 
 Now let's say, we want to write a rule in Modality to restrict our commute options. Here's a rule that says we may not drive to work:
 
+<center>
+
 `[drive] false`
+
+</center>
 
 The square brackets around the word "drive" is called a box and conveys necessity. In this case, the box is telling us that this rule applies to commuting paths that necessitate driving.
 
@@ -56,7 +60,11 @@ Not all rules specify obligations, some specify rights. A right is rule that ens
 
 Going back to our example, we can write a rule to ensure that commuting by bike remains possible. To do this we use the angle brackets `< >` known as diamond:
 
+<center>
+
 `<bike> true`
+
+</center>
 
 The final `true` indicates that the rule should be evaluated as true if a path including `bike` is possible. Once committed to a contract, such a rule prevents any new rule restricting us from biking to work from also being committed.
 

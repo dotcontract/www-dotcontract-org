@@ -128,11 +128,33 @@ export default function DocsPage({ html, state }) {
         }
       }
       .doc-prev-and-next {
+        border-top: 1px solid #ccc;
+        padding-top: 30px;
         margin-top: 40px;
         display: flex;
         flex-direction: columns;
         justify-content: space-between;
         font-weight: bold;
+        text-decoration: none;
+      }
+      .doc-prev-and-next a {
+        text-decoration: none;
+      }
+      .doc-prev-and-next a.next {
+        text-align: right;
+      }
+      .doc-prev-and-next .top {
+        font-size: 14px;
+        text-decoration: none;
+        font-weight: 700;
+        color: var(--rift-princess);
+      }
+      .doc-prev-and-next .bottom {
+        padding: 10px 0;
+        font-size: 16px;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, "system-ui", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        color: #777;
+        font-weight: 700;
       }
     </style>
     <style>
@@ -153,11 +175,14 @@ export default function DocsPage({ html, state }) {
         margin-bottom: 1.5rem;
         padding: 5px;
         background: #fff9d8;
+        background: rgb(240, 249, 255);
         border: none;
+        border-radius: 8px;
         padding: 1.25em;
         margin-left: 0;
         margin-top: 0.25em;
         font-size: 14px;
+        line-height: 1.5em;
       }
     </style>
 
@@ -174,8 +199,9 @@ export default function DocsPage({ html, state }) {
         ${doc.title ? `<h1>${doc.title}</h1>` : ""} ${doc.html}
         ${(doc.frontmatter?.next_doc || doc.frontmatter?.prev_doc) && `
           <div class="doc-prev-and-next">
-            ${doc.frontmatter?.prev_doc ? `<a href="/docs/${doc.frontmatter?.prev_doc}" class="prev">← Prev</a>` : '<span></span>'}
-            ${doc.frontmatter?.next_doc ? `<a href="/docs/${doc.frontmatter?.next_doc}" class="next">Next →</a>` : '<span></span>'}
+            ${doc.frontmatter?.prev_doc ?
+              `<a href="/docs/${doc.frontmatter?.prev_doc}" class="prev"><div class="top">Previous</div><div class="bottom">← ${doc.frontmatter.prev_doc_title || 'Doc'}</div></a>` : '<span></span>'}
+            ${doc.frontmatter?.next_doc ? `<a href="/docs/${doc.frontmatter?.next_doc}" class="next"><div class="top">Next</div><div class="bottom">${doc.frontmatter.next_doc_title || 'Doc'} →</div></a>` : '<span></span>'}
           </div>
         `}
       </article>

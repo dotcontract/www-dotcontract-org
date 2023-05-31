@@ -27,6 +27,18 @@ const arcdown = new Arcdown({
   },
 });
 
+async function readDoc(docPath) {
+  let docURL = new URL(`../../pages/docs/${docPath}/index.md`, import.meta.url);
+  let docMarkdown;
+  try {
+    docMarkdown = readFileSync(docURL.pathname, "utf-8");
+  } catch (_err) {
+    return false;
+  }
+  const doc = await arcdown.render(docMarkdown);
+  return doc;
+}
+
 /** @type {import('@enhance/types').EnhanceApiFn} */
 export async function get(request) {
   const gacode = process.env.ARC_ENV === "production" ? "G-TODO" : "G-TODO";
@@ -43,12 +55,10 @@ export async function get(request) {
     }
   }
 
-  const sidebarData = navDataLoader('docs', activePath)
+  const sidebarData = navDataLoader("docs", activePath);
 
-  let docMarkdown;
-  try {
-    docMarkdown = readFileSync(docURL.pathname, "utf-8");
-  } catch (_err) {
+  const doc = await readDoc(docPath);
+  if (!doc) {
     let searchTerm = null;
     if (!docPath.endsWith("/index")) {
       const docPathParts = docPath.split("/");
@@ -61,28 +71,32 @@ export async function get(request) {
         path: docPath,
         html: `<docs-404 search-term="${searchTerm}"></docs-404>`,
       },
+      searchTerm,
       otherLinks,
       sidebarData,
-      searchTerm,
       gacode,
-    };
-
+    };  
     return { statusCode: 404, json: initialState };
   }
-  const doc = await arcdown.render(docMarkdown);
-
   let gitHubLink =
     "https://github.com/dotcontract/www-dotcontract-org/edit/main/";
-  gitHubLink += `app/pages/${activePath.replace(/^\//,'')}/index.md`;
-
+  gitHubLink += `app/pages/${activePath.replace(/^\//, "")}/index.md`;
   const initialState = {
-    pageSubtitle: doc?.title,
-    doc,
-    gitHubLink,
+    doc: doc,
+    title: doc?.title,
+    searchTerm: null,
     otherLinks,
     sidebarData,
     gacode,
+    gitHubLink
   };
+
+  if (doc.frontmatter?.next_doc) {
+    initialState.doc.frontmatter.next_doc_title = (await readDoc(doc.frontmatter?.next_doc))?.title;
+  }
+  if (doc.frontmatter?.prev_doc) {
+    initialState.doc.frontmatter.prev_doc_title = (await readDoc(doc.frontmatter?.prev_doc))?.title;
+  }
 
   let cacheControl =
     process.env.ARC_ENV === "production"
