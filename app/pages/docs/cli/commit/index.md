@@ -1,5 +1,6 @@
 ---
 title: 'commit'
+topic_doc: '/cli'
 ---
 
 ## Overview

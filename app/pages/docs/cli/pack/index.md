@@ -1,5 +1,6 @@
 ---
 title: 'pack'
+topic_doc: '/cli'
 ---
 
 ## Overview

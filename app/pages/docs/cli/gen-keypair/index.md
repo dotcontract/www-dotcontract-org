@@ -1,5 +1,6 @@
 ---
 title: 'gen-keypair'
+topic_doc: '/cli'
 ---
 
 ## Overview

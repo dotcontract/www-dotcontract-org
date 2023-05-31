@@ -1,4 +1,7 @@
-# Temporal Modal Logic
+---
+title: 'Temporal Modal Logic'
+topic_doc: '/concepts'
+---
 
 [Temporal modal logic](https://en.wikipedia.org/wiki/Temporal_logic), simply stated, is the logic of possibility over time.
 

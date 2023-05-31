@@ -127,6 +127,13 @@ export default function DocsPage({ html, state }) {
           display: block;
         }
       }
+      .topic-link {
+        display: block;
+        margin-bottom: 0px !important;
+        text-decoration: none;
+        font-weight: 700;
+        color: #2c9875;
+      }
       .doc-prev-and-next {
         border-top: 1px solid #ccc;
         padding-top: 30px;
@@ -176,6 +183,7 @@ export default function DocsPage({ html, state }) {
         padding: 5px;
         background: #fff9d8;
         background: rgb(240, 249, 255);
+        background: rgb(239 253 246);
         border: none;
         border-radius: 8px;
         padding: 1.25em;
@@ -196,6 +204,7 @@ export default function DocsPage({ html, state }) {
 
     <doc-content id="content" class="overflow-y-auto-lg pb2">
       <article slot="doc" class="block leading2">
+        ${doc.frontmatter?.topic_doc ? `<a class="topic-link" href="/docs/${doc.frontmatter?.topic_doc}">${doc.frontmatter?.topic_doc_title || 'Topic'}</a>`: ''}
         ${doc.title ? `<h1>${doc.title}</h1>` : ""} ${doc.html}
         ${(doc.frontmatter?.next_doc || doc.frontmatter?.prev_doc) && `
           <div class="doc-prev-and-next">

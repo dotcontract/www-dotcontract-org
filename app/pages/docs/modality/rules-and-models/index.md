@@ -2,6 +2,7 @@
 title: "Rules and Models"
 prev_doc: "/modality"
 next_doc: "/modality/necessity-and-possibility"
+topic_doc: "/modality"
 ---
 
 We write rules in Modality to constrain the future outcomes of a DotContract. When changes are committed to a contract, we use models to confirm that the rules remain satisfied.

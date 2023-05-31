@@ -1,5 +1,6 @@
 ---
 title: 'pull'
+topic_doc: '/cli'
 ---
 
 ## Overview

@@ -97,6 +97,9 @@ export async function get(request) {
   if (doc.frontmatter?.prev_doc) {
     initialState.doc.frontmatter.prev_doc_title = (await readDoc(doc.frontmatter?.prev_doc))?.title;
   }
+  if (doc.frontmatter?.topic_doc) {
+    initialState.doc.frontmatter.topic_doc_title = (await readDoc(doc.frontmatter?.topic_doc))?.title;
+  }
 
   let cacheControl =
     process.env.ARC_ENV === "production"

@@ -2,6 +2,7 @@
 title: "Necessity and Possibility"
 prev_doc: "/modality/rules-and-models"
 next_doc: "/modality/can-and-must"
+topic_doc: "/modality"
 ---
 
 In Modality, we specify that a certain behavior is either necessary or possible, using boxes `[ ]` and diamonds `< >`.

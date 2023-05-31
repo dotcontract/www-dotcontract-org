@@ -1,5 +1,6 @@
 ---
 title: 'push'
+topic_doc: '/cli'
 ---
 
 ## Overview

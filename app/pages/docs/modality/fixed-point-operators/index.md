@@ -2,6 +2,7 @@
 title: "Fixed Point Operators"
 prev_doc: "/modality/can-and-must"
 next_doc: "/modality/henceforth-and-until"
+topic_doc: "/modality"
 ---
 
 Fixed point operators allow us to write rules that are applied repeated throughout a model.
