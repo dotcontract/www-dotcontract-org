@@ -7,7 +7,7 @@ topic_doc: "/modality"
 
 In Modality, we specify that a certain behavior is either necessary or possible, using boxes `[ ]` and diamonds `< >`.
 
-## Box `[ ]` means necessity along a path
+## Box `[ ]` of Necessity
 
 Consider the following model, showing that to get from home to work we may either walk, bike, or drive.
 
@@ -55,7 +55,7 @@ So what if we wanted a rule to require walking to work? Which of these two rules
 <div>Great job! <code>false</code> after <code>[-walk]</code> means that any path not including walking should be false.</div>
 </details>
 
-## Diamond `< >` means possibility along a path
+## Diamond `< >` of Possibility
 
 Not all rules specify obligations, some specify rights. A right is rule that ensure that some act remains possible.
 
@@ -77,10 +77,14 @@ Now consider a model where we commute to work and then back home:
 flowchart LR
     home((fa:fa-home home)) -->|fa:fa-walking walk| work((fa:fa-building work))
     home -->|fa:fa-bicycle bike| work
-    home -->|fa:fa-drive drive| work
+    home -->|fa:fa-car drive| work
     work -->|fa:fa-walking walk| home2((fa:fa-home home))
     work -->|fa:fa-bicycle bike| home2
-    work -->|fa:fa-drive drive| home2
+    work -->|fa:fa-car drive| home2
 ```
 
-Let's try writing
+Let's try writing...
+
+## A little history
+
+Modality isn't the first language to use boxes and diamonds. In fact, they're the symbols logicians have used for temporal modalities since the 1910s when they were first introduced by C. I. Lewis. Similarly, idea of placing transition labels inside of the boxes and diamonds comes from HML (Hennessy-Milner logic) which was developed in the 1980s.

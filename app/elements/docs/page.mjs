@@ -134,6 +134,9 @@ export default function DocsPage({ html, state }) {
         font-weight: 700;
         color: #2c9875;
       }
+      .topic-link:hover {
+        text-decoration: underline;
+      }
       .doc-prev-and-next {
         border-top: 1px solid #ccc;
         padding-top: 30px;
@@ -161,7 +164,11 @@ export default function DocsPage({ html, state }) {
         font-size: 16px;
         font-family: Inter, ui-sans-serif, system-ui, -apple-system, "system-ui", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
         color: #777;
+        color: #2c9875;
         font-weight: 700;
+      }
+      .doc-prev-and-next .bottom:hover {
+        text-decoration: underline;
       }
     </style>
     <style>
