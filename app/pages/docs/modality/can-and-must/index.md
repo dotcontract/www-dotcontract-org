@@ -31,7 +31,7 @@ must +audit
 
 ## Can
 
-Possibility is fairly simple convey with a diamond and true:
+Possibility is fairly simple to convey with a diamond and true:
 
 <center>
 
