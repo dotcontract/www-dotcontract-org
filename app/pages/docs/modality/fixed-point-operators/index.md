@@ -13,7 +13,7 @@ So far, we've seen simple rules using boxes and diamonds. Each of time a rule is
 
 ```mermaid
 flowchart LR
-    s1(((s1))) -->| | s2((s2))
+    s1((s1)) -->| | s2((s2))
     s2((s2)) -->| | s3((s3))
     s3((s3)) -->| | s4((s4))
     s4((s4)) -->| | s5((s5))
@@ -23,7 +23,7 @@ If we apply the rule, `[-signed]false`, then the model will need to evolve to co
 
 ```mermaid
 flowchart LR
-    s1(((s1))) -->|+signed| s2((s2))
+    s1((s1)) -->|+signed| s2((s2))
     s2((s2)) -->| | s3((s3))
     s3((s3)) -->| | s4((s4))
     s4((s4)) -->| | s5((s5))
@@ -37,7 +37,7 @@ We could conjoin subrules to produce a rule that applies to the model's subseque
 
 ```mermaid
 flowchart LR
-    s1(((s1))) -->|+signed| s2((s2))
+    s1((s1)) -->|+signed| s2((s2))
     s2((s2)) -->|+signed| s3((s3))
     s3((s3)) -->|+signed| s4((s4))
     s4((s4)) -->|+signed| s5((s5))

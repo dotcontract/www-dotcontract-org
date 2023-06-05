@@ -34,7 +34,7 @@ Each arrow is a labelled set of pseudo-booleans propositions (true, false, maybe
 
 -  means that a proposition must be false
 
-0  means that a proposition can be either true or false
+?  means that a proposition can be either true or false
    this is the default if a proposition doesn't appear
 ```
 
