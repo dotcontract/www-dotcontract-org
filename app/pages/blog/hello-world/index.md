@@ -1,8 +1,8 @@
 ---
-title: Hello World
-subtitle: Example subtitle
+title: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+subtitle: Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 date: 2023-01-01
-hero_image: /blog/hello-world/hello-world.png
+hero_image: /blog/hello-world/swirls-square.jpg
 hero_text_color: "#000"
 hero_background_color: "#fff"
 ---

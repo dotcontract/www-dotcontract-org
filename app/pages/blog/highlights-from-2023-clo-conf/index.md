@@ -2,7 +2,7 @@
 title: Highlights from 2023 CLO Conf
 subtitle:
 date: 2023-01-01
-hero_image: /blog/hello-world/hello-world.png
+hero_image: /blog/hello-world/swirls.jpeg
 hero_text_color: "#000"
 hero_background_color: "#fff"
 hidden: true

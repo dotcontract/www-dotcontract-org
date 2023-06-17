@@ -7,48 +7,56 @@ export default function Component({ html, state }) {
   const CSS = /*css*/ `
   h1 {
     font-family: "Hepta Slab", "Sanchez", "Open Sans", sans-serif;
-    font-size: 18px;
     line-height: 1.4em;
+    font-size: 48px;
     font-weight: 500;
     padding-bottom: 20px;
     text-align: left;
   }
   @media (min-width: 480px) {
     h1 {
-      font-size: 24px;
+      font-size: 48px;
     }
   }
   @media (min-width: 760px) {
     h1 {
-      font-size: 36px;
+      font-size: 68px;
     }
   }
   @media (min-width: 960px) {
     h1 {
-      font-size: 50px;
+      font-size: 68px;
     }
   }
   h2, h3 {
     font-weight: 700;
   }
   .blog-body {
-    width: 860px;
-    max-width: calc(100% - 40px);
-    margin: 20px auto;
+    width: 680px;
+    margin: 70px auto;
+    max-width: calc(100% - 35px);
   }
   .blog-body p {
-    margin: 2em 0;
+    margin: 0.9em 0 1.9em 0;
+    line-height: 1.3em;
+    font-size: 17px;
+  }
+  .blog-body pre {
+    font-family: 'Roboto Mono';
+    margin: 3.5em 0 3.5em 0;
     font-size: 16px;
-    line-height: 1.6em;
+    line-height: 1.4em;
+    max-width: 100%;
+    overflow: scroll;
   }
   .blog-body a {
     text-decoration: underline;
   }
   .blog-hero {
-    padding-top: 50px;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-bottom: 50px;
+    padding-top: 180px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
   }
   .blog-hero > div {
     flex-grow: 1;
@@ -75,18 +83,21 @@ export default function Component({ html, state }) {
   }
 
   .blog-hero h1 {
-    font-weight: 700;
+    font-weight: 500;
+    font-family: "Inter";
+    -webkit-font-smoothing: antialiased;
+    line-height: 1em;
   }
   .blog-hero .subtitle {
-    line-height: 1.6em;
+    line-height: 1.5em;
+    font-size: 21px;
   }
   .blog-preroll {
-    margin-top: 50px;
+    margin-top: 30px;
     padding-top: 15px;
     margin-left: 20px;
     margin-right: 20px;
     border-top: 1px solid #111;
-    font-size: 16px;
   }
   `;
 
