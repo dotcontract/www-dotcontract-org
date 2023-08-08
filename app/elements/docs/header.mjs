@@ -88,7 +88,7 @@ export default function PublicTopNav({ html, state }) {
       <div class="right">
         <a class="link invisible" href="/solutions">Solutions</a>
         <a class="link invisible" href="/resources">Resources</a>
-        <a class="link get-started" href="http://dotcontract.cloud"><img style="display: inline-block;" src="/_public/icons/cloud.svg" /> Cloud Login</a>
+        <a class="link get-started" href="https://contract.nexus"><img style="display: inline-block;" src="/_public/icons/cloud.svg" /> ContractNexus</a>
       </div>
     </header>
   `;

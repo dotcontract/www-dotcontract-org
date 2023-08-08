@@ -16,21 +16,15 @@ export const data = [
         label: "FAQs",
         path: "/docs/faqs",
       },
+      {
+        type: TYPE.link,
+        label: "Get Started",
+        path: '/docs/get-started'
+      },
     ]
   },
 
-  {
-    type: TYPE.category,
-    label: "Get Started",
-    slug: "get-started",
-    items: [
-      // {label: "CLI Install", slug: "cli-install"},
-      // {label: 'Windows Install', slug: 'windows-install'},
-      // {label: 'MacOS Install', slug: 'macos-install'},
-      // {label: 'Linux Install', slug: 'linux-install'},
-      // {label: 'DotContract Cloud', slug: 'dotcontract-cloud'},
-    ]
-  },
+
 
   {
     type: TYPE.category,

@@ -212,7 +212,7 @@ export default function DocsPage({ html, state }) {
     <doc-content id="content" class="overflow-y-auto-lg pb2">
       <article slot="doc" class="block leading2">
         ${doc.frontmatter?.topic_doc ? `<a class="topic-link" href="/docs/${doc.frontmatter?.topic_doc}">${doc.frontmatter?.topic_doc_title || 'Topic'}</a>`: ''}
-        ${doc.title ? `<h1>${doc.title}</h1>` : ""} ${doc.html}
+        ${(doc.frontmatter?.shown_title || doc.title) ? `<h1>${doc.frontmatter?.shown_title || doc.title}</h1>` : ""} ${doc.html}
         ${(doc.frontmatter?.next_doc || doc.frontmatter?.prev_doc) && `
           <div class="doc-prev-and-next">
             ${doc.frontmatter?.prev_doc ?

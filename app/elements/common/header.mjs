@@ -82,8 +82,9 @@ export default function CommonHeader({ html, state }) {
         header .right a.menu-icon {
           display: none;
         }
-        header .right .link, header .right .link.get-started {
-          display: block;
+        header .right .link,
+        header .right .link.get-started {
+          display: flex;
         }
         header .right {
           margin-left: 20px;
@@ -103,19 +104,19 @@ export default function CommonHeader({ html, state }) {
       </div>
       <div class="right">
         <a class="menu-icon"><img src="/_public/icons/menu.svg" /></a>
-        <a class="link" href="/resources">Resources</a>
         <a class="link" href="/for-devs">Developers</a>
-        <a class="link get-started" href="http://dotcontract.cloud"
+        <a class="link" href="/docs">Docs</a>
+        <a class="link get-started" href="http://contract.nexus"
           ><img style="display: inline-block;" src="/_public/icons/cloud.svg" />
-          Cloud Login</a
-        >
+          ContractNexus
+        </a>
       </div>
       <div class="below">
-        <a class="link" href="/resources">Resources</a>
         <a class="link" href="/for-devs">Developers</a>
-        <a class="link get-started" href="http://dotcontract.cloud"
+        <a class="link" href="/docs">Docs</a>
+        <a class="link get-started" href="https://contract.nexus"
           ><img style="display: inline-block;" src="/_public/icons/cloud.svg" />
-          Cloud Login</a
+          ContractNexus</a
         >
       </div>
     </header>

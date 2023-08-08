@@ -75,7 +75,7 @@ export async function get(request) {
       otherLinks,
       sidebarData,
       gacode,
-    };  
+    };
     return { statusCode: 404, json: initialState };
   }
   let gitHubLink =
@@ -88,17 +88,22 @@ export async function get(request) {
     otherLinks,
     sidebarData,
     gacode,
-    gitHubLink
+    gitHubLink,
   };
 
   if (doc.frontmatter?.next_doc) {
-    initialState.doc.frontmatter.next_doc_title = (await readDoc(doc.frontmatter?.next_doc))?.title;
+    initialState.doc.frontmatter.next_doc_title = (
+      await readDoc(doc.frontmatter?.next_doc)
+    )?.title;
   }
   if (doc.frontmatter?.prev_doc) {
-    initialState.doc.frontmatter.prev_doc_title = (await readDoc(doc.frontmatter?.prev_doc))?.title;
+    initialState.doc.frontmatter.prev_doc_title = (
+      await readDoc(doc.frontmatter?.prev_doc)
+    )?.title;
   }
   if (doc.frontmatter?.topic_doc) {
-    initialState.doc.frontmatter.topic_doc_title = (await readDoc(doc.frontmatter?.topic_doc))?.title;
+    const topic_doc = await readDoc(doc.frontmatter?.topic_doc);
+    initialState.doc.frontmatter.topic_doc_title = topic_doc?.title;
   }
 
   let cacheControl =

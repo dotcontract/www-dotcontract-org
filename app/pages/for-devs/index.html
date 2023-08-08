@@ -884,7 +884,7 @@
     <!-- <h2>Validated and changeable with consensus, no blockchain required.</h2> -->
     <div class="examples-and-terminal">
       <div class="sidebar">
-        <div class="title">Build a Contract</div>
+        <div class="title">Contract CLI</div>
         <select class="examples-selector">
           <option value="create-or-clone" class="example">
             Create or Clone a DotContract
@@ -892,48 +892,53 @@
           <option value="commit-history" class="example active" selected>
             Read Commit History
           </option>
-          <option value="empty" class="example">Start a Draft</option>
+          <!-- <option value="empty" class="example">Start a Draft</option> -->
           <option value="empty" class="example">Add Rules in Modality</option>
           <option value="empty" class="example">
-            Sign &amp; Commit a Draft
+            Sign &amp; Commit
           </option>
           <option value="validate-commits" class="example">
             Validate Commits
           </option>
           <option value="empty" class="example">Simulate Usage</option>
           <option value="empty" class="example">
-            Pull &amp; Push a Hosted DotContract
+            Pull &amp; Push
           </option>
         </select>
         <div class="examples">
           <div data-ex="create-or-clone" class="example">
-            Create or Clone a DotContract
+            Create or Clone
           </div>
           <div data-ex="commit-history" class="example active">
             Read Commit History
           </div>
-          <div data-ex="empty" class="example">Start a Draft</div>
+          <!-- <div data-ex="empty" class="example">Start a Draft</div> -->
           <div data-ex="empty" class="example">Add Rules in Modality</div>
-          <div data-ex="empty" class="example">Sign &amp; Commit a Draft</div>
+          <div data-ex="empty" class="example">Sign &amp; Commit</div>
           <div data-ex="validate-commits" class="example">Validate Commits</div>
           <div data-ex="empty" class="example">Simulate Usage</div>
           <div data-ex="empty" class="example">
-            Pull &amp; Push a Hosted DotContract
+            Pull &amp; Push
           </div>
         </div>
       </div>
       <div class="terminal">
         <div data-ex="empty" class="terminal-example">
           <div class="header">
-            <div class="left">dotcontract-cli</div>
-            <div class="right">&lt;/&gt;</div>
+            <div class="left">contract</div>
+            <div class="right">sh</div>
           </div>
         </div>
         <div data-ex="create-or-clone" class="terminal-example">
           <div class="header">
-            <div class="left">dotcontract-cli</div>
-            <div class="right">&lt;/&gt;</div>
+            <div class="left">contract create</div>
+            <div class="right">sh</div>
           </div>
+          <pre class="bod">
+<span class="bold">% contract create -f partnership.contract</span>
+
+<span class="bold">% contract clone --url pubkey@contract.nexus:/demos/example.contract</span>
+          </pre>
         </div>
         <div data-ex="commit-history" class="terminal-example active">
           <div class="header">
@@ -941,7 +946,7 @@
             <div class="right">sh</div>
           </div>
           <pre class="bod">
-<span class="bold">% contract log example-partnership.contract</span>
+<span class="bold">% contract log --reverse -f partnership.contract</span>
 
 <span class="bold"># DotContract b45a777ffe355419b7d9a7859355818fe115a3d1</span>
 Name: Example Business Partnership
@@ -950,15 +955,14 @@ Sort: Oldest to Newest
 <span class="bold">## Commit d4033751307f9ebbc36f11e3988c98d335746101</span>
 <span class="bold green">DEFINE</span>  <span class="blue">@party_a</span>, <span class="purple">crypto:/ed25519-pub/12D...</span>
 <span class="bold green">DEFINE</span>  <span class="blue">@party_b</span>, <span class="purple">crypto:/ed25519-pub/12D...</span>
-<span class="bold green">RULE</span>    <span class="blue">/</span>, henceforth_must( signed_by( one_of( <span class="blue">@party_a</span>, <span class="blue">@party_b</span> ) ) )
+<span class="bold green">RULE</span>    always must (include_sig <span class="blue">@party_a</span> or include_sig <span class="blue">@party_b</span>)
 
 <span class="bold">## Commit b45a777ffe355419b7d9a7859355818fe115a3d1</span>
-<span class="bold green">DEFINE</span>  <span class="blue">/docs</span>, FileDirectory
-<span class="bold green">RULE</span>    <span class="blue">/docs</span>, henceforth_must( signed_by( all_of( <span class="blue">@party_a</span>, <span class="blue">@party_b</span> ) ) )
+<span class="bold green">RULE</span>    always must (when post_to /gov also include_sig <span class="blue">@party_a</span> and include_sig <span class="blue">@party_b</span>)
 <span class="bold green">SIGNED</span>  <span class="blue">@party_a</span>
 
 <span class="bold">## Commit 433cd4320dba0db724af8f9c85b42f67679113f8</span>
-<span class="bold green">POST  </span>  <span class="blue">/docs/Operating Agreement.docx</span>, <span class="purple">attach:/docs/Operating Agreement.docx</span>
+<span class="bold green">POST  </span>  <span class="blue">/gov/Operating Agreement.docx</span>, <span class="purple">attach:/docs/Operating Agreement.docx</span>
 <span class="bold green">SIGNED</span>  <span class="blue">@party_a</span>
 <span class="bold green">SIGNED</span>  <span class="blue">@party_b</span>
 </pre>
