@@ -12,7 +12,7 @@ DotContract turns any contract into a digital repository, making recording keepi
 
 #### What was DotContract designed for?
 
-DotContract is as a *general purpose* data repository for compliance, accounting, and governance data.
+DotContract is a *general purpose* data repository for compliance, accounting, and governance data.
 
 DotContracts can be used to govern anything from people in a partnership to computers in a data use agreement.
 
@@ -20,7 +20,7 @@ DotContracts can be used to govern anything from people in a partnership to comp
 
 No. DotContract (like git) is *not* blockchain based.
 
-Blockchains unsuitable and dangerous for fiduciaries and their clients. This is because the defining feature of a blockchain is its use of a crypto-economic game (viz proof-of-work, proof-of-stake, etc) to establish consensus over a massively commingled history of changes.
+Blockchains are unsuitable and dangerous for fiduciaries and their clients. This is because the defining feature of a blockchain is its use of a crypto-economic game (viz proof-of-work, proof-of-stake, etc) to establish consensus over a massively commingled history of changes.
 
 In contrast, DotContract (like git) is repository based, isolating the record keeping of any particular contract. DotContract only uses cryptography insofar as to authenticate and authorize users and their actions.
 
