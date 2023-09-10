@@ -56,13 +56,13 @@ export const data = [
       },
       {
         type: TYPE.link,
-        label: "Create a DotContract",
-        slug: "create-a-dotcontract",
+        label: "Sign an Agreement",
+        slug: "sign-an-agreement",
       },
       {
         type: TYPE.link,
-        label: "Sign an Agreement",
-        slug: "sign-an-agreement",
+        label: "Create a DotContract",
+        slug: "create-a-dotcontract",
       },
       {
         type: TYPE.link,
