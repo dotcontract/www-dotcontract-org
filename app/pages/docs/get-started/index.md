@@ -1,6 +1,6 @@
 ---
 title: 'Get Started with DotContract'
-next_doc: "/cli"
+next_doc: "/by-example"
 topic_doc: "/"
 ---
 

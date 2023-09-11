@@ -1,7 +1,8 @@
 ---
 title: FAQs
-next_doc: "/get-started"
 topic_doc: "/"
+next_doc: "/get-started"
+prev_doc: "/"
 ---
 
 #### Why do digital contracts the DotContract way?

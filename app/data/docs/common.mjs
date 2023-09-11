@@ -24,7 +24,33 @@ export const data = [
     ]
   },
 
-
+  {
+    type: TYPE.category,
+    label: "By Example",
+    slug: "by-example",
+    items: [
+      {
+        type: TYPE.link,
+        label: "Create your Keys",
+        slug: "create-your-keys",
+      },
+      {
+        type: TYPE.link,
+        label: "Sign an Agreement",
+        slug: "sign-an-agreement",
+      },
+      // {
+      //   type: TYPE.link,
+      //   label: "Create a DotContract",
+      //   slug: "create-a-dotcontract",
+      // },
+      // {
+      //   type: TYPE.link,
+      //   label: "Read Commit History",
+      //   slug: "read-commit-history",
+      // },
+    ]
+  },
 
   {
     type: TYPE.category,
@@ -44,33 +70,7 @@ export const data = [
       {label: 'gen-keypair'},
     ]
   },
-  {
-    type: TYPE.category,
-    label: "By Example",
-    slug: "by-example",
-    items: [
-      {
-        type: TYPE.link,
-        label: "Create your Keys",
-        slug: "create-your-keys",
-      },
-      {
-        type: TYPE.link,
-        label: "Sign an Agreement",
-        slug: "sign-an-agreement",
-      },
-      {
-        type: TYPE.link,
-        label: "Create a DotContract",
-        slug: "create-a-dotcontract",
-      },
-      {
-        type: TYPE.link,
-        label: "Read Commit History",
-        slug: "read-commit-history",
-      },
-    ]
-  },
+
   {
     type: TYPE.category,
     label: "Modality",

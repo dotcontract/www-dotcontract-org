@@ -1,8 +1,8 @@
 ---
-topic: 'By Example'
-title: 'Sign an Agreement'
+topic: "By Example"
+title: "Sign an Agreement"
 prev_doc: "/by-example/create-your-keys"
---next_doc: "/by-example/inspect-a-dotcontract"
+next_doc: "/cli"
 ---
 
 You've been sent an [example.contract](/public/example.contract) and have been asked to sign. What do you do?
@@ -29,7 +29,7 @@ ______ README.md ______
 
 # Example Contributor License Agreement
 
-Thank you for your interest in contributing to an Example open source project. You must read and agree to the contained agreement /cla-agreement.pdf before becoming a contributor.
+Thank you for your interest in contributing to an Example open source project. You must read and agree to the contained /agreement.pdf before becoming a contributor.
 
 ## Instructions
 
@@ -48,7 +48,6 @@ At the top we see a summary of technical details of the contract. So far there h
 
 At the bottom we see a general description of the contract, which comes to us from the `/README.md` file contained with the example.contract. It looks like this a Contributor License Agreement for an open source project that we'd like to work on.
 
-
 Now let's take a look at the rules applied to the .contract.
 
 ```wrapped
@@ -56,7 +55,7 @@ contract rules -f example.contract
 
 # 1
 
-rule: always must includes_sig(/collective/signing.pub)   
+rule: always must includes_sig(/collective/signing.pub)
 since: a47b208ffdf38e631eae5647dc8033578043d1a697ae7d7fdabb33201e64a8cc
 message: Example Collective must sign off on all commits
 ```
@@ -71,16 +70,16 @@ contract contents -f example.contract
 /collective/name.text     Example Collective
 /collective/email.text    admin@example.com
 /collective/signing.pub   crypto://ed25519-pub/12D3KooWGzTPmNwRgs6qspk5TmPGrVyHEE8dGq9nTfYBF5Dbf1YK
-/cla-agreement.pdf        attachment://decdef816dece1e1aa152e649d1a860757e0b9a7d153d23bc1051858f3db65c1
+/agreement.pdf            attachment://decdef816dece1e1aa152e649d1a860757e0b9a7d153d23bc1051858f3db65c1
 /README.md                attachment://e1fef8da62c19310d825dda71bcb9e616405545ea1c88898e089449519087241
 ```
 
-The top three values are the name, email, and signing pub of the Example Collective. After that, we see two attachments. The README.md we already previewed. We can extract the cla-agreement.pdf to view the legal text included in this contract.
+The top three values are the name, email, and signing pub of the Example Collective. After that, we see two attachments. The README.md we already previewed. We can extract the agreement.pdf to view the legal text included in this contract.
 
 ```
-contract extract -f example.contract --path /cla-agreement.pdf
+contract extract -f example.contract --path /agreement.pdf
 
-Extracting cla-agreement.pdf to:
+Extracting agreement.pdf to:
   ~/Desktop/
 ```
 
@@ -103,9 +102,9 @@ Above we see that there's one draft `new-contributor`. It has one additional com
 Let's look at the its commit log.
 
 ```
-contract draft-commits -f example.contract --draft new-contributor
+contract log -f example.contract --draft new-contributor
 
-## Commit #1 b2713b774d311b248fae9bbff86c9cdabd0861d3d42bafcd062ab752e11cba49
+## Commit b2713b774d311b248fae9bbff86c9cdabd0861d3d42bafcd062ab752e11cba49
 
 MESSAGE   Adding myself as a contributor.
 
@@ -126,15 +125,15 @@ RULE      must include_sig(/contributor/signing.pub)
 Let's complete the draft by filling out the blank fields and signing the draft.
 
 ```wrapped
-contract draft-revise -f example.contract --draft new-contributor --post-pub /contributor/signing.pub --post /contributor/name.text "Hubert Leibniz" --post /contributor/email.text "hubert@leibniz.net" --sign
+contract edit-draft -f example.contract --draft new-contributor --post-pub /contributor/signing.pub --post /contributor/name.text "Hubert Leibniz" --post /contributor/email.text "hubert@leibniz.net" --sign
 ```
 
 Now if we check the draft's commit log, we'll see that the fields have been filled in.
 
 ```
-contract draft-commits -f example.contract --draft new-contributor
+contract log -f example.contract --draft new-contributor
 
-## Commit #1 17ed7d1b73c61e292e0ae22ea1ae5803bcf76d290a520b34a50ed950222afd76
+## Commit 17ed7d1b73c61e292e0ae22ea1ae5803bcf76d290a520b34a50ed950222afd76
 
 MESSAGE   Adding myself as a contributor.
 
@@ -151,3 +150,15 @@ SIGNED    /contributor/signing.pub
 ```
 
 One rule remains unsatisfied: the collective must also sign! Time to send the `example.contract` back to them to counter sign and merge the draft into the committed contract.
+
+## Merging in a Signed Draft
+
+When Example Collective receives our signed draft, it's their turn to sign the draft.
+
+```
+contract edit-draft -f example.contract --draft new-contributor --sign
+
+contract merge-draft -f example.contract --draft new-contributor
+```
+
+The contract is now full signed by both parties. Example Collective should send a copy of the fully signed contract back to the new contributor
