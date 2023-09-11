@@ -39,6 +39,16 @@ export const data = [
         label: "Sign an Agreement",
         slug: "sign-an-agreement",
       },
+      {
+        type: TYPE.link,
+        label: "Unpack a DotContract File",
+        slug: "unpack-a-dotcontract-file",
+      },
+      {
+        type: TYPE.link,
+        label: "Sync a DotContract Repo",
+        slug: "sync-a-dotcontract-repo",
+      },
       // {
       //   type: TYPE.link,
       //   label: "Create a DotContract",

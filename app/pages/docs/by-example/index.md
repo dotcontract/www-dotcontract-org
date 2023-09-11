@@ -1,5 +1,7 @@
 ---
-title: 'DotContract by Example'
+title: 'By Example'
+shown_title: DotContract by Example
+topic_doc: "/by-example"
 prev_doc: "/get-started"
 next_doc: "/by-example/create-your-keys"
 ---

@@ -1,8 +1,8 @@
 ---
-topic: "By Example"
 title: "Sign an Agreement"
+topic_doc: "/by-example"
 prev_doc: "/by-example/create-your-keys"
-next_doc: "/cli"
+next_doc: "/by-example/unpack-a-dotcontract-file"
 ---
 
 You've been sent an [example.contract](/public/example.contract) and have been asked to sign. What do you do?

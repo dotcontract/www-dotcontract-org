@@ -1,6 +1,6 @@
 ---
-topic: "By Example"
 title: "Create your Keys"
+topic_doc: "/by-example"
 next_doc: "/by-example/sign-an-agreement"
 prev_doc: "/by-example"
 ---
