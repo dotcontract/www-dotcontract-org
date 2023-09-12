@@ -7,6 +7,8 @@ topic_doc: "/modality"
 
 We write rules in Modality to constrain the future outcomes of a DotContract. When changes are committed to a contract, we use models to confirm that the rules remain satisfied.
 
+<img src="/_static/docs/modality/modality-rules-and-models.png" class="m-auto" alt="Rules specify models while models satisfy rules." />
+
 ## Rules
 
 A rule constrains the future outcomes of a contract. For example, a rule may require that two parties sign for a payment to occur.

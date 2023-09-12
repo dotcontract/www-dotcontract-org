@@ -3,8 +3,7 @@ title: "Modality"
 next_doc: "/modality/rules-and-models"
 ---
 
-DotContract rules and queries are written in Modality, a formal specification language for encoding the terms of any multi-party agreement.
-
+DotContract rules and queries are written in Modality, a formal specification language for encoding the terms of any multi-party dynamic.
 ## Why Modality?
 
 We believe that no contract should be exploitable by bugs or defects. The only way to achieve this is for the terms of a contract to express their intended behavior in a verifiable way. Modality was designed to make this possible.
