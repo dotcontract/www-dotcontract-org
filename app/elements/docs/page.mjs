@@ -181,6 +181,21 @@ export default function DocsPage({ html, state }) {
       code[data-language="wrapped"] {
         white-space: pre-wrap;
       }
+      code[data-language="terminal"] {
+        background: #2d3040;
+        color: #9698a0;
+        color: white;
+        border-radius: 8px;
+        box-shadow: 0 5px 12px rgb(0 0 0 / 20%);
+      }
+      code[data-language="wrapped-terminal"] {
+        white-space: pre-wrap;
+        background: #2d3040;
+        color: #9698a0;
+        color: white;
+        border-radius: 8px;
+        box-shadow: 0 5px 12px rgb(0 0 0 / 20%);
+      }
       code[data-language="shell"] {
         white-space: pre-wrap;
       }

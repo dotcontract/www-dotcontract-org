@@ -13,8 +13,8 @@ If you haven't already, be sure to first [create your keys](/docs/by-example/cre
 
 As a first step, let's get some general info from the example.contract file we were sent.
 
-```wrapped
-contract info -f example.contract
+```wrapped-terminal
+% contract info -f example.contract
 
 # Summary
 
@@ -50,8 +50,8 @@ At the bottom we see a general description of the contract, which comes to us fr
 
 Now let's take a look at the rules applied to the .contract.
 
-```wrapped
-contract rules -f example.contract
+```wrapped-terminal
+% contract rules -f example.contract
 
 # 1
 
@@ -64,8 +64,8 @@ The above rule is fairly self-explanatory. The text after `rule` is written in M
 
 Let's now take a look at the present contents of the contract. This will show us both attached files and persisted values.
 
-```
-contract contents -f example.contract
+```terminal
+% contract contents -f example.contract
 
 /collective/name.text     Example Collective
 /collective/email.text    admin@example.com
@@ -76,8 +76,8 @@ contract contents -f example.contract
 
 The top three values are the name, email, and signing pub of the Example Collective. After that, we see two attachments. The README.md we already previewed. We can extract the agreement.pdf to view the legal text included in this contract.
 
-```
-contract extract -f example.contract --path /agreement.pdf
+``` terminal
+% contract extract -f example.contract --path /agreement.pdf
 
 Extracting agreement.pdf to:
   ~/Desktop/
@@ -87,8 +87,8 @@ Extracting agreement.pdf to:
 
 A .contract can also store drafts of commits for others to complete. Let's take a look at draft that was sent within example.contract.
 
-```
-contract drafts -f example.contract
+```terminal
+% contract drafts -f example.contract
 
 # new-contributor
 * Commits: 1
@@ -101,8 +101,8 @@ Above we see that there's one draft `new-contributor`. It has one additional com
 
 Let's look at the its commit log.
 
-```
-contract log -f example.contract --draft new-contributor
+```terminal
+% contract log -f example.contract --draft new-contributor
 
 ## Commit b2713b774d311b248fae9bbff86c9cdabd0861d3d42bafcd062ab752e11cba49
 
@@ -124,14 +124,14 @@ RULE      must include_sig(/contributor/signing.pub)
 
 Let's complete the draft by filling out the blank fields and signing the draft.
 
-```wrapped
-contract edit-draft -f example.contract --draft new-contributor --post-pub /contributor/signing.pub --post /contributor/name.text "Hubert Leibniz" --post /contributor/email.text "hubert@leibniz.net" --sign
+```wrapped-terminal
+% contract edit-draft -f example.contract --draft new-contributor --post-pub /contributor/signing.pub --post /contributor/name.text "Hubert Leibniz" --post /contributor/email.text "hubert@leibniz.net" --sign
 ```
 
 Now if we check the draft's commit log, we'll see that the fields have been filled in.
 
-```
-contract log -f example.contract --draft new-contributor
+```terminal
+% contract log -f example.contract --draft new-contributor
 
 ## Commit 17ed7d1b73c61e292e0ae22ea1ae5803bcf76d290a520b34a50ed950222afd76
 
@@ -155,10 +155,10 @@ One rule remains unsatisfied: the collective must also sign! Time to send the `e
 
 When Example Collective receives our signed draft, it's their turn to sign the draft.
 
-```
-contract edit-draft -f example.contract --draft new-contributor --sign
+```terminal
+% contract edit-draft -f example.contract --draft new-contributor --sign
 
-contract merge-draft -f example.contract --draft new-contributor
+% contract merge-draft -f example.contract --draft new-contributor
 ```
 
 The contract is now full signed by both parties. Example Collective should send a copy of the fully signed contract back to the new contributor

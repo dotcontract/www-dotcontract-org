@@ -7,7 +7,7 @@ next_doc: "/by-example/sync-a-dotcontract-repo"
 
 You can list the contents of a .contract file using the CLI and then extract files you want to view:
 
-```
+```terminal
 % contract contents -f example.contract
 
 /collective/name.text     Example Collective
@@ -21,7 +21,7 @@ You can list the contents of a .contract file using the CLI and then extract fil
 
 But another way to quickly get access to all the files in a .contract is to unpack it and view its content as a directory on your computer:
 
-```
+```terminal
 % contract unpack -f example.contract
 
 Unpacking to: ~/Downloads/example
@@ -38,7 +38,7 @@ Unpacking complete!
 
 You can also interact with the unpacked DotContract directory using the CLI:
 
-```
+```terminal
 % contract info --directory ~/Downloads/example
 
 # Summary
@@ -56,7 +56,7 @@ You can also interact with the unpacked DotContract directory using the CLI:
 
 If you change directories into an unpacked DotContract directory (or any of its subdirectories), you also don't need specify its path when using the command line:
 
-```
+```terminal
 % cd ~/Downloads/example
 % contract info
 
@@ -74,6 +74,6 @@ If you change directories into an unpacked DotContract directory (or any of its 
 
 If you make changes to a DotContract directory, you may want to pack it back up as a .contract file to send to others:
 
-```
+```terminal
 % contract pack -f ~/example2.contract
 ```

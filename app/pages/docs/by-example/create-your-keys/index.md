@@ -22,16 +22,16 @@ Each of your keys generates a public identifier (formally a public key), here ca
 ### Getting Started
 
 Create your default set of keys and pubs with the command:
-```
-contract new-id
+```terminal
+% contract new-id
 ```
 
 If you need additional identities, name them:
-```
-contract new-id --name me@work
+```terminal
+% contract new-id --name me@work
 ```
 
 To see a list of your available identities, use the command:
-```
-contract whoami
+```terminal
+% contract whoami
 ```
